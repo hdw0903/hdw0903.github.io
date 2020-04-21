@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>효과 및 애니메이션 -jQuery - 한참치의 Study Blog</title><meta description="jQuery Effects jQuery Hide&amp;#x2F;Show jQuery Fade jQuery Slide jQuery Animate jQuery stop() jQuery delay() jQuery queue() jQuery finish() jQuery Callback jQuery Chaining"><meta property="og:type" content="blog"><meta property="og:title" content="효과 및 애니메이션 -jQuery"><meta property="og:url" content="hdw0903.github.io/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/"><meta property="og:site_name" content="한참치의 Study Blog"><meta property="og:description" content="jQuery Effects jQuery Hide&amp;#x2F;Show jQuery Fade jQuery Slide jQuery Animate jQuery stop() jQuery delay() jQuery queue() jQuery finish() jQuery Callback jQuery Chaining"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="/img/og_image.png"><meta property="article:published_time" content="2020-03-12T04:21:33.000Z"><meta property="article:modified_time" content="2020-04-20T20:02:34.124Z"><meta property="article:author" content="Han Dongwon"><meta property="article:tag" content="jQuery"><meta property="article:tag" content="JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"hdw0903.github.io/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/"},"headline":"한참치의 Study Blog","image":["/img/og_image.png"],"datePublished":"2020-03-12T04:21:33.000Z","dateModified":"2020-04-20T20:02:34.124Z","author":{"@type":"Person","name":"Han Dongwon"},"description":"jQuery Effects jQuery Hide&#x2F;Show jQuery Fade jQuery Slide jQuery Animate jQuery stop() jQuery delay() jQuery queue() jQuery finish() jQuery Callback jQuery Chaining"}</script><link rel="canonical" href="hdw0903.github.io/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/"><link rel="icon" href="/images/coffee-favicon.PNG"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night-bright.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/images/template.svg" alt="한참치의 Study Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub Home" href="https://github.com/hdw0903"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-12T04:21:33.000Z" title="2020-03-12T04:21:33.000Z">2020-03-12</time><span class="level-item"><a class="link-muted" href="/categories/jQuery/">jQuery</a></span><span class="level-item">15분 읽기 (대략 2277 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">효과 및 애니메이션 -jQuery</h1><div class="content"><ul>
+<li>jQuery Effects<ul>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_Hide_Show">jQuery Hide/Show</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_Fade">jQuery Fade</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_Slide">jQuery Slide</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_Animate">jQuery Animate</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_stop">jQuery stop()</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_delay">jQuery delay()</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_queue">jQuery queue()</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_finish">jQuery finish()</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_Callback">jQuery Callback</a></li>
+<li><a href="/2020/03/12/효과-및-애니메이션-jQuery/#jQuery_Chaining">jQuery Chaining</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<hr>
+<h2 id="jQuery_Hide_Show">hide() / show() / toggle()</h2>
+--------------------------
+
+<blockquote>
+<ol>
+<li>$(selector).hide(speed,callback);</li>
+<li>$(selector).show(speed,callback);</li>
+</ol>
+</blockquote>
+<ul>
+<li>speed : 효과속도 vlaue:[ “fast” | “normarl” | “slow” | (milliseconds) ]</li>
+<li>callback : 콜백 함수 실행문 (콜백 매개 변수는 hide () 또는 show () 메소드가 완료된 후 실행될 함수입니다)</li>
+</ul>
+<ol>
+<li>선택 요소를 효과 속도에 맞춰 숨긴 후 콜백 실행</li>
+<li>선택 요소가 숨겨져 있는 경우 속도에 맞춰 노출시키고 콜백 실행</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#hide"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"p"</span>).hide();  </span><br><span class="line">&#125;);  </span><br><span class="line">  </span><br><span class="line">$(<span class="string">"#show"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"p"</span>).show();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>toggle() 메서드로 요소를 숨기거나 보여지게 할 수 있습니다.</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"p"</span>).toggle();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>speed : normarl 값을 제외한 “fast”, “slow” ,milliseconds 값을 사용할 수 있습니다.</li>
+</ul>
+<hr>
+<h2 id="jQuery_Fade">fadeIn() / fadeOut() / fadeToggle() / fadeTo()</h2>
+----------------------------------------------
+
+<hr>
+<ul>
+<li>fadeIn() 메소드는 숨겨진 요소를 서서히 보여지게 합니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"#div1"</span>).fadeIn();  </span><br><span class="line"> $(<span class="string">"#div2"</span>).fadeIn(<span class="string">"slow"</span>);  </span><br><span class="line"> $(<span class="string">"#div3"</span>).fadeIn(<span class="number">3000</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>fadeOut() 메소드는 보여지는 요소를 서서히 감춥니다.</li>
+</ul>
+<hr>
+<ul>
+<li>fadeToggle() 메소드는<br>요소가 숨겨져 있다면 서서히 보여지게,<br>보여지고 있는 요소라면 서서히 감추게 해줍니다.</li>
+</ul>
+<hr>
+<ul>
+<li>fadeTo() 메소드를 사용하면<br>opacity (0~1사이) 값을 지정해서 요소를 사라지게 할 수 있습니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"#div1"</span>).fadeTo(<span class="string">"slow"</span>, <span class="number">0.15</span>);  </span><br><span class="line"> $(<span class="string">"#div2"</span>).fadeTo(<span class="string">"slow"</span>, <span class="number">0.4</span>);  </span><br><span class="line"> $(<span class="string">"#div3"</span>).fadeTo(<span class="string">"slow"</span>, <span class="number">0.7</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="jQuery_Slide">slideDown() / slideUp() / slideToggle()</h2>
+---------------------------------------
+
+<pre><code>$(selector).slide메소드(speed,callback);</code></pre><p>speed: “slow”, “fast”, or milliseconds<br>callback: 콜백 함수는 슬라이딩이 완료된 후 실행될 함수 입니다.</p>
+<hr>
+<ul>
+<li>slideDown() 메소드는 요소를 슬라이드-다운(펼침) 하게 해줍니다.</li>
+</ul>
+<hr>
+<ul>
+<li>slideUp() 메소드는<br>slideDown되어 펼쳐져 있는 요소를 슬라이드-업(닫음) 하게 해줍니다.</li>
+</ul>
+<hr>
+<ul>
+<li>slideToggle() 메소드는<br>요소가 슬라이드 닫혀 있다면 펼쳐주고,<br>펼쳐 있다면 닫아줍니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#flip"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 클릭 했을 때 실행됩니다.  </span></span><br><span class="line"> $(<span class="string">"#panel"</span>).slideToggle();   </span><br><span class="line"> <span class="comment">// 클릭 이벤트가 발생한 요소 아래에 slide이벤트를 발생 시킵니다.  </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="jQuery_Animate">animate</h2>
+-------
+
+<p>animate() 메소드를 사용하여 animation을 커스텀 할 수 있습니다.</p>
+<hr>
+<p>기본형<br>$(selector).animate({params},speed,callback);</p>
+<ul>
+<li>params 매개 변수는 애니메이션효과를 줄 CSS 특성을 말합니다.</li>
+</ul>
+<figure class="highlight js"><figcaption><span>사용 예시</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"div"</span>).animate(&#123;<span class="attr">left</span>: <span class="string">'250px'</span>&#125;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>기본적으로 HTML 요소들은 정적위치를 가지기에 이동할 수 없습니다.</code><br><code>위치를 이동시키려면 우선 이동시킬 요소의 CSS 속성 position 값을</code><br><code>position: relative, fixed, or absolute으로 설정해 줘야 합니다.</code></p>
+<hr>
+<p><strong>animate() 메소드를 이용하여 여러CSS속성을 한번에 조작 할 수도 있습니다.</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"div"</span>).animate(&#123;  </span><br><span class="line"> left: <span class="string">'250px'</span>,  </span><br><span class="line"> opacity: <span class="string">'0.5'</span>,  </span><br><span class="line"> height: <span class="string">'150px'</span>,  </span><br><span class="line"> width: <span class="string">'150px'</span>  </span><br><span class="line"> &#125;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>animate() 메소드를 사용할 때 camel 네이밍 문법으로 사용했는지 유의하며 사용해야합니다.</code></p>
+<blockquote>
+<p>padding-left (x) : paddingLeft (o)<br>margin-right (x) : marginRight (o)</p>
+</blockquote>
+<p>또한 색상 애니메이션은 jQuery핵심 파일에 포함되어 있지 않습니다.<br>색상에 애니메이션을 주고 싶다면<br>Color Animations plugin from <a href="https://jQuery.com">https://jQuery.com</a><br>다운받아야 합니다.</p>
+<hr>
+<p><strong>애니메이션 효과를 현재 값을 기준으로 상대적으로 줄 수 있습니다.</strong></p>
+<p>단지 값앞에 += 또는 -= 을 넣어주는 것 만으로 됩니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"div"</span>).animate(&#123;  </span><br><span class="line"> left: <span class="string">'250px'</span>,  </span><br><span class="line"> height: <span class="string">'+=150px'</span>,  </span><br><span class="line"> width: <span class="string">'+=150px'</span>   </span><br><span class="line"> &#125;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>사전 정의된 값(Pre-defined Values)을 사용 할 수 있습니다.</strong></p>
+<p>예를 들어 animate()값을 hide,show,toggle 으로 줄 수 있습니다.</p>
+<figure class="highlight js"><figcaption><span>toggle</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"div"</span>).animate(&#123;  </span><br><span class="line"> height: <span class="string">'toggle'</span>  </span><br><span class="line"> <span class="comment">//버튼이 클릭될 때 마다 height 속성이  </span></span><br><span class="line"> <span class="comment">//사라지거나 보여집니다.  </span></span><br><span class="line"> &#125;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>Uses Queue Functionality</strong></p>
+<p>기본적으로 jQuery에는 애니메이션 대기열 기능이 포함되어있습니다.</p>
+<p>이 말은 jQuery animate()메소드를 여러 줄로 작성했을 때<br>jQuery 자체적으로 애니메이션들의 대기열을 만들어<br>animate()메소드 들을 한번에 실행시키는 것이 아니라<br>한개씩 불러와 순차적으로 실행 시키는 기능을 말합니다.</p>
+<p>따라서, animate()끼리의 순차적으로 다른 애니메이션효과를 원할때 사용합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> <span class="keyword">var</span> div = $(<span class="string">"div"</span>);  </span><br><span class="line"> <span class="number">1.</span> div.animate(&#123;<span class="attr">height</span>: <span class="string">'300px'</span>, <span class="attr">opacity</span>: <span class="string">'0.4'</span>&#125;, <span class="string">"slow"</span>);  </span><br><span class="line"> <span class="number">2.</span> div.animate(&#123;<span class="attr">width</span>: <span class="string">'300px'</span>, <span class="attr">opacity</span>: <span class="string">'0.8'</span>&#125;, <span class="string">"slow"</span>);  </span><br><span class="line"> <span class="number">3.</span> div.animate(&#123;<span class="attr">height</span>: <span class="string">'100px'</span>, <span class="attr">opacity</span>: <span class="string">'0.4'</span>&#125;, <span class="string">"slow"</span>);  </span><br><span class="line"> <span class="number">4</span> .div.animate(&#123;<span class="attr">width</span>: <span class="string">'100px'</span>, <span class="attr">opacity</span>: <span class="string">'0.8'</span>&#125;, <span class="string">"slow"</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>animate가 동시에 실행 되는 것이 아니라</p>
+<p>1.animate 효과가 끝난 후<br>2.animate가 실행 / 3,4번까지<br>순차적으로 실행됩니다.</p>
+<hr>
+<h2 id="jQuery_stop">stop()</h2>
+------
+
+<p>jQuery stop () 메서드는 애니메이션이나 효과가 끝나기 전에 중지하는 데 사용됩니다.</p>
+<p>stop () 메소드는 슬라이딩, 페이딩 및 사용자 정의 애니메이션을 포함한 모든 jQuery 효과 함수에 작동합니다.</p>
+<blockquote>
+<p>$(selector).stop(stopAll,goToEnd);</p>
+</blockquote>
+<ul>
+<li><p>stopAll 선택적 매개 변수입니다.<br>애니메이션 큐도 지워야하는지 여부를 지정합니다.<br>기본값은 false입니다. 즉, 활성 애니메이션 만 중지되어<br>대기중인 애니메이션을 나중에 수행 할 수 있습니다.</p>
+</li>
+<li><p>goToEnd 선택적 매개 변수입니다.<br>현재 애니메이션을 즉시 완료할지 여부를 지정합니다.<br>기본값은 false입니다.</p>
+</li>
+</ul>
+<p>따라서 기본적으로 stop() 메서드는<br>선택한 요소에서 수행중인 현재 애니메이션만 종료합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#stop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"#panel"</span>).stop();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="jQuery_delay">delay()</h2>
+-------
+
+<p>delay() 메소드는 queue에서 다음 항목의 실행을 지연시킵니다.</p>
+<p>대기중인 effect가 지정된 시간만큼 지연된 후 발생합니다.</p>
+<blockquote>
+<p>$(selector).delay(speed,queueName)</p>
+</blockquote>
+<ul>
+<li>queueName : queue이름을 직접 지정해 줄 수있습니다.<br>기본값은 effect queue의 표준인 “fx”입니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"#div1"</span>).delay(<span class="string">"slow"</span>).fadeIn();  </span><br><span class="line"> $(<span class="string">"#div2"</span>).delay(<span class="string">"fast"</span>).fadeIn();  </span><br><span class="line"> $(<span class="string">"#div3"</span>).delay(<span class="number">1000</span>).fadeIn();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="jQuery_queue">queue() / clearQueue() / dequeue()</h2>
+----------------------------------
+
+<p>queue란 특정 요소에 실행 대기 중인<br>method 또는 function의 저장소를 말합니다.</p>
+<pre><code>1. $(&quot;요소 선택&quot;).queue();
+2. $(&quot;요소 선택&quot;).queue(function(){...});</code></pre><ol>
+<li>선택한 요소의 queue에 대기중인 메서드를 반환합니다.</li>
+<li>선택한 요소의 queue에 function을 저장합니다.<br>저장된 이후에 대기중인 메서드는 모두 제거합니다.</li>
+</ol>
+<ul>
+<li><p>clearQueue() 메서드는<br>요소의 queue에서 가장 앞에 있는 메서드만 뺴고<br>나머지 queue에서 대기중인 모든 메서드를 제거합니다.</p>
+</li>
+<li><p>dequeue() 메서드는<br>선택한 요소 큐에 대기중인 모든 메서드를 제거합니다.</p>
+</li>
+</ul>
+<hr>
+<h2 id="jQuery_finish">finish()</h2>
+--------
+
+<p>finish()메소드는<br>animation의 현재 동작상태를 모두 무시하고<br>완료 시켜버립니다. (최종 완료 시점만 보여줌)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#complete"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"div"</span>).finish();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>구동 원리: 현재 실행중인 애니메이션을 중지하고<br>queue에 대기중인 모든 애니메이션을 제거하고<br>선택한 요소에 대한 모든 애니메이션을 완료합니다.</p>
+<hr>
+<h2 id="jQuery_Callback">Callback</h2>
+--------
+
+<p>callback() function은 현재 실행중인 효과가<br>완전히 끝난후 실행될 function을 의미합니다.</p>
+<p>Javascript문은 기본적으로 한줄씩 실행됩니다.<br>그러나 코드 내에 effect 들이 있다면<br>첫 줄 effect가 완료되기 전에 다음 코드 줄에 있는 effect가 실행되어<br>오류가 발생할 수 있습니다.</p>
+<p>이를 방지하기 위해 callback function을 만드는 것 입니다.</p>
+<p>callback function 없이 사용했을 때</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"p"</span>).hide(<span class="number">1000</span>);  </span><br><span class="line"> alert(<span class="string">"The paragraph is now hidden"</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>위에 코드는 button요소를 클릭 했을 때 실행되지만<br>p요소가 완전히 숨겨지고 나서<br>경고창이 나오지 않습니다.<br>숨겨지기전에 경고창이 나오게 될 것입니다.</p>
+<figure class="highlight js"><figcaption><span>callback function 이용한 바른 예</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"p"</span>).hide(<span class="number">1000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> alert(<span class="string">"The paragraph is now hidden"</span>);  </span><br><span class="line"> &#125;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>먼저 실행될 hide메소드에 callback function을 넣어줘<br>정상적으로 p 요소가 완전히 hide 된 후<br>경고창이 표시됩니다.</p>
+<hr>
+<h2 id="jQuery_Chaining">chaining</h2>
+--------
+
+<p>jQuery를 사용하면 액션 / 메소드를 함께 연결할 수 있습니다.<br>체인을 사용하면 단일 명령문 내에서 <strong>동일한 요소를</strong><br>여러 jQuery 메소드로 실행할 수 있습니다.</p>
+<p><code>이 방법으로 브라우저는 동일한 요소를 두 번 이상 찾을 필요가 없습니다.</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#p1"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>).slideUp(<span class="number">2000</span>).slideDown(<span class="number">2000</span>);  </span><br><span class="line">===  </span><br><span class="line">$(<span class="string">"#p1"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>)  </span><br><span class="line"> .slideUp(<span class="number">2000</span>)  </span><br><span class="line"> .slideDown(<span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>첫번째로 p요소의 색상이 변하고<br>두번째로 슬라이드가 닫히고,<br>세번째로 슬라이드가 펼쳐집니다.</p>
+<p>체인 방식으로 작성하다보면 코드줄이 길어질 수있습니다.</p>
+<p>jQuery는 구문에 엄격하지 않으므로<br>가독성을 위해 줄 바꿈 및 들여쓰기를 사용하여 써도 잘 작동 합니다.</p>
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/jQuery/">jQuery</a><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/16/Strict%20mode%20-ECMAScript/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Strict mode -ECMAScript</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/12/jQuery%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%ED%95%B8%EB%93%A4%EB%9F%AC/"><span class="level-item">jQuery 이벤트 핸들러 -jQuery</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="" src="/images/blog_logo.png" alt="Han Dongwon"></figure><p class="title is-size-4 is-block line-height-inherit">Han Dongwon</p><p class="is-size-6 is-block">한 동원참치</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul / South Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">포스트</p><a href="/archives"><p class="title">45</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">카테고리</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">태그</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/hdw0903" target="_blank" rel="noopener">팔로우</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/hdw0903"><i class="fab fa-github"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">링크</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://github.com/hdw0903" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Core-JavaScript/"><span class="level-start"><span class="level-item">Core JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/ECMAScript6/"><span class="level-start"><span class="level-item">ECMAScript6</span></span><span class="level-end"><span class="level-item tag">23</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/jQuery/"><span class="level-start"><span class="level-item">jQuery</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-16T00:00:39.000Z">2020-04-16</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/16/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%20-Core%20JavaScript/">데이터 타입 - Core JavaScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-14T00:44:27.000Z">2020-04-14</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/14/Promise%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/">Promise 오브젝트 -ECMAScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/ECMAScript6/">ECMAScript6</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-13T23:55:14.000Z">2020-04-14</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/14/WeakSet%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/">WeakSet 오브젝트 -ECMAScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/ECMAScript6/">ECMAScript6</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-13T01:32:44.000Z">2020-04-13</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/13/Set%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/">Set 오브젝트 -ECMAScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/ECMAScript6/">ECMAScript6</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-12T23:22:25.000Z">2020-04-13</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/13/WeakMap%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/">WeakMap 오브젝트 -ECMAScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/ECMAScript6/">ECMAScript6</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">아카이브</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">4월 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">3월 2020</span></span><span class="level-end"><span class="level-item tag">31</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">2월 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Core-JavaScript/"><span class="tag">Core JavaScript</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ECMAScript6/"><span class="tag">ECMAScript6</span><span class="tag is-grey-lightest">23</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag is-grey-lightest">45</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jQuery/"><span class="tag">jQuery</span><span class="tag is-grey-lightest">4</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/images/template.svg" alt="한참치의 Study Blog" height="28"></a><p class="size-small"><span>&copy; 2020 Han Dongwon</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'hdw0903.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="입력 하세요..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"입력 하세요...","untitled":"(Untitled)","posts":"포스트","pages":"Pages","categories":"카테고리","tags":"태그"});
+        });</script></body></html>
