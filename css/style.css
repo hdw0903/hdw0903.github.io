@@ -412,7 +412,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Jeju Gothic", Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif;
+  font-family: 'Jeju Gothic', Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif;
 }
 code,
 pre {
@@ -1057,13 +1057,13 @@ a.has-text-grey-lightest:focus {
   font-weight: 700 !important;
 }
 .is-family-primary {
-  font-family: "Jeju Gothic", Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif !important;
+  font-family: 'Jeju Gothic', Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif !important;
 }
 .is-family-secondary {
-  font-family: "Jeju Gothic", Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif !important;
+  font-family: 'Jeju Gothic', Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif !important;
 }
 .is-family-sans-serif {
-  font-family: "Jeju Gothic", Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif !important;
+  font-family: 'Jeju Gothic', Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif !important;
 }
 .is-family-monospace {
   font-family: monospace !important;
@@ -10693,7 +10693,7 @@ html {
   color: #3273dc !important;
 }
 .size-small {
-  font-size: 0.85rem !important;
+  font-size: 1.2rem !important;
 }
 .line-height-inherit {
   line-height: inherit !important;
@@ -10730,6 +10730,31 @@ html {
   border: none;
   margin-top: 0;
 }
+.card div {
+  font-size: 1.5rem !important;
+}
+.card .level a {
+  font-size: 1.3rem !important;
+}
+.card .level p {
+  font-size: 1.5rem !important;
+}
+.card .tag {
+  font-size: x-small;
+}
+html {
+  font-size: 10px;
+}
+body .container {
+  font-size: 1.6em !important;
+}
+body .container .navbar-menu {
+  font-weight: bold;
+}
+article h1 {
+  font-size: 2em !important;
+  font-weight: 550 !important;
+}
 article.media .media-content {
   color: #7a7a7a;
 }
@@ -10746,26 +10771,27 @@ article.article .article-meta {
   margin-bottom: 0.5rem;
 }
 article.article .content {
+  color: #000;
   word-wrap: break-word;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 }
 article.article .content h1 {
-  font-size: 1.75em;
+  font-size: 2em !important;
 }
 article.article .content h2 {
-  font-size: 1.5em;
+  font-size: 1.75em !important;
 }
 article.article .content h3 {
-  font-size: 1.25em;
+  font-size: 1.55em !important;
 }
 article.article .content h4 {
-  font-size: 1.125em;
+  font-size: 1.25em !important;
 }
 article.article .content h5 {
-  font-size: 1em;
+  font-size: 1.2em !important;
 }
 article.article .content pre {
-  font-size: 0.85em;
+  font-size: 1em !important;
 }
 article.article .content code {
   padding: 0;
@@ -10774,6 +10800,9 @@ article.article .content code {
 }
 article.article .content mark {
   background-color: #8af99f;
+}
+article.article .content blockquote {
+  border-left: 5px solid #f00;
 }
 article.article .content blockquote.pullquote {
   float: right;
@@ -10865,7 +10894,7 @@ article.article .content blockquote footer strong + cite {
   }
 }
 .navbar-logo img {
-  max-height: 1.75rem;
+  max-height: 4rem;
 }
 @media screen and (max-width: 768px) {
   footer.footer .level-start {
@@ -10883,7 +10912,7 @@ footer.footer .level-end .field {
   }
 }
 .footer-logo img {
-  max-height: 1.75rem;
+  max-height: 4rem;
 }
 .pagination .pagination-link a,
 .pagination .pagination-ellipsis a,
@@ -10963,7 +10992,7 @@ footer.footer .level-end .field {
   text-decoration: none;
 }
 .searchbox input {
-  font-size: 1rem;
+  font-size: 1.4rem;
   border: none;
   outline: none;
   box-shadow: none;
@@ -11012,7 +11041,7 @@ footer.footer .level-end .field {
 }
 .searchbox .searchbox-close {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 0.5em 0.75em;
   cursor: pointer;
 }
@@ -11023,6 +11052,7 @@ footer.footer .level-end .field {
   background: #dbdbdb;
 }
 .searchbox .searchbox-body {
+  font-size: 1.3rem;
   flex-grow: 1;
   overflow-y: auto;
   border-top: 1px solid #dbdbdb;
