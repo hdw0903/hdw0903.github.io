@@ -1,0 +1,75 @@
+<div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-02T00:47:09.000Z" title="2020-03-02T00:47:09.000Z">2020-03-02</time><span class="level-item"><a class="link-muted" href="/categories/JavaScript/">JavaScript</a></span><span class="level-item">4분 읽기 (대략 566 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">Number(숫자) 객체 -JavaScript</h1><div class="content"><hr>
+<pre><code>기본형 
+    var num1 = new Number(값);
+    또는 var num1 = 값;
+    //new 키워드 없이 값만 입력해도 객체 생성가능.</code></pre><hr>
+<a id="more"></a>
+
+<h3 id="Number-객체의-속성"><a href="#Number-객체의-속성" class="headerlink" title="Number 객체의 속성"></a>Number 객체의 속성</h3><table>
+<thead>
+<tr>
+<th>속성</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MAX_VALUE</td>
+<td>표현 가능한 가장 큰수</td>
+</tr>
+<tr>
+<td>MIN_VALUE</td>
+<td>표현 가능한 가장 작은 수</td>
+</tr>
+<tr>
+<td>POSITIVE_INFINITY</td>
+<td>무한대 수 표기</td>
+</tr>
+<tr>
+<td>NEGATIVE_INFINITY</td>
+<td>음의 무한대 수 표기</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>숫자가 아닌 경우 표기</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Number-객체의-메서드"><a href="#Number-객체의-메서드" class="headerlink" title="Number 객체의 메서드"></a>Number 객체의 메서드</h3><table>
+<thead>
+<tr>
+<th>속성</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>toExponential(n)</td>
+<td>지수 표기법으로 소수점 n자리만큼 문자형 데이터로 반환</td>
+</tr>
+<tr>
+<td>toFixed(n)</td>
+<td>소수점 n자리만큼 반올림하여 문자형 데이터로 반환</td>
+</tr>
+<tr>
+<td>toPrecision(n)</td>
+<td>유효 숫자 n의 개수만큼 반올림하여 문자형 데이터로 반환</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>숫자형 데이터를 문자형으로 반환</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>객체의 원래 값을 반환</td>
+</tr>
+<tr>
+<td>parselnt(값)</td>
+<td>데이터를 정수로 변환하여 반환</td>
+</tr>
+<tr>
+<td>parseFloat(값)</td>
+<td>데이터를 실수로 변환하여 반환</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>사용 예제</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// javascript로 표현가능한 최댓값을 지수 표기법으로 반환  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"표현 가능한 가장 큰 수:"</span>+<span class="built_in">Number</span>.MAX_VALUE, <span class="string">"&lt;br /&gt;"</span>);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// javascript로 표현가능한 최솟값을 지수 표기법으로 반환  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"표현 가능한 가장 작은 수:"</span>+<span class="built_in">Number</span>.MIN_VALUE, <span class="string">"&lt;br /&gt;"</span>);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// javascript로 숫자로 표기할 수 없을때 반환되는 값 (Not a Number)  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"숫자가 아닌경우의 표기:"</span>+<span class="built_in">Number</span>.NaN, <span class="string">"&lt;br /&gt;"</span>);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// javascript로 반환되는 무한댓 값  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"무한대 수 표기:"</span>+<span class="built_in">Number</span>.POSITIVE_INFINITY, <span class="string">"&lt;br /&gt;"</span>);  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// javascript로 반환되는 음의 무한댓값  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"음의 무한대 수 표기:"</span>+<span class="built_in">Number</span>.NEGATIVE_INFINITY, <span class="string">"&lt;br /&gt;"</span>);  </span><br><span class="line">    </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> num1=<span class="number">3.456789</span>;  </span><br><span class="line"><span class="keyword">var</span> num2=<span class="number">700000</span>;  </span><br><span class="line"><span class="keyword">var</span> num3=<span class="string">"30.5px"</span>;  </span><br><span class="line"><span class="keyword">var</span> num4=<span class="number">40</span>;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// num2에 저장된 값에 지정된 소수점 자리만큼 지수표기법으로 반환  </span></span><br><span class="line"><span class="built_in">document</span>.write(num2.toExponential(<span class="number">1</span>), <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// = 7.0 * 100000 = 7.0e+5  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// num1에 저장된 값에 소수점 2째 자리까지 반올림하여 표기  </span></span><br><span class="line"><span class="built_in">document</span>.write(num1.toFixed(<span class="number">2</span>), <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// 3.46  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// num1에 저장된 값에 지정된 숫자 2개에 반올림하여 표기  </span></span><br><span class="line"><span class="built_in">document</span>.write(num1. toPrecision(<span class="number">2</span>), <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// (3.4)56789 &gt; 3.5  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// num1에 저장된 값을 문자형 데이터로 반환 ""  </span></span><br><span class="line"><span class="built_in">document</span>.write(num1.toString(), <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// "3.456789"  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// num4에 저장된 값 반환  </span></span><br><span class="line"><span class="built_in">document</span>.write(num4.valueOf(), <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// 40  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// num3에 저장된 "30.5px"에 정수만 남겨 반환하고 num4를 더합니다  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="built_in">parseInt</span>(num3)+num4, <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// 30 + 40 = 70  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// num3에 저장된 "30.5px"에 실수만 남겨 반환하고 num4를 더합니다  </span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="built_in">parseFloat</span>(num3)+num4, <span class="string">"&lt;br /&gt;"</span>); <span class="comment">// 30.5 + 40 = 70.5</span></span><br></pre></td></tr></table></figure></div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/02/%EC%88%98%ED%95%99%20%EA%B0%9D%EC%B2%B4%20-JavaScript/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Math(수학) 객체 -JavaScript</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/02/%EB%82%A0%EC%A7%9C%20%EA%B0%9D%EC%B2%B4%20%EB%A9%94%EC%84%9C%EB%93%9C/"><span class="level-item">Date(날짜) 객체 -JavaScript</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div>

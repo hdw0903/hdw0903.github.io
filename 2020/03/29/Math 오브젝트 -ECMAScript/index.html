@@ -1,0 +1,110 @@
+<div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-28T20:11:55.000Z" title="2020-03-28T20:11:55.000Z">2020-03-29</time><span class="level-item"><a class="link-muted" href="/categories/ECMAScript6/">ECMAScript6</a></span><span class="level-item">7분 읽기 (대략 1100 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">Math 오브젝트 -ECMAScript</h1><div class="content"><hr>
+<p>Math는 수학적인 상수와 함수를 위한 속성과 메서드를 가진 내장 객체입니다. 함수 객체가 아닙니다.</p>
+<p>Math는 Number 자료형만 지원하며 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/BigInt">BigInt</a>와는 사용할 수 없습니다.</p>
+<p>BigInt는 Number 원시 값이 안정적으로 나타낼 수 있는 최대치인 253 - 1보다 큰 정수를 표현할 수 있는 내장 객체입니다.</p>
+<p>다른 전역 객체와 달리 Math는 생성자가 아닙니다. Math의 모든 속성과 메서드는 정적입니다.</p>
+<a id="more"></a>
+
+<hr>
+<h2 id="속성"><a href="#속성" class="headerlink" title="속성"></a>속성</h2><hr>
+<ul>
+<li><p>math.E<br>오일러의 상수이며 자연로그의 밑. 약 2.718.</p>
+</li>
+<li><p>math.LN2<br>2의 자연로그. 약 0.693.</p>
+</li>
+<li><p>math.LN10<br>10의 자연로그. 약 2.303.</p>
+</li>
+<li><p>math.LOG2E<br>밑이 2인 로그 E. 약 1.443.</p>
+</li>
+<li><p>math.LOG10E<br>밑이 10인 로그 E. 약 0.434.</p>
+</li>
+<li><p>math.PI<br>원의 둘레와 지름의 비율. 약 3.14159.</p>
+</li>
+<li><p>math.SQRT1_2<br>½의 제곱근. 약 0.707.</p>
+</li>
+<li><p>math.SQRT2<br>2의 제곱근. 약 1.414.</p>
+</li>
+</ul>
+<hr>
+<h2 id="메서드"><a href="#메서드" class="headerlink" title="메서드"></a>메서드</h2><hr>
+<ul>
+<li><p>참고: 삼각 함수(sin(), cos(), tan(), asin(), *acos(), atan(), atan2())는 매개변수와 반환값 모두 호도법(라디안)을 사용합니다.<br>라디안 값을 각도 값으로 변환하려면 (Math.PI / 180)으로 나누세요. 반대로 각도 값에 곱하면 라디안 값이 됩니다.</p>
+</li>
+<li><p>참고: 많은 수의 Math 함수 정확도는 구현에 따라 다를 수 있습니다. 즉, 각 브라우저의 결과가 다를 수 있으며, 서로 같은 JS 엔진이라도 운영체제나 아키텍쳐에 따라서 불일치하는 값을 반환할 수 있습니다.</p>
+</li>
+<li><p>math.abs(x)<br>숫자의 절댓값을 반환합니다.</p>
+</li>
+</ul>
+<ul>
+<li><p>math.acos(x)<br>숫자의 아크코사인 값을 반환합니다.</p>
+</li>
+<li><p>math.acosh(x)<br>숫자의 쌍곡아크코사인 값을 반환합니다.</p>
+</li>
+<li><p>math.asin(x)<br>숫자의 아크사인 값을 반환합니다.</p>
+</li>
+<li><p>math.asinh(x)<br>숫자의 쌍곡아크사인 값을 반환합니다.</p>
+</li>
+<li><p>math.atan(x)<br>숫자의 아크탄젠트 값을 반환합니다.</p>
+</li>
+<li><p>math.atanh(x)<br>숫자의 쌍곡아크탄젠트 값을 반환합니다.</p>
+</li>
+<li><p>math.atan2(y, x)<br>인수 몫의 아크탄젠트 값을 반환합니다.</p>
+</li>
+<li><p>math.cbrt(x)<br>숫자의 세제곱근을 반환합니다.</p>
+</li>
+<li><p>math.ceil(x)<br>인수보다 크거나 같은 수 중에서 가장 작은 정수를 반환합니다.</p>
+</li>
+<li><p>math.clz32(x)<br>주어진 32비트 정수의 선행 0 개수를 반환합니다.</p>
+</li>
+<li><p>math.cos(x)<br>숫자의 코사인 값을 반환합니다.</p>
+</li>
+<li><p>math.cosh(x)<br>숫자의 쌍곡코사인 값을 반환합니다.</p>
+</li>
+<li><p>math.exp(x)<br>Ex 를 반환합니다. x는 인수이며 E 는 오일러 상수(2.718…) 또는 자연로그의 밑입니다.</p>
+</li>
+<li><p>math.expm1(x)<br>exp(x)에서 1을 뺀 값을 반환합니다.</p>
+</li>
+<li><p>math.floor(x)<br>인수보다 작거나 같은 수 중에서 가장 큰 정수를 반환합니다.</p>
+</li>
+<li><p>math.fround(x)<br>인수의 가장 가까운 단일 정밀도 표현을 반환합니다. 32비트 유동 소수 값</p>
+</li>
+<li><p>math.hypot([x[, y[, …]]])<br>인수의 제곱합의 제곱근을 반환합니다.</p>
+</li>
+<li><p>math.imul(x, y)<br>두 32비트 정수의 곱을 반환합니다.</p>
+</li>
+<li><p>math.log(x)<br>숫자의 자연로그(loge 또는 ln) 값을 반환합니다.</p>
+</li>
+<li><p>math.log1p(x)<br>숫자 x에 대해 1 + x의 자연로그(loge 또는 ln) 값을 반환합니다.</p>
+</li>
+<li><p>math.log10(x)<br>숫자의 밑이 10인 로그를 반환합니다.</p>
+</li>
+<li><p>math.log2(x)<br>숫자의 밑이 2인 로그를 반환합니다.</p>
+</li>
+<li><p>math.max([x[, y[, …]]])<br>0개 이상의 인수에서 제일 큰 수를 반환합니다.</p>
+</li>
+<li><p>math.min([x[, y[, …]]])<br>0개 이상의 인수에서 제일 작은 수를 반환합니다.</p>
+</li>
+<li><p>math.pow(x, y)<br>x의 y 제곱을 반환합니다.</p>
+</li>
+<li><p>math.random()<br>0과 1 사이의 난수를 반환합니다.</p>
+</li>
+<li><p>math.round(x)<br>숫자에서 가장 가까운 정수를 반환합니다.</p>
+</li>
+<li><p>math.sign(x)<br>x의 양의 수인지 음의 수인지 나타내는 부호를 반환합니다.</p>
+</li>
+<li><p>math.sin(x)<br>숫자의 사인 값을 반환합니다.</p>
+</li>
+<li><p>math.sinh(x)<br>숫자의 쌍곡사인 값을 반환합니다.</p>
+</li>
+<li><p>math.sqrt(x)<br>숫자의 제곱근을 반환합니다.</p>
+</li>
+<li><p>math.tan(x)<br>숫자의 탄젠트 값을 반환합니다.</p>
+</li>
+<li><p>math.tanh(x)<br>숫자의 쌍곡탄젠트 값을 반환합니다.</p>
+</li>
+<li><p>math.toSource()<br>문자열 “Math”를 반환합니다.</p>
+</li>
+<li><p>math.trunc(x)<br>숫자의 정수 부분을 반환합니다.</p>
+</li>
+</ul>
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a><a class="link-muted mr-2" rel="tag" href="/tags/ECMAScript6/">ECMAScript6</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/29/String%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">String 오브젝트 -ECMAScript</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/26/Number%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/"><span class="level-item">Number 오브젝트 -ECMAScript</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div>

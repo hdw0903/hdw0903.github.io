@@ -1,0 +1,73 @@
+<div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-02T02:23:53.000Z" title="2020-03-02T02:23:53.000Z">2020-03-02</time><span class="level-item"><a class="link-muted" href="/categories/JavaScript/">JavaScript</a></span><span class="level-item">5분 읽기 (대략 760 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">Array(배열) 객체 -JavaScript</h1><div class="content"><p>여러 개의 데이터를 하나의 저장소에 저장하는 Array(배열) 객체</p>
+<p>사용법 3가지</p>
+<pre><code>1. var a =new Array();
+    a[0]=30;
+    a[1]=&quot;홍길동&quot;;
+    a[2]=true;
+
+2. var b =new Array(30, &quot;홍길동&quot;, true);
+
+3. var c =[30, &quot;홍길동&quot;, true];</code></pre><a id="more"></a>
+
+<hr>
+<h4 id="배열-객체의-메서드-및-속성"><a href="#배열-객체의-메서드-및-속성" class="headerlink" title="배열 객체의 메서드 및 속성"></a>배열 객체의 메서드 및 속성</h4><table>
+<thead>
+<tr>
+<th>종류</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>join(연결문자)</td>
+<td>배열 객체에 데이터를 연결 문자 기준으로 1개의 문자형 데이터로 반환</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>배열 객체에 데이터의 순서를 거꾸로 바꾼 후 반환</td>
+</tr>
+<tr>
+<td>sort()</td>
+<td>배열 객체에 데이터를 오름차순으로 정렬</td>
+</tr>
+<tr>
+<td>slice(index1, index2)</td>
+<td>배열 객체에 데이터 중 원하는 인덱스 구간만큼 잘라서 배열 객체로 가져옴</td>
+</tr>
+<tr>
+<td>splice()</td>
+<td>배열 객체에 지정 데이터를 삭제하고 그 구간에 새 데이터를 삽입</td>
+</tr>
+<tr>
+<td>concat()</td>
+<td>2개의 배열 객체를 하나로 결합</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>배열에 저장된 데이터 중 마지막 인덱스에 저장된 데이터를 삭제</td>
+</tr>
+<tr>
+<td>push(new data)</td>
+<td>배열 객체 마지막 인덱스에 새 데이터 삽입</td>
+</tr>
+<tr>
+<td>shift()</td>
+<td>배열 객체에 저장된 데이터 중 첫 번째 인덱스에 저장된 데이터를 삭제</td>
+</tr>
+<tr>
+<td>unshift(new date)</td>
+<td>배열 객체의 가장 앞의 인덱스에 새 데이터를 삽입</td>
+</tr>
+<tr>
+<td>length</td>
+<td>배열에 저장된 총 데이터의 개수를 반환</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="join-과-reverse-사용-예제"><a href="#join-과-reverse-사용-예제" class="headerlink" title="join() 과 reverse() 사용 예제"></a>join() 과 reverse() 사용 예제</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=[<span class="string">"사당"</span>,<span class="string">"교대"</span>,<span class="string">"방배"</span>,<span class="string">"강남"</span>];  </span><br><span class="line">  <span class="comment">// 배열 객체를 출력합니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(num,<span class="string">"&lt;br /&gt;"</span>); <span class="comment">//사당,교대,방배,강남  </span></span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 배열 객체의 형(type) 출력합니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(<span class="keyword">typeof</span> num,<span class="string">"&lt;br/&gt;"</span>); <span class="comment">//object  </span></span><br><span class="line">    </span><br><span class="line"> <span class="comment">// "-" 문자를 기준으로 하나의 문자형 데이터로 결합합니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(num.join(<span class="string">"-"</span>),<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 사당-교대-방배-강남  </span></span><br><span class="line">  </span><br><span class="line"> <span class="comment">// join으로 결합된 데이터의 형이 문자형 데이터인걸 확인할 수 있습니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(<span class="keyword">typeof</span> num.join(<span class="string">"-"</span>),<span class="string">"&lt;br/&gt;"</span>); <span class="comment">//string  </span></span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 배열 객체 값 순서가 역으로 출력됩니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(num.reverse(),<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 강남,방배,교대,사당  </span></span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 배열 객체 값들을 오름차순으로 정렬 후 출력합니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(num.sort(),<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 강남,교대,방배,사당</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="splice-와-slice-사용-예제"><a href="#splice-와-slice-사용-예제" class="headerlink" title="splice() 와 slice() 사용 예제"></a>splice() 와 slice() 사용 예제</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> greenLine=[<span class="string">"사당"</span>,<span class="string">"교대"</span>,<span class="string">"방배"</span>,<span class="string">"강남"</span>];  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/* greenline 배열 객체 인덱스 2에 저장된 데이터 1개를 삭제하고   </span></span><br><span class="line"><span class="comment"> "서초","역삼" 데이터 삽입 */</span>  </span><br><span class="line"> greenLine.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">"서초"</span>,<span class="string">"역삼"</span>); <span class="comment">//사당,교대,서초,역삼,강남  </span></span><br><span class="line"> <span class="built_in">document</span>.write(greenLine,<span class="string">"&lt;br/&gt;"</span>);  </span><br><span class="line">    </span><br><span class="line"> <span class="comment">// greenline 객체의 인덱스1 부터 3이전 까지 일부 데이터만 반환합니다.  </span></span><br><span class="line"> <span class="built_in">document</span>.write(greenLine.slice(<span class="number">1</span>,<span class="number">3</span>),<span class="string">"&lt;br/&gt;"</span>); <span class="comment">//교대,서초</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="concat-pop-push-shift-unshift-사용-예제"><a href="#concat-pop-push-shift-unshift-사용-예제" class="headerlink" title="concat(), pop(), push(), shift(), unshift() 사용 예제"></a>concat(), pop(), push(), shift(), unshift() 사용 예제</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> greenLine=[<span class="string">"사당"</span>,<span class="string">"교대"</span>,<span class="string">"방배"</span>,<span class="string">"강남"</span>];  </span><br><span class="line"><span class="keyword">var</span> yellowLine=[<span class="string">"미금"</span>,<span class="string">"정자"</span>,<span class="string">"모란"</span>,<span class="string">"수서"</span>];  </span><br><span class="line">  </span><br><span class="line"> <span class="keyword">var</span> twoLine=greenLine.concat(yellowLine);  </span><br><span class="line"> <span class="built_in">document</span>.write(twoLine,<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 2개의 배열 객체가 하나가 되어 twoLine에 저장됩니다.  </span></span><br><span class="line">  </span><br><span class="line"> greenLine.pop();  </span><br><span class="line"> <span class="built_in">document</span>.write(greenLine,<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 마지막 인덱스 값인 "강남" 삭제됩니다.  </span></span><br><span class="line">  </span><br><span class="line"> greenLine.push(<span class="string">"삼성"</span>);  </span><br><span class="line"> <span class="built_in">document</span>.write(greenLine,<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 마지막 인덱스에 "삼성" 값을 삽입합니다.  </span></span><br><span class="line">  </span><br><span class="line"> greenLine.shift();  </span><br><span class="line"> <span class="built_in">document</span>.write(greenLine,<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 첫 번째 인덱스 값인 "사당" 삭제됩니다.  </span></span><br><span class="line">  </span><br><span class="line"> greenLine.unshift(<span class="string">"신도림"</span>);  </span><br><span class="line"> <span class="built_in">document</span>.write(greenLine,<span class="string">"&lt;br/&gt;"</span>); <span class="comment">// 인덱스 가장 앞에 "신도림" 값을 삽입합니다.</span></span><br></pre></td></tr></table></figure>
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/02/String%20%EB%AC%B8%EC%9E%90%20%EA%B0%9D%EC%B2%B4%20-JavaScript/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">String(문자) 객체 -JavaScript</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/02/%EC%88%98%ED%95%99%20%EA%B0%9D%EC%B2%B4%20-JavaScript/"><span class="level-item">Math(수학) 객체 -JavaScript</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div>

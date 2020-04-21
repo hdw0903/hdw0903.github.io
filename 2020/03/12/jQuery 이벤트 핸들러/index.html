@@ -1,0 +1,143 @@
+<div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-12T01:40:59.000Z" title="2020-03-12T01:40:59.000Z">2020-03-12</time><span class="level-item"><a class="link-muted" href="/categories/jQuery/">jQuery</a></span><span class="level-item">8분 읽기 (대략 1251 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">jQuery 이벤트 핸들러 -jQuery</h1><div class="content"><hr>
+<p>jQuery에서의 이벤트 사용 기본형</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>버튼<span class="tag">&lt;<span class="name">a</span>&gt;</span>  </span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="javascript"> $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;)  </span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>$(“#btn”)<br>이벤트 대상</li>
+<li>click()<br>이벤트 등록 메서드</li>
+<li>function(){…}<br>이벤트가 발생 했을 때 (이벤트 대상이 클릭되었을 때)<br>실행되는 이벤트 핸들러</li>
+</ol>
+<a id="more"></a>
+
+<hr>
+<h2 id="ready-load-메서드"><a href="#ready-load-메서드" class="headerlink" title="ready() / load() 메서드"></a>ready() / load() 메서드</h2><hr>
+<p>HTML 문서를 불러올 때 지정된 객체의 로딩이 완료되면<br>실행되는 이벤트 핸들러.</p>
+<pre><code>1. $(문서 객체).ready(function)(){...});
+2. $(&quot;이미지 또는 프레임&quot;).load(function(){...});</code></pre><ul>
+<li><ol>
+<li>문서의 로딩이 완료된 후 실행됩니다.</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>HTML 문서 로딩이 완료되더라도<br>이미지나 프레임 소스는 그 이후에 로딩됩니다.<br>load() 메서드는 이런 이미지나 프레임에 연동된 소스가 로딩이<br>완료된 후 실행됩니다.<br><em>이미지나 프레임을 제외한 객체에는 사용할 수 없습니다.</em></li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="click-dbclick-메서드"><a href="#click-dbclick-메서드" class="headerlink" title="click() / dbclick() 메서드"></a>click() / dbclick() 메서드</h2><hr>
+<blockquote>
+<ol>
+<li>$(“요소 선택”).click(function(){…});</li>
+<li>$(“요소 선택”).click();</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>선택한 요소를 클릭할 때 마다 실행문을 실행합니다.</p>
+</li>
+<li><p>선택한 요소에 강제로 click이벤트가 발생, 유저가 클릭하지 않아도 실행됩니다.</p>
+</li>
+</ol>
+<blockquote>
+<ol start="3">
+<li>$(“요소 선택”).on(“dbclick”,function(){…});</li>
+<li>$(“요소 선택”).dbclick();</li>
+</ol>
+</blockquote>
+<ol start="3">
+<li><p>선택한 요소를 두번 연속으로 클릭했을 때 실행됩니다.</p>
+</li>
+<li><p>강제로 더블클릭 이벤트가 발생합니다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="이벤트-대상이-lt-a-gt-태그일-때"><a href="#이벤트-대상이-lt-a-gt-태그일-때" class="headerlink" title="이벤트 대상이 &lt; a&gt; 태그일 때"></a>이벤트 대상이 &lt; a&gt; 태그일 때</h2><hr>
+<p>&lt; a&gt;태그의 경우 클릭할 때 마다 링크된 주소로 이동됩니다.</p>
+<p><strong>링크된 주소로 이동되지 않도록 만드는 방법</strong></p>
+<ol>
+<li>return false<br> return false를 이용하여 a 태그를 클릭 했을 때<br> 링크된 주소로 이동되는 것을 막을 수 있습니다.<br> 단 return은 function 실행문을 강제로 종료시키므로<br> 함수의 마지막 부분에 작성합니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> ...실행문...  </span><br><span class="line"> <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>preventDefault()<br> function 매개변수에 .preventDefalut() 메서드를 사용하면<br> 링크된 주소로 이동되는 것을 막을 수 있습니다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;  </span><br><span class="line"> x.preventDefalut();  </span><br><span class="line"> <span class="comment">//...실행문...  </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="mouseover-mouseout-hover-mousemove"><a href="#mouseover-mouseout-hover-mousemove" class="headerlink" title="mouseover() / mouseout() / hover() / mousemove()"></a>mouseover() / mouseout() / hover() / mousemove()</h2><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> $(<span class="string">"요소 선택"</span>).mouseover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;);  </span><br><span class="line"><span class="number">2.</span> $(<span class="string">"요소 선택"</span>).mouseover();  </span><br><span class="line">  </span><br><span class="line"><span class="number">3.</span> $(<span class="string">"요소 선택"</span>).mouseout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;);  </span><br><span class="line"><span class="number">4.</span> $(<span class="string">"요소 선택"</span>).mouseout();  </span><br><span class="line">  </span><br><span class="line"><span class="number">5.</span> $(<span class="string">"요소 선택"</span>).hover(  </span><br><span class="line"> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;실행문<span class="number">1</span>&#125;,  </span><br><span class="line"> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;실행문<span class="number">2</span>&#125;  </span><br><span class="line">);  </span><br><span class="line">  </span><br><span class="line"><span class="number">6.</span> $(<span class="string">"요소 선택"</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;);  </span><br><span class="line"><span class="number">7.</span> $(<span class="string">"요소 선택"</span>).mousemove();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>mouseover()</p>
+<ol>
+<li>선택한 요소에 <strong>마우스를 올릴 때 마다</strong> 실행됩니다.</li>
+<li>선택한 요소에 강제로 mouseover 이벤트를 발생시킵니다.</li>
+</ol>
+</li>
+<li><p>mouseout()</p>
+<ol start="3">
+<li>선택한 요소에서 <strong>마우스가 벗어날 때마다</strong> 실행됩니다.</li>
+<li>선택한 요소에 강제로 mouseout 이벤트를 발생시킵니다.</li>
+</ol>
+</li>
+<li><p>hover()</p>
+<ol start="5">
+<li>마우스를 올릴 때 마다 {실행문1}을 실행시키고,<br>마우스가 벗어날 때 마다 {실행문2}를 실행시킵니다.</li>
+</ol>
+</li>
+<li><p>mousemove()</p>
+<ol start="6">
+<li>선택한 <strong>요소의 영역에서 마우스를 움직일 때 마다</strong> 실행됩니다.</li>
+<li>선택한 요소에 강제로 mousemove 이벤트를 발생시킵니다.</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><figcaption><span>mousemove() 마우스 좌표값 구하기</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// document 영역내에서 마우스를 움직일때 마다 실행  </span></span><br><span class="line"> <span class="keyword">var</span> x=e.pageX; <span class="comment">// X 좌표값 구하기  </span></span><br><span class="line"> <span class="keyword">var</span> y=e.pageY; <span class="comment">// Y 좌표값 구하기  </span></span><br><span class="line"> $(<span class="string">"p"</span>).text(<span class="string">"x좌표값:"</span>+x+<span class="string">"y좌표값:"</span>+y); <span class="comment">// x,y 좌표값을 출력  </span></span><br><span class="line"> &#125;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="change-index"><a href="#change-index" class="headerlink" title="change() / index()"></a>change() / index()</h2><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> $(<span class="string">"요소 선택"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;);  </span><br><span class="line"><span class="number">2.</span> $(<span class="string">"요소 선택"</span>).change();  </span><br><span class="line">  </span><br><span class="line"><span class="number">3.</span>$(<span class="string">"요소 선택"</span>).이벤트(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"요소 선택"</span>).index(<span class="keyword">this</span>);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>요소의 값이(value) 새 값으로 바뀌고 포커스가 다른 요소로 이동<br>되었을 때 실행됩니다.</p>
+</li>
+<li><p>강제로 change 이벤트 메서드를 발생시킵니다.</p>
+</li>
+<li><p>이벤트를 등록한 요소 중에서 이벤트가 발생한 요소의 인덱스 값을 반환합니다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="그룹-이벤트-등록-및-삭제"><a href="#그룹-이벤트-등록-및-삭제" class="headerlink" title="그룹 이벤트 등록 및 삭제"></a>그룹 이벤트 등록 및 삭제</h2><hr>
+<table>
+<thead>
+<tr>
+<th>종류</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>on()</td>
+<td>여러 개의 이벤트를 등록할 때 사용합니다. 이벤트를 등록한 이후에 동일한 태그가 생성되어도 같이 이벤트 실행됩니다.</td>
+</tr>
+<tr>
+<td>bind()</td>
+<td>선택 요소에 한 개 이상의 이벤트를 등록.</td>
+</tr>
+<tr>
+<td>delegate()</td>
+<td>선택 요소의 하위 요소에 여러 개의 이벤트 등록. 등록 이후 생성된 동일한 요소에도 같이 이벤트 생성됩니다.</td>
+</tr>
+<tr>
+<td>one()</td>
+<td>한번 이벤트가 발생되면 자동으로 등록된 이벤트가 제거되어 한 번만 실행됩니다.</td>
+</tr>
+<tr>
+<td>off()</td>
+<td>선택한 요소에 등록된 이벤트를 제거합니다.</td>
+</tr>
+<tr>
+<td>unbind()</td>
+<td>선택한 요소에 등록된 이벤트를 제거합니다.</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><figcaption><span>사용 ex)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="string">"#btn"</span>).on(&#123;  </span><br><span class="line"> <span class="string">"mouseover focus"</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="keyword">this</span>).css(<span class="string">"background-color"</span>,<span class="string">"yellow"</span>);  </span><br><span class="line"> &#125;, <span class="comment">// id 값 btn에 마우스가 올라가거나 포커스되면 배경색을 바꿉니다.  </span></span><br><span class="line"> <span class="string">"mouseout blur"</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line"> $(<span class="keyword">this</span>).css(<span class="string">"background-color"</span>,<span class="string">"red"</span>);  </span><br><span class="line"> &#125; <span class="comment">// id 값 btn에 마우스가 벗어나거나 포커스아웃 되면 배경색을 바꿉니다.  </span></span><br><span class="line"> &#125;);  </span><br><span class="line"> $(<span class="string">"#btn"</span>).append(<span class="string">"&lt;a href='#'&gt;버튼2&lt;/a&gt;"</span>);  </span><br><span class="line"> <span class="comment">//id값 btn의 마지막에 새 요소 (a태그로 감싼 버튼2)를 추가했습니다.  </span></span><br><span class="line"> <span class="comment">// .on 이벤트로 적용된 이벤트가 그대로 적용됩니다.   </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a><a class="link-muted mr-2" rel="tag" href="/tags/jQuery/">jQuery</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">효과 및 애니메이션 -jQuery</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/10/%EA%B0%9D%EC%B2%B4%20%EC%A1%B0%EC%9E%91%20%EB%A9%94%EC%84%9C%EB%93%9C%20-jQuery/"><span class="level-item">객체 조작 메서드 -jQuery</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div>

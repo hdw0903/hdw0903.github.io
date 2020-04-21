@@ -1,0 +1,41 @@
+<div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-18T03:54:51.000Z" title="2020-03-18T03:54:51.000Z">2020-03-18</time><span class="level-item"><a class="link-muted" href="/categories/ECMAScript6/">ECMAScript6</a></span><span class="level-item">8분 읽기 (대략 1145 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">Iteration -ECMAScript</h1><div class="content"><hr>
+<h2 id="1-개요"><a href="#1-개요" class="headerlink" title="1. 개요"></a>1. 개요</h2><hr>
+<p><strong>Iteration은 반복 처리를 나타내며 이를 위한 프로토콜(Protocol)을 갖고 있습니다.</strong></p>
+<p>protocol 이라고 하면 통신이 연상되는데<br>통신에 있어 프로토콜은 약속된 기준과 방법으로 데이터를 송수신하는 것을 의미합니다. (통신 프로토콜 = 통신규약)</p>
+<p>ES6에서 프로토콜도 규약입니다.<br>Iteration을 위한 규약이 있으며 이를 지켜야 반복 처리가 가능합니다.</p>
+<p>예를 들어 자바스크립트에서 Array(배열)를 반복 처리 하기 위해서는<br>배열이 반복할 수 있는 Object(오브젝트)여야 하며,<br>오브젝트에 반복 처리를 할 수 있는 method(메서드)가 필요합니다.<br>이러한 규약이 ES6의 Iteration Protocol (반복 처리 규약) 입니다.</p>
+<a id="more"></a>
+
+<hr>
+<h2 id="iterable-protocol"><a href="#iterable-protocol" class="headerlink" title="iterable protocol"></a>iterable protocol</h2><hr>
+<p>iterable protocol (이터러블 프로토콜)은 <strong>오브젝트의 반복 처리 규약을 정의</strong> 합니다.<br>빌트인 오브젝트 String, Array, Map, Set, TypedArray, Argument 와<br>DOM의 NodeList 는 기본 값으로 이터러블 프로토콜을 갖고 있습니다.</p>
+<p>이와 같은 오브젝트는 자바스크립트 엔진이 렌더링될 때 이터러블 프로토콜이 설정되기 때문에 사전처리를 하지 않아도 반복 처리를 할 수 있습니다.<br>오브젝트에 이터러블 프로토콜이 설정되면 이터러블 오브젝트라고 합니다.</p>
+<p>자바스크립트는 이터러블 오브젝트에 Symbol.iterator가 있어야 합니다.(protocol 규약)<br>Symbol.iterator가 있으면 이터러블 오브젝트 입니다.<br>ex) 이터러블 오브젝트가 아닌 오브젝트에 Symbol.iterator 코드를 추가하면 이터러블 오브젝트가 됩니다.</p>
+<p>자체 오브젝트에는 없지만, 상속받은 prototype chain에 있어도 이터러블 오브젝트가 됩니다.</p>
+<p>ex) 빌트인 Array 오브젝트를 상속받은 오브젝트는 이터러블 오브젝트.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arrayObj = [];  </span><br><span class="line"><span class="keyword">let</span> result = arrayObj[<span class="built_in">Symbol</span>.iterator];  </span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// function values() &#123; [native code] &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>오브젝트에 프로퍼티 존재 여부를 체크할 때<br>1.arrayObj.propertyKey<br>또는<br>2.arrayObj[propertyKey]형태로 작성하지만,</p>
+<p>Symbol은 2번과 같이 []안에<br>arrayObj[Symbol.iterator] 형태로 작성해야 합니다.</p>
+<p>빌트인 오브젝트 Array에 Symbol.iterator가 설정되어 있으므로<br>function values() { [native code] } 함수코드가 출력됩니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> objectObj = &#123;&#125;;  </span><br><span class="line"><span class="keyword">let</span> result = objectObj[<span class="built_in">Symbol</span>.iterator];  </span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>objectObj는 Symbol.iterator가 존재 하지 않으므로<br>undefined가 출력됩니다.<br>이는 objectObj가 이터러블 오브젝트가 아니라는 뜻이 됩니다.</p>
+<hr>
+<h2 id="iterator-protocol"><a href="#iterator-protocol" class="headerlink" title="iterator protocol"></a>iterator protocol</h2><hr>
+<p>iterator protocol(이터레이터 프로토콜)은 next()메서드를 사용해<br>오브젝트의 값을 차례대로 처리할 수 있는 방법을 제공합니다.</p>
+<p>자바스크립트에서 {key: value} 형태의 오브젝트는 작성한 순서대로 열거되는 것이 보장되지 않습니다.<br>이는 오브젝트에 next()가 없다는 의미이기도 합니다.<br><del>ES6에서는 오브젝트에 추가한 순서대로 key, value가 열거되는<br>Map 오브젝트가 있습니다. 자세한 사항은 Map오브젝트에서 다룹니다.</del></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arrayObj = [<span class="number">1</span>, <span class="number">2</span>];  </span><br><span class="line"><span class="keyword">let</span> iteratorObj = arrayObj[<span class="built_in">Symbol</span>.iterator]();  </span><br><span class="line">  </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"1:"</span>, <span class="keyword">typeof</span> iteratorObj);  </span><br><span class="line">  </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"2:"</span>, iteratorObj.next());  </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"3:"</span>, iteratorObj.next());  </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"4:"</span>, iteratorObj.next());</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Array 오브젝트를 생성하여 [1,2]값을 arrayObj에 할당합니다.</p>
+</li>
+<li><p>arrayObj의 Symbol.iterator()을 호출하면 이터레이터 오브젝트를 생성하여 반환합니다.</p>
+</li>
+</ol>
+<p><strong>1: object</strong><br>Symbol.iterator()로 반환받은 iteratorObj 타입.<br>(이터러블 오브젝트에 Symbol.iterator()로 반환받은 오브젝트이므로 이터레이터 오브젝트 입니다.)<br>이터레이터 오브젝트 이므로 next()메소드를 사용 할 수있습니다.</p>
+<p><strong>2: Object {value: 1, done: false}</strong><br>value: 1 = 이터러블 오브젝트의 값 [1,2] 중 1<br>done: false = 이터레이터가 끝나지 않은 것을 의미합니다.</p>
+<p><strong>3: Object {value: 2, done: false}</strong><br>value: 2 = 이터러블 오브젝트의 값 [1,2] 중 2<br>done: false = 이터레이터가 끝나지 않은 것을 의미합니다.</p>
+<p><strong>4: Object {value: undefined, done: true}</strong><br>value: undefined = 이터러블 오브젝트의 값 [1,2] 중 이터레이터로 읽은 값이 없음<br>done: true = 이터레이터 종료됨.</p>
+<p>이와 같이 이터레이터를 사용하여 이터러블 오브젝트의 값을 작성한 순서대로 읽을 수 있습니다. for()문으로 반복하는 것과는 차이가 있습니다.(목적도 다름)</p>
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a><a class="link-muted mr-2" rel="tag" href="/tags/ECMAScript6/">ECMAScript6</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/20/Spread%20%EC%97%B0%EC%82%B0%EC%9E%90%20-ECMAScript/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Spread 연산자 -ECMAScript</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/17/Arrow%20-ECMAScript/"><span class="level-item">Arrow -ECMAScript</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div>
