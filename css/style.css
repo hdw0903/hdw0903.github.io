@@ -30,7 +30,7 @@
     transform: rotate(359deg);
   }
 }
-@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); 
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css); 
 .jejugothic * {
    font-family: 'Jeju Gothic', sans-serif;
    }
