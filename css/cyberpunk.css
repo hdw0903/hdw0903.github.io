@@ -10778,21 +10778,26 @@ article.article .content {
 }
 article.article .content h1 {
   font-size: 2em !important;
+  font-weight: 600 !important;
 }
 article.article .content h2 {
   font-size: 1.75em !important;
+  font-weight: 600 !important;
 }
 article.article .content h3 {
   font-size: 1.55em !important;
+  font-weight: 600 !important;
 }
 article.article .content h4 {
   font-size: 1.25em !important;
+  font-weight: 600 !important;
 }
 article.article .content h5 {
   font-size: 1.2em !important;
+  font-weight: 600 !important;
 }
 article.article .content pre {
-  font-size: 1em !important;
+  font-size: 0.875em !important;
 }
 article.article .content code {
   padding: 0;
@@ -11056,6 +11061,7 @@ footer.footer .level-end .field {
   font-size: 1.3rem;
   flex-grow: 1;
   overflow-y: auto;
+  line-height: 120%;
   border-top: 1px solid #02d7f2;
 }
 .searchbox .searchbox-result-section header,
@@ -11191,14 +11197,15 @@ figure.highlight figcaption {
   margin: 0 !important;
   padding: 0.3em 0em 0.3em 0.75em;
   font-style: normal;
-  font-size: 0.8em;
+  font-size: 0.8em !important;
 }
 figure.highlight figcaption * {
-  color: #848484;
+  color: #fff;
 }
 figure.highlight figcaption span {
   font-weight: 500;
   font-family: 'Roboto Mono', monospace, 'Microsoft YaHei';
+  font-size: 0.8em !important;
 }
 figure.highlight figcaption .level-left *:not(:last-child) {
   margin-right: 0.5em;
