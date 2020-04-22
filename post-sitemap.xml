@@ -8,24 +8,8 @@
     </url>
 
     <url>
-        <loc>hdw0903.github.io/2020/03/29/String%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:19:24.427Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/</loc>
-        <lastmod>2020-04-22T12:17:40.204Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>hdw0903.github.io/2020/04/14/WeakSet%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:14:54.713Z</lastmod>
+        <lastmod>2020-04-22T13:01:02.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +17,127 @@
 
     <url>
         <loc>hdw0903.github.io/2020/04/13/WeakMap%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:14:32.271Z</lastmod>
+        <lastmod>2020-04-22T12:56:36.950Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/06/Symbol%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:55:58.565Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/06/Symbol%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:55:24.801Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/09/Symbol%20%EB%A9%94%EC%84%9C%EB%93%9C%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:54:37.314Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/29/String%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:54:00.645Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/13/Set%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:53:18.707Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/14/Promise%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:52:05.148Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/23/Object%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:51:35.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/26/Number%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:50:58.233Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/10/Map%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScriprt/</loc>
+        <lastmod>2020-04-22T12:50:23.407Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/31/Generator%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:49:20.663Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/22/ES6%EC%97%90%20%EC%B6%94%EA%B0%80%EB%90%9C%20Operation%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:48:09.973Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/01/Class%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:44:41.111Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/30/Array%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-04-22T12:43:39.325Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/</loc>
+        <lastmod>2020-04-22T12:42:42.219Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>hdw0903.github.io/2020/04/16/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%20-Core%20JavaScript/</loc>
+        <lastmod>2020-04-22T12:41:11.785Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -50,30 +154,6 @@
     <url>
         <loc>hdw0903.github.io/2020/03/29/Template%20%EB%A6%AC%ED%84%B0%EB%84%90%20-ECMAScript/</loc>
         <lastmod>2020-04-22T12:13:40.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/06/Symbol%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:13:19.042Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/06/Symbol%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:12:00.206Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/09/Symbol%20%EB%A9%94%EC%84%9C%EB%93%9C%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:11:22.819Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -104,14 +184,6 @@
     </url>
 
     <url>
-        <loc>hdw0903.github.io/2020/04/13/Set%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:08:53.271Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>hdw0903.github.io/2020/03/09/return%20%EB%AC%B8,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%20%ED%98%B8%EC%B6%9C%20-JavaScript/</loc>
         <lastmod>2020-04-22T12:08:10.637Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,40 +200,8 @@
     </url>
 
     <url>
-        <loc>hdw0903.github.io/2020/04/14/Promise%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:07:36.814Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/03/23/Object%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:06:32.011Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/03/26/Number%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:04:47.320Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>hdw0903.github.io/2020/03/29/Math%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
         <lastmod>2020-04-22T12:04:06.627Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/10/Map%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScriprt/</loc>
-        <lastmod>2020-04-22T12:03:44.576Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -192,24 +232,8 @@
     </url>
 
     <url>
-        <loc>hdw0903.github.io/2020/03/31/Generator%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T12:00:57.980Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>hdw0903.github.io/2020/03/09/function%20%ED%95%A8%EC%88%98%20-JavaScript/</loc>
         <lastmod>2020-04-22T12:00:01.120Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/03/22/ES6%EC%97%90%20%EC%B6%94%EA%B0%80%EB%90%9C%20Operation%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T11:59:24.734Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -232,14 +256,6 @@
     </url>
 
     <url>
-        <loc>hdw0903.github.io/2020/04/01/Class%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T11:57:27.624Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>hdw0903.github.io/2020/03/04/BOM%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
         <lastmod>2020-04-22T11:55:17.032Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -256,24 +272,8 @@
     </url>
 
     <url>
-        <loc>hdw0903.github.io/2020/03/30/Array%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T11:52:10.420Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>hdw0903.github.io/2020/03/02/Array%20%EB%B0%B0%EC%97%B4%20%EA%B0%9D%EC%B2%B4%20-JavaScript/</loc>
         <lastmod>2020-04-22T11:50:54.027Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/16/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%20-Core%20JavaScript/</loc>
-        <lastmod>2020-04-22T11:48:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -362,14 +362,6 @@
     <url>
         <loc>hdw0903.github.io/2020/03/10/%EA%B0%9D%EC%B2%B4%20%EC%A1%B0%EC%9E%91%20%EB%A9%94%EC%84%9C%EB%93%9C%20-jQuery/</loc>
         <lastmod>2020-04-22T11:21:39.859Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/22/test/</loc>
-        <lastmod>2020-04-22T11:17:51.932Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
