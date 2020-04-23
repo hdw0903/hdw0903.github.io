@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>hdw0903.github.io/2020/04/16/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%20-Core%20JavaScript/</loc>
+        <lastmod>2020-04-23T12:57:22.740Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>hdw0903.github.io/2020/04/14/WeakSet%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-22T13:01:02.857Z</lastmod>
+        <lastmod>2020-04-23T10:27:06.287Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -130,14 +138,6 @@
     <url>
         <loc>hdw0903.github.io/2020/03/12/%ED%9A%A8%EA%B3%BC%20%EB%B0%8F%20%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98%20-jQuery/</loc>
         <lastmod>2020-04-22T12:42:42.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>hdw0903.github.io/2020/04/16/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%20-Core%20JavaScript/</loc>
-        <lastmod>2020-04-22T12:41:11.785Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
