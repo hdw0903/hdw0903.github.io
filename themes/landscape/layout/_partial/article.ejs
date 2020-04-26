@@ -1,0 +1,55 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+    <%- partial('post/category') %>
+  </div>
+  <div class="article-inner">
+    <%- partial('post/gallery') %>
+    <% if (post.link || post.title){ %>
+      <header class="article-header">
+        <%- partial('post/title', {class_name: 'article-title'}) %>
+      </header>
+    <% } %>
+    <div class="article-entry" itemprop="articleBody">
+      <% if (post.excerpt && index){ %>
+        <%- post.excerpt %>
+        <% if (theme.excerpt_link){ %>
+          <p class="article-more-link">
+            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+          </p>
+        <% } %>
+      <% } else { %>
+        <%- post.content %>
+      <% } %>
+    </div>
+    <footer class="article-footer">
+      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+      <% if (post.comments && config.disqus_shortname){ %>
+        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
+      <% } %>
+      <%- partial('post/tag') %>
+    </footer>
+  </div>
+  <% if (!index){ %>
+    <%- partial('post/nav') %>
+  <% } %>
+</article>
+
+<% if (!index && post.comments && config.disqus_shortname){ %>
+<section id="comments">
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tunas-blog-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
+</section>
+<% } %>
