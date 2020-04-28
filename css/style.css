@@ -10821,6 +10821,15 @@ article.article .content blockquote.pullquote {
 article.article .content blockquote footer strong + cite {
   margin-left: 0.5em;
 }
+code {
+  font-size: 0.875em;
+  font-weight: normal;
+  padding: 2px 4px !important;
+  color: #c7254e !important;
+  background-color: #f9f2f4 !important;
+  border-radius: 4px !important;
+  font-family: 'Jeju Gothic';
+}
 .rtl {
   direction: rtl;
 }
@@ -11350,6 +11359,34 @@ figure.highlight .section {
 .far,
 .fas {
   line-height: inherit;
+}
+.MathJax,
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.katex {
+  white-space: nowrap;
+}
+.katex-display {
+  margin-top: -1em !important;
+}
+.katex-html {
+  padding-top: 1em;
+}
+.katex-html .tag {
+  align-items: unset;
+  background-color: unset;
+  border-radius: unset;
+  color: unset;
+  display: unset;
+  font-size: unset;
+  height: unset;
+  justify-content: unset;
+  line-height: unset;
+  padding-left: unset;
+  padding-right: unset;
+  white-space: unset;
 }
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
