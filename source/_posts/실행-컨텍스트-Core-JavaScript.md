@@ -13,17 +13,17 @@ categories: Core JavaScript
 자바스크립트는 실행 컨텍스트가 활성화되는 시점에 선언된 변수를 위로 끌어올리고(호이스팅), 외부 환경 정보를 구성하고, this 값을 설정하는 등의 동작을 수행하는데, 이로 인해 다른 언어에서는 발견할 수 없는 특이한 현상들이 발생합니다.
 
 * 실행 컨텍스트
-  * [실행 컨텍스트란?](/2020/04/26/실행%20컨텍스트%20-Core%20JavaScript/#execution_context)
+  * [실행 컨텍스트란?](/2020/04/26/실행-컨텍스트-Core-JavaScript/#execution_context)
     * 스택과 큐
-  * [VariableEnvironment](/2020/04/26/실행%20컨텍스트%20-Core%20JavaScript/#VariableEnvironment)
-  * [LexicalEnvironment](/2020/04/26/실행%20컨텍스트%20-Core%20JavaScript/#LexicalEnvironment)
+  * [VariableEnvironment](/2020/04/26/실행-컨텍스트-Core-JavaScript/#VariableEnvironment)
+  * [LexicalEnvironment](/2020/04/26/실행-컨텍스트-Core-JavaScript/#LexicalEnvironment)
     * environmentRecord와 호이스팅
       * 호이스팅 규칙
       * 함수 선언문과 함수 표현식
     * 스코프, 스코프 체인, outerEnvironmentReference
       * 스코프 체인
       * 전역변수 와 지역변수
-  * [this](/2020/04/26/실행%20컨텍스트%20-Core%20JavaScript/#thisBinding)
+  * [this](/2020/04/26/실행-컨텍스트-Core-JavaScript/#thisBinding)
 
 <!-- more -->
 
