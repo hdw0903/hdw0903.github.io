@@ -35,20 +35,21 @@ this는 상황에 따라 참조하는 대상이 달라질 수 있습니다.
       * name 프로퍼티
       * 상위 컨텍스트의 this를 내부함수나 콜백 함수에 전달하기
     * 화살표 => 함수의 예외사항
-    * 별도의 인자로 this를 받는 경우(콜백 함수 내에서의 this) 
+    * 별도의 인자로 this를 받는 경우(콜백 함수 내에서의 this)
+  * [this 정리](/2020/04/27/this-Core-JavaScript/#this_point) 
 
 <!-- more -->
 
 ------
 <h2 id="this">상황에 따라 달라지는 this</h2>
 
-* this는 기본적으로 <mark>실행 컨텍스트가 생성될 때 함께 결정됩니다.</mark>
-실행 컨텍스트는 함수를 호출할 때 생성되므로, <mark>this는 함수를 호출할 때 결정된다고 할 수 있습니다.</mark>
+* `this`는 기본적으로 <mark>실행 컨텍스트가 생성될 때 함께 결정됩니다.</mark>
+실행 컨텍스트는 함수를 호출할 때 생성되므로, `this`<mark>는 함수를 호출할 때 결정된다고 할 수 있습니다.</mark>
 
 ------
 ### 전역 공간에서의 this
 
-전역 공간에서 this는 전역 객체를 가리킵니다. 브라우저 환경에서 전역객체는 window이고 Node.js 환경에서는 global입니다.
+전역 공간에서 `this`는 전역 객체를 가리킵니다. 브라우저 환경에서 전역객체는 `window`이고 Node.js 환경에서는 `global`입니다.
 
   * 참고 : 전역 변수
 전역 변수를 선언하면 자바스크립트 엔진은 전역객체의 프로퍼티로 할당시킴.
@@ -69,9 +70,9 @@ console.log(this.a); // 1 (this는 현재 전역객체 참조)
 
 * 전역 공간에서 var로 변수를 선언하는 대신 window의 프로퍼티에 직접 할당하더라도 결과적으로 똑같이 동작합니다. 하지만 `delete` 연산자를 사용하는 경우 다른 결과를 반환합니다.
 
-  * var 변수로 선언한 경우 : delete window 형식으로 삭제 불가,
+  * `var` 변수로 선언한 경우 : delete window 형식으로 삭제 불가,
   delete 변수명 형식으로도 삭제 불가
-  * window 프로퍼티에 직접 할당한 경우: delete window 형식으로 삭제 가능,
+  * `window` 프로퍼티에 직접 할당한 경우: delete window 형식으로 삭제 가능,
   delete 변수명 형식으로도 삭제 가능
 
 ------
@@ -104,7 +105,7 @@ obj['method'](2); // { method: f } 2
 
 #### 메서드 내부에서의 this
 
-this에는 호출한 주체에 대한 정보가 담깁니다. 어떤 함수를 메서드로서 호출하는 경우 호출 주체는 바로 함수명(프로퍼티 명)앞의 객체입니다. 점 표기법의 경우 마지막 점 앞에 명시된 객체가 곧 this가 됩니다.
+`this`에는 호출한 주체에 대한 정보가 담깁니다. 어떤 함수를 메서드로서 호출하는 경우 호출 주체는 바로 함수명(프로퍼티 명)앞의 객체입니다. 점 표기법의 경우 마지막 점 앞에 명시된 객체가 곧 `this`가 됩니다.
 
 ```js 메서드 내부에서의 this
 var obj = {
@@ -132,10 +133,10 @@ obj['inner']['methodB'](); // { methodB: f }      ( === obj.inner)
 ------
 #### 함수 내부에서의 this
 
-어떤 함수를 함수로서 호출할 경우 this가 지정되지 않습니다.(this는 호출한 주체에 대한 정보가 담깁니다.)
+어떤 함수를 함수로서 호출할 경우 `this`가 지정되지 않습니다.(this는 호출한 주체에 대한 정보가 담깁니다.)
 함수로서 호출하는 것은 호출 주체(객체지향 언어에서의 객체)를 명시하지 않고 실행한 것이기 때문에 호출 주체의 정보를 알 수 없는 것입니다. 
 <mark>this가 지정되지 않은 경우 this는 전역 객체를 참조합니다.</mark>
-따라서 함수에서의 this는 전역 객체를 가리킵니다.
+따라서 함수에서의 `this`는 전역 객체를 가리킵니다.
 
 ------
 #### 메서드의 내부함수에서의 this
@@ -411,7 +412,7 @@ var arr = Array.prototype.slice.call(obj);
 console.log(arr); // [ 'a', 'b', 'c', 'd' ]
 ```
 
-* 유사배열객체인 경우 call 또는 apply 메서드를 이용해 배열 메서드를 사용할 수 있습니다.
+* 유사배열객체인 경우 `call` 또는 `apply` 메서드를 이용해 배열 메서드를 사용할 수 있습니다.
 
 * 배열 메서드인 `push`를 `객체 obj`에 적용해 프로퍼티 3에 'd'를 추가했습니다.
 
@@ -428,6 +429,7 @@ console.log(arr); // [ 'a', 'b', 'c', 'd' ]
 
 ------
 #### Array.from
+
 Array 오브젝트를 생성하고 콜백 함수에서 반환된 값을 엘리먼트 값으로 설정하여 새로운 Array 객체를 반환합니다.
 
 >Array.from(arrayLike[, mapFn[, thisArg]])
@@ -458,4 +460,236 @@ console.log(arr); // ['a', 'b', 'c']
 ------
 #### class 내부에서 다른 class를 호출
 
-`class` 내부에 다른 `class`와 공통된 내용이 있을 경우
+`class` 내부에 다른 `class`와 공통된 내용이 있을 경우 `call` 또는 `apply`를 이용해 다른 `class`를 호출하면 간단하게 반복을 줄일 수 있습니다.
+
+```js class 내부에서 다른 class 호출
+function Person(name, gender) {
+  this.name = name;
+  this.gender = gender;
+}
+function Student(name, gender, school) {
+  Person.call(this, name, gender);
+  this.school = school;
+}
+function Employee(name, gender, company) {
+  Person.apply(this, [name, gender]);
+  this.company = company;
+}
+var by = new Student('보영', 'female', '단국대');
+var jn = new Employee('재난', 'male', '구골');
+```
+
+Student, Employee class함수 내부에서 Person 함수를 호출해서 instance 속성을 정의하게 했습니다.
+
+------
+#### 여러 인수를 묶어 하나의 배열로 전달하고 싶을 때
+
+`apply`메서드를 사용해 하나의 배열로 인수들을 전달할 수 있습니다.
+
+```js 여러 인수를 받는 메서드(Math.max/Math.min)에 apply 적용
+var numbers = [10, 20, 3, 16, 45];
+var max = Math.max.apply(null, numbers);
+var min = Math.min.apply(null, numbers);
+console.log(max, min); // 45 3
+```
+
+ES6에서는 `spread` 연산자를 이용하면 `apply`를 적용하는 것보다 더욱 간편하게 작성할 수 있습니다.
+
+```js
+const numbers = [10, 20, 3, 16, 45];
+const max = Math.max(...numbers);
+const min = Math.min(...numbers);
+console.log(max, min); // 45 3
+```
+
+------
+### bind 메서드
+
+>Function.prototype.bind(thisArg[,arg1[, arg2[, ...]]])
+
+`bind` 메서드는 ES5에서 추가된 기능으로, call과 비슷하지만 즉시 호출하지는 않고 넘겨받은 this 및 인수들을 바탕으로 새로운 함수를 반환하기만 하는 메서드입니다.
+다시 새로운 함수를 호출할 때 인수를 넘기면 그 인수들은 기존 `bind` 메서드를 호출할 때 전달했던 인수들의 뒤에 이어서 등록됩니다.
+즉 `bind`메서드는 함수에 this를 미리 적용하는 것과 부분 적용 함수를 구현하는 두 가지 목적을 모두 지닙니다.
+
+```js bind메서드의 this 지정과 부분 적용 함수 구현
+var func = function(a, b, c, d) {
+  console.log(this, a, b, c, d);
+};
+func(1, 2, 3, 4); // Window{ ... } 1 2 3 4
+
+1. var bindFunc1 = func.bind({ x: 1 });
+bindFunc1(5, 6, 7, 8); // { x: 1 } 5 6 7 8
+
+2. var bindFunc2 = func.bind({ x: 1 }, 4, 5);
+bindFunc2(6, 7); // { x: 1 } 4 5 6 7
+bindFunc2(8, 9); // { x: 1 } 4 5 8 9
+```
+
+1. `bindFunc1` 변수에 `func` 변수에 `this`를 `{x : 1}`로 지정하는 새로운 함수가 할당됩니다.
+다음 줄에서 `bindFunc1`을 호출하면 지정된 `this`값과 함께 반환됩니다.
+
+2. `bindFunc2` 변수에는 `func` 변수에 `this`를 `{x : 1}`로 지정하고, 파라미터를 차례대로 4, 5로 지정한 함수 새로운 함수가 할당됩니다. 다음 코드를 호출하면 `this`로 지정해준 값과 파라미터에 지정해준 값이 적용되고 그 다음 함수를 호출하며 넘겨준 파라미터 값이 붙습니다 `{x : 1} 4 5 6 7`, `{x : 1} 4 5 8 9` 형태로 반환됩니다.
+<mark>이것이 bind의 부분 적용 함수 구현법입니다.</mark>
+
+------
+#### name 프로퍼티
+
+<u>bind 메서드를 적용해서 새로 만든 함수는 한 가지 독특한 성질이 있습니다.</u>
+name 프로퍼티에 동사 bind의 수동태인 `bound`라는 접두어가 붙습니다.
+
+함수의 name 프로퍼티가 `bound xxx`이라면 함수명이 xxx인 원본 함수에 `bind`메서드를 적용한 새로운 함수라는 의미가 되므로 call 과 apply 메서드에 비해 코드 추적이 용이한 점이 있습니다.
+
+```js
+var func = function(a, b, c, d) {
+  console.log(this, a, b, c, d);
+};
+var bindFunc = func.bind({ x: 1 }, 4, 5);
+console.log(func.name); // func
+console.log(bindFunc.name); // bound func
+```
+
+------
+#### 상위 컨텍스트의 this를 내부함수나 콜백 함수에 전달하기
+
+메서드의 내부함수에서 메서드의 `this`를 그대로 바라보게 하기 위한 방법으로
+self 등의 변수를 활용하거나 화살표 함수를 이용한 우회법이 있었는데
+`call`, `apply`, `bind` 메서드를 이용하면 더 깔끔하게 처리할 수 있습니다.
+
+```js 내부함수에 this 전달 - call
+var obj = {
+  outer: function() {
+    console.log(this); //{outer : f}
+    var innerFunc = function() {
+      console.log(this); //{outer : f}
+    };
+    innerFunc.call(this);
+  },
+};
+obj.outer();
+```
+
+```js 내부함수에 this 전달 -bind
+var obj = {
+  outer: function() {
+    console.log(this); //{outer : f}
+    var innerFunc = function() {
+      console.log(this); //{outer : f}
+    }.bind(this); // 호출x, 새로운 함수 바인드
+    innerFunc(); // 호출
+  },
+};
+obj.outer();
+```
+
+* 또한 콜백 함수를 인자로 받는 함수(메서드) 중에서 기본적으로 콜백 함수 내에서의 `this`에 관여하는 함수(메서드)에 대해서도 `bind` 메서드를 사용하면 `this`값을 지정하여 바꿀 수 있습니다.
+
+```js bind 메서드 - 내부 함수에 this 전달
+var obj = {
+  logThis: function() {
+    console.log(this);
+  },
+  logThisLater1: function() {
+    setTimeout(this.logThis, 500);
+  },
+  logThisLater2: function() {
+    setTimeout(this.logThis.bind(this), 1000);
+  },
+};
+obj.logThisLater1(); // Window { ... }
+obj.logThisLater2(); // obj { logThis: f, ... }
+```
+
+------
+### 화살표 함수의 예외사항
+
+ES6에 새롭게 도입된 화살표 함수 `=>`는 실행 컨텍스트 생성 시 this를 바인딩 하지 않습니다.
+즉 화살표 함수 `=>` 내부에는 `this`가 아예 없으며, `this`에 접근하고자 하면 스코프체인상 가장 가까운 `this`에 접근하게 됩니다.
+
+```js 화삺표 함수 내부에서의 this
+var obj = {
+  outer: function() {
+    console.log(this);
+    var innerFunc = () => {
+      console.log(this);
+    };
+    innerFunc();
+  },
+};
+obj.outer();
+```
+
+* `call`, `apply`, `bind`를 사용했던 예제의 내부함수를 `=>`함수로 바꾼 것입니다.
+더욱 간결해졌습니다.
+
+------
+### 별도의 인자로 this를 받는 경우(콜백 함수 내에서의 this)
+
+콜백 함수를 인자로 받는 메서드에는 `this`로 지정할 객체(`thisArg`)를 인자로 지정할 수 있는 것들이 있습니다. 이러한 메서드를 이용하여 `this`값을 원하는대로 변경할 수 있습니다.
+
+이러한 메서드는 내부 요소에 대해 같은 동작을 반복 수행해야하는 배열 메서드에 많이 존재하고, 같은 이유로 ES6에 추가된 `Set`, `Map`등의 메서드에도 일부 존재합니다.
+
+* 콜백 함수와 함께 thisArg를 인자로 받는 메서드
+  | Array.prototype                        | Set.prototype                | Map.prototype                |
+|----------------------------------------|------------------------------|------------------------------|
+| `forEach`(callback[, thisArg])           | `forEach`(callback[, thisArg]) | `forEach`(callback[, thisArg]) |
+| `map`(callback[, thisArg])               |                              |                              |
+| `filter`(callback[, thisArg])            |                              |                              |
+| `some`(callback[, thisArg])              |                              |                              |
+| `every`(callback[, thisArg])             |                              |                              |
+| `find`(callback[, thisArg])              |                              |                              |
+| `findIndex`(callback[, thisArg])         |                              |                              |
+| `flatMap`(callback[, thisArg])           |                              |                              |
+| `from`(arrayLike[, callback[, thisArg]]) |                              |                              |
+
+* 대표적인 배열 메서드인 `forEach` 예시
+
+```js forEach
+var report = {
+  sum: 0,
+  count: 0,
+  add: function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.forEach(function(entry) {
+      this.sum += entry;
+      ++this.count;
+    }, this);
+  },
+  average: function() {
+    return this.sum / this.count;
+  },
+};
+report.add(60, 85, 95);
+console.log(report.sum, report.count, report.average()); // 240 3 80
+```
+
+* `60, 85, 95`를 인자로 삼아 `add` 메서드를 호출하면 `slice.call`메서드가 인자를 받아 새로운 배열로 반환합니다. 이후 `forEach` 메서드가 실행됩니다.
+
+* 콜백 함수 내부의 `this`는 `forEach` 함수의 두 번째 인자로 전달해준 `this`(add 메서드의 this)가 전달된 상태이므로 `add` 메서드의 `this(report)`를 가리킵니다.
+
+* 따라서 배열의 요소들을 순회 반복하며 `report.sum` , `report.count`값이 차례로 바뀌게 됩니다.
+출력 결과로 `report.sum`에 240, `report.count`에 3이 반환되어 출력됩니다.
+
+
+------
+<h2 id="this_point">this 정리</h2>
+
+명시적 `this` 바인딩이 없는 한 항상 성립하는 규칙
+
+  * 전역공간에서의 `this`는 전역객체를 참조 (브라우저에서는 `window`, Node.js에서는 `global`)
+
+  * 함수를 메서드로 호출한 경우 `this`는 메서드 호출 주체를 참조 (메서드명 앞의 객체)
+
+  * 함수를 함수로 호출한 경우 `this`는 전역객체를 참조 (메서드의 내부함수에서도 동일)
+
+  * 콜백 함수 내부에서의 `this`는 해당 콜백 함수의 제어권을 넘겨받은 함수가 정의한 바를 참조
+`this`가 정의되어 있지않다면 전역객체를 참조
+
+  * `class` 함수에서 `this`는 생성될 `instance`를 참조
+
+위 규칙에 부합하지 않는 경우 명시적 `this` 바인딩 규칙으로 예측할 수 있습니다.
+
+  * `call`, `apply` 메서드는 `this`를 명시적으로 지정하면서 함수 또는 메서드를 호출
+
+  * `bind` 메서드는 `this` 및 함수에 넘길 파라미터를 일부 지정해 새로운 함수를 만듭니다.
+
+  * 콜백 함수를 반복 순회,호출 하는 일부 메서드는 별도의 인자로 `this`를 받기도 합니다.
