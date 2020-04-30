@@ -10741,7 +10741,7 @@ html {
   font-size: 1.5rem !important;
 }
 .card .tag {
-  font-size: x-small;
+  font-size: x-small !important;
 }
 html {
   font-size: 10px;
@@ -10830,6 +10830,19 @@ code {
   background-color: #f9f2f4 !important;
   border-radius: 4px !important;
   font-family: 'Jeju Gothic';
+}
+.post-title {
+  color: #363636;
+}
+.post-title:hover {
+  color: #3273dc;
+}
+.level-item {
+  font-size: 1.3rem;
+}
+.link-muted {
+  font-size: 1.3rem;
+  text-transform: initial;
 }
 .rtl {
   direction: rtl;
