@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>클로저 -Core JavaScript - 한참치의 Study Blog</title><meta description="클로저 (Closure) 클로저의 의미 및 원리 이해 클로저와 메모리 관리 클로저 활용 사례 콜백 함수 내부에서 외부 데이터를 사용하고자 할 때 접근 권한 제어 (정보 은닉) 부분 적용 함수 커링 함수   정리"><meta property="og:type" content="blog"><meta property="og:title" content="클로저 -Core JavaScript"><meta property="og:url" content="https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/"><meta property="og:site_name" content="한참치의 Study Blog"><meta property="og:description" content="클로저 (Closure) 클로저의 의미 및 원리 이해 클로저와 메모리 관리 클로저 활용 사례 콜백 함수 내부에서 외부 데이터를 사용하고자 할 때 접근 권한 제어 (정보 은닉) 부분 적용 함수 커링 함수   정리"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://hdw0903.github.io/img/og_image.png"><meta property="article:published_time" content="2020-05-03T06:56:17.000Z"><meta property="article:modified_time" content="2020-05-03T09:33:17.198Z"><meta property="article:author" content="Han Dongwon"><meta property="article:tag" content="JavaScript"><meta property="article:tag" content="Core JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/"},"headline":"한참치의 Study Blog","image":["https://hdw0903.github.io/img/og_image.png"],"datePublished":"2020-05-03T06:56:17.000Z","dateModified":"2020-05-03T09:33:17.198Z","author":{"@type":"Person","name":"Han Dongwon"},"description":"클로저 (Closure) 클로저의 의미 및 원리 이해 클로저와 메모리 관리 클로저 활용 사례 콜백 함수 내부에서 외부 데이터를 사용하고자 할 때 접근 권한 제어 (정보 은닉) 부분 적용 함수 커링 함수   정리"}</script><link rel="canonical" href="https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/"><link rel="icon" href="/images/coffee-favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/tomorrow-night-bright.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link href="https://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-164181722-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-164181722-1');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><script data-ad-client="ca-pub-7899198893911275" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><link rel="alternate" href="/rss2.xml" title="한참치의 Study Blog" type="application/rss+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/images/template.png" alt="한참치의 Study Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub Home" href="https://github.com/hdw0903"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2020년 5월 3일 일요일 오후 3:56</span><span class="level-item"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></span><span class="level-item">14분 읽기 (대략 2075 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">클로저 -Core JavaScript</h1><div class="content"><ul>
+<li>클로저 (Closure)<ul>
+<li><a href="/2020/05/03/클로저-Core-JavaScript/#closure">클로저의 의미 및 원리 이해</a></li>
+<li><a href="/2020/05/03/클로저-Core-JavaScript/#closure_memory">클로저와 메모리 관리</a></li>
+<li><a href="/2020/05/03/클로저-Core-JavaScript/#closure_ex">클로저 활용 사례</a><ul>
+<li>콜백 함수 내부에서 외부 데이터를 사용하고자 할 때</li>
+<li>접근 권한 제어 (정보 은닉)</li>
+<li>부분 적용 함수</li>
+<li>커링 함수</li>
+</ul>
+</li>
+<li><a href="/2020/05/03/클로저-Core-JavaScript/#">정리</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<hr>
+<h2 id="closure">클로저의 의미 및 원리 이해</h2>
+
+<p>클로저(<code>Closure</code>)는 여러 함수형 프로그래밍 언어에서 등장하는 보편적인 특성입니다.<br>자바스크립트 고유의 개념이 아니라서 ECMAScript 명세에서도 클로저의 정의를 다루지 않고 있고, 다양한 문헌에서 제각각 클로저를 다르게 정의 또는 설명하고 있습니다.</p>
+<p>다양한 서적에서 클로저를 한 문장으로 요약해서 설명하는 부분들을 소개하면 다음과 같습니다.<br>    * 자신을 내포하는 함수의 컨텍스트에 접근할 수 있는 함수</p>
+<pre><code>* 함수가 특정 스코프에 접근할 수 있도록 의도적으로 그 스코프에서 정의하는 것
+
+* 함수를 선언할 때 만들어지는 유효범위가 사라진 후에도 호출할 수 있는 함수
+
+* 이미 생명 주기상 끝난 외부 함수의 변수를 참조하는 함수
+
+* 자유변수가 있는 함수와 자유변수를 알 수 있는 환경의 결합
+
+* 로컬 변수를 참조하고 있는 함수 내의 함수
+
+* 자신이 생성될 때의 스코프에서 알 수 있었던 변수들 중 언젠가 자신이 실행될 때 사용할 변수들만을 기억하여 유지시키는 함수</code></pre><p><strong>MDN</strong> 에서는 클로저를 함수와 그 함수가 선언될 당시의 <code>LexicalEnvironment</code>의 조합이라고 소개하고,<br>다른 말로 클로저는 내부 함수에서 외부 함수의 범위로 접근할 수 있게 해주는 함수라고 합니다.</p>
+<p>선언될 당시의 <code>LexicalEnvironment</code>는 실행 컨텍스트의 구성 요소 중 하나인 <code>outerEnvironmentReference</code>에 해당합니다.<br><code>LexicalEnvironment</code>의 <code>environmentRecord</code>와 <code>outerEnvironmentReference</code>에 의해 변수의 유효범위인 스코프가 결정되고 스코프 체인이 가능해집니다.</p>
+<ul>
+<li><code>컨텍스트 A</code>에서 선언한 <code>내부 함수B</code>의 실행 컨텍스트가 활성화된 시점에서는 B의 <code>outerEnvironmentReference</code>가 참조하는 대상인 A의 <code>LexicalEnvironment</code>에도 접근이 가능해 집니다. A에서는 B에서 선언한 변수에 접근할 수 없지만 B에서는 A에 선언한 변수에 접근이 가능해집니다.</li>
+</ul>
+<ul>
+<li>이런 내부함수에서 외부 변수를 참조하게 되는 경우가, 선언될 당시의 <code>LexicalEnvironment</code>와의 상호관계(조합)의 의미가 됩니다.</li>
+</ul>
+<figure class="highlight js"><figcaption><span>외부 함수의 변수를 참조하는 내부 함수 -1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> inner = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++a);</span><br><span class="line">  &#125;;</span><br><span class="line">  inner();</span><br><span class="line">&#125;;</span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>outer</code> 함수에 변수 a를 선언했고 1을 할당했습니다.</li>
+</ol>
+<ol start="2">
+<li><code>outer</code>의 내부함수인 <code>inner</code> 함수에서 a의 값을 1 증가시키고 출력합니다.</li>
+</ol>
+<ul>
+<li><code>inner</code>함수 내부에서는 a를 선언하지 않았기 때문에 <code>environmentRecord</code>에서 값을 찾지 못하므로 <code>outerEnvironmentReference</code>에 지정된 상위 컨텍스트인 <code>outer</code>의 <code>LexicalEnvironment</code>에 접근하여 다시 a를 찾습니다.</li>
+</ul>
+<ul>
+<li><code>outer</code> 함수의 실행 컨텍스트가 종료되면 <code>LexicalEnvironment</code>에 저장된 식별자들(a,inner)에 대한 참조를 지웁니다. 그러면 각 주소에 저장돼 있던 값들은 자신을 참조하는 변수가 하나도 없게 되므로 <code>가비지컬렉터(GC)</code>의 수집 대상이 됩니다.</li>
+</ul>
+<figure class="highlight js"><figcaption><span>외부 함수의 변수를 참조하는 내부 함수 -2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> inner = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ++a;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> inner();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> outer2 = outer();</span><br><span class="line"><span class="built_in">console</span>.log(outer2); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>이 예제 역시 <code>inner</code>함수 내부에서 외부변수인 a를 사용했습니다.<br><code>inner</code> 함수를 실행한 결과를 <code>return</code> 하고 나면 <code>outer</code>함수의 실행 컨텍스트가 종료된 시점에는 a변수를 참조하는 대상이 없어집니다. 그러므로 예제1과 마찬가지로 식별자들의(a,inner) 값들은 <code>가비지컬렉터(GC)</code>에 의해 소멸됩니다.</li>
+</ul>
+<ul>
+<li>예제1과 예제2는 <code>outer</code>함수의 실행 컨텍스트가 종료되기 이전에 <code>inner</code> 함수의 실행 컨텍스트가 종료돼 있으며, 이후 별도로 <code>inner</code> 함수를 호출할 수 없다는 공통점을 가지고 있습니다.</li>
+</ul>
+<p><mark>그렇다면 outer의 실행 컨텍스트가 종료된 후에도 inner 함수를 호출할 수 있게 만들면 어떨까요?</mark></p>
+<figure class="highlight js"><figcaption><span>외부 함수의 변수를 참조하는 내부 함수 -3</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> inner = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ++a;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> inner;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> outer2 = outer();</span><br><span class="line"><span class="built_in">console</span>.log(outer2()); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(outer2()); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>return inner()</code> 함수의 실행 결과가 아닌 <code>return inner</code> 함수 자체를 반환했습니다.</li>
+</ol>
+<ol start="2">
+<li><code>outer2</code> 변수는 <code>outer</code>함수의 실행 결과인 <code>inner</code>함수 자체를 참조하게 됩니다.<br><code>outer2</code> 호출시 <code>inner</code> 함수가 실행됨.</li>
+</ol>
+<ol start="3">
+<li><code>inner</code> 함수의 실행 컨텍스트의 <code>environmentRecord</code>에는 수집할 정보가 없습니다. <code>outerEnvironmentReference</code>에는 <code>inner</code> 함수가 선언된 위치의 <code>LexicalEnvironment</code>가 참조복사 됩니다. <code>inner</code>함수는 <code>outer</code> 함수 내부에서 선언됐으므로, <code>outer</code> 함수의 <code>LexicalEnvironment</code>가 담깁니다.</li>
+</ol>
+<ol start="4">
+<li>스코프체이닝에 따라 <code>outer</code>에서 선언한 변수 a에 접근해 1만큼 증가시킨후 결과 값인 2를 반환하고, <code>inner</code>함수의 실행 컨텍스트가 종료됩니다.</li>
+</ol>
+<ol start="5">
+<li><code>outer2</code><u>를 다시 호출하면 같은 방식으로 a의 값을 2에서 1만큼 증가시켜 그 결과 값인 3을 반환합니다.</u></li>
+</ol>
+<p><strong>중요 포인트</strong></p>
+<ul>
+<li><code>outer</code>함수의 실행 컨텍스트는 종료된 상태인데 어떻게 외부 함수의 변수(<code>outer</code> 함수의 <code>LexicalEnvironment</code>)에 접근할 수 있는 걸까?</li>
+</ul>
+<ul>
+<li>이는 가비지컬렉터의 동작 방식 때문입니다.</li>
+</ul>
+<ul>
+<li><mark>어떤 값을 참조하는 변수가 하나라도 있다면 그 값은 가비지컬렉터(GC)의 대상이 되지 않습니다.</mark></li>
+</ul>
+<ul>
+<li><code>outer</code> 함수는 실행 종료 시점에 <code>inner</code> 함수를 반환했습니다. <code>outer</code> 함수는 <code>inner</code>함수를 참조하게 되고 외부함수인 <code>outer</code>의 실행이 종료되었지만 내부함수인 <code>inner</code>함수는 언젠가 <code>outer()</code>형식 (변수 outer2와 같은)으로 호출될 수 있습니다.</li>
+</ul>
+<ul>
+<li><code>inner</code> 함수 역시 <code>outer</code>의 변수를 참조하므로 실행 컨텍스트가 활성화 되면 <code>outerEnvironmentReference</code>가 <code>outer</code> 함수의 <code>LexicalEnvironment</code>를 필요로 하게되므로 <code>가비지컬렉터(GC)</code>의 대상에서 제외됩니다. 그 덕에 <code>inner</code>함수가 외부함수의 변수에 접근할 수 있는 것입니다.</li>
+</ul>
+<ul>
+<li>클로저란 :<br><mark>외부 함수에서 선언한 변수를 참조하는 내부 함수를 외부로 전달할 경우 외부 함수의 실행 컨텍스트가 종료된 이후에도 변수가 사라지지 않는 현상</mark></li>
+</ul>
+<ul>
+<li>“내부함수를 외부로 전달”이 return만을 의미하는 것은 아님. 다른 경우도 존재</li>
+</ul>
+<figure class="highlight js"><figcaption><span>return 없이 클로저가 발생하는 경우</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1) setInterval/setTimeout</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">0</span>; <span class="comment">// 외부 함수의 변수를 내부 함수에서</span></span><br><span class="line">  <span class="keyword">var</span> intervalId = <span class="literal">null</span>; <span class="comment">// 참조하고 있으므로 GC의 대상이 되지 않음. </span></span><br><span class="line">  <span class="keyword">var</span> inner = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (++a &gt;= <span class="number">10</span>) &#123; <span class="comment">// 외부 함수의 변수a 참조</span></span><br><span class="line">      clearInterval(intervalId); <span class="comment">// 외부 함수의 변수 intervalId 참조</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;;</span><br><span class="line">  intervalId = setInterval(inner, <span class="number">1000</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>별도의 외부객체인 window의 메서드(setTimeout 또는 setInterval)에 전달할 콜백 함수 내부에서 지역변수를 참조합니다.</p>
+<figure class="highlight js"><figcaption><span>return 없이 클로저가 발생하는 경우</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (2) eventListener</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> button = <span class="built_in">document</span>.createElement(<span class="string">'button'</span>);</span><br><span class="line">  button.innerText = <span class="string">'click'</span>;</span><br><span class="line">  button.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++count, <span class="string">'times clicked'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(button);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>별도의 외부 객체인 DOM의 메서드 (addEventListener)에 등록할 handler 함수 내부에서 지역변수를 참조합니다.</p>
+<p><mark>두 상황 모두 두 지역변수를 참조하는 내부함수를 외부에 전달했기 때문에 클로저(closure)입니다.</mark></p>
+<hr>
+<h2 id="closure_memory">클로저와 메모리 관리</h2>
+
+
+
+
+
+
+<hr>
+<h2 id="closure_ex">클로저 활용 사례</h2>
+
+
+
+
+
+<hr>
+<h2 id="closure">정리</h2></div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaScript/">JavaScript</a><a class="link-muted mr-2" rel="tag" href="/tags/Core-JavaScript/">Core JavaScript</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/04/30/%EC%BD%9C%EB%B0%B1-%ED%95%A8%EC%88%98-Core-JavaScript/"><span class="level-item">콜백 함수 -Core JavaScript</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="" src="/images/blog_logo.png" alt="Han Dongwon"></figure><p class="title is-size-4 is-block line-height-inherit">Han Dongwon</p><p class="is-size-6 is-block">한 동원참치</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul / South Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">포스트</p><a href="/archives"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">카테고리</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">태그</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/hdw0903" target="_blank" rel="noopener">팔로우</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/hdw0903"><i class="fab fa-github"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">링크</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://github.com/hdw0903" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Core-JavaScript/"><span class="level-start"><span class="level-item">Core JavaScript</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/ECMAScript6/"><span class="level-start"><span class="level-item">ECMAScript6</span></span><span class="level-end"><span class="level-item tag">23</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/jQuery/"><span class="level-start"><span class="level-item">jQuery</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-03T06:56:17.000Z">2020-05-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/">클로저 -Core JavaScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-30T11:03:50.000Z">2020-04-30</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/30/%EC%BD%9C%EB%B0%B1-%ED%95%A8%EC%88%98-Core-JavaScript/">콜백 함수 -Core JavaScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-27T12:50:04.000Z">2020-04-27</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/27/this-Core-JavaScript/">this -Core JavaScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-26T08:50:25.000Z">2020-04-26</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/26/%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Core-JavaScript/">실행 컨텍스트 -Core JavaScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-16T00:00:39.000Z">2020-04-16</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/16/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%20-Core%20JavaScript/">데이터 타입 -Core JavaScript</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/Core-JavaScript/">Core JavaScript</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">아카이브</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/05/"><span class="level-start"><span class="level-item">5월 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">4월 2020</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">3월 2020</span></span><span class="level-end"><span class="level-item tag">31</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">2월 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Core-JavaScript/"><span class="tag">Core JavaScript</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ECMAScript6/"><span class="tag">ECMAScript6</span><span class="tag is-grey-lightest">23</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag is-grey-lightest">49</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jQuery/"><span class="tag">jQuery</span><span class="tag is-grey-lightest">4</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/images/template.png" alt="한참치의 Study Blog" height="28"></a><p class="size-small"><span>&copy; 2020 Han Dongwon</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://hdw0903.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="맨 위로" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="입력 하세요..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"입력 하세요...","untitled":"(Untitled)","posts":"포스트","pages":"Pages","categories":"카테고리","tags":"태그"});
+        });</script></body></html>
