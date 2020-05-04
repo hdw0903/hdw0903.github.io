@@ -163,7 +163,7 @@ obj['inner']['methodB'](); // { methodB: f }      ( === obj.inner)
 2. obj1.outer();
 // (1): obj1
 // (2): 전역객체(window)
-// (3): obj.innerMethod
+// (3): obj2
 ```
 
 (2)는 `innerFunc`를 호출한 결과를, (3)은 `obj2.innerMethod`를 호출한 결과입니다.
