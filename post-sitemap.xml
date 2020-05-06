@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>https://hdw0903.github.io/2020/04/13/WeakMap%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-06T13:30:55.904Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/16/Strict%20mode%20-ECMAScript/</loc>
+        <lastmod>2020-05-06T13:11:57.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hdw0903.github.io/2020/05/05/prototype-Core-JavaScript/</loc>
-        <lastmod>2020-05-05T13:30:24.262Z</lastmod>
+        <lastmod>2020-05-06T12:52:50.350Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -50,14 +66,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/03/02/%EB%82%A0%EC%A7%9C%20%EA%B0%9D%EC%B2%B4%20%EB%A9%94%EC%84%9C%EB%93%9C/</loc>
         <lastmod>2020-04-26T08:05:21.358Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/13/WeakMap%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-26T07:17:32.532Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -353,14 +361,6 @@
 
     <url>
         <loc>https://hdw0903.github.io/2020/04/14/Promise%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/16/Strict%20mode%20-ECMAScript/</loc>
         <lastmod>2020-04-25T09:57:08.465Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
