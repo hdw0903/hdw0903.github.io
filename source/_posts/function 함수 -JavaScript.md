@@ -79,12 +79,11 @@ tag:
 
 #### Function Hoisting
 
-Hoisting은 변수 선언 및 함수 선언에 적용됩니다.  
-이 때문에 JavaScript 함수는 선언되기 전에 호출 할 수 있습니다.
+`Hoisting`은 변수 선언 및 함수 선언에 적용됩니다.  
+이 때문에 `JavaScript 함수`는 선언되기 전에 호출 할 수 있습니다.
 
 > myFunction(5);
-
-function myFunction(y) {  
+>function myFunction(y) {  
 return y * y;  
 }
 
@@ -92,9 +91,9 @@ return y * y;
 
 #### Arrow Functions
 
-Arrow 함수는 함수 표현식 작성을위한 짧은 구문을 허용합니다.  
-function(함수) 키워드,  
-return(반환) 키워드 및 {}중괄호가 필요하지 않습니다.
+`Arrow` 함수는 함수 표현식 작성을위한 짧은 구문을 허용합니다.  
+`function`(함수) 키워드,  
+`return`(반환) 키워드 및 `{}`중괄호가 필요하지 않습니다.
 
 > // ES5  
 > var x = function(x, y) {  
@@ -103,7 +102,7 @@ return(반환) 키워드 및 {}중괄호가 필요하지 않습니다.
 > // ES6  
 > const x = (x, y) => x * y;
 
-*   Arrow 함수는 hoisting 되지않습니다.  
+*   `Arrow` 함수는 `hoisting` 되지않습니다.  
     반드시 사용하기 전에 정의해야합니다.  
     또한 IE 11 이전 버젼에서는 사용할 수 없습니다.
 

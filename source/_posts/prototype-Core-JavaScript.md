@@ -6,6 +6,21 @@ tags:
   - JavaScript
 date: 2020-05-05 17:57:53
 categories: Core JavaScript
+toc: true
+
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+      
+sidebar:
+  right:
+    sticky: true
 ---
 
 * 프로토타입 (prototype)
@@ -248,7 +263,7 @@ var p5 = new p1.constructor('사람5'); // Person { name: "사람5" } true
 });
 ```
 
-* 다음은 모두 동일한 대상을 가리키게 됩니다.
+* **다음은 모두 동일한 대상을 가리키게 됩니다.**
 
         
         1. [Constructor]
@@ -262,7 +277,7 @@ var p5 = new p1.constructor('사람5'); // Person { name: "사람5" } true
         5. [Constructor].prototype.constructor
 
 
-* 다음은 모두 동일한 객체에 접근할 수 있습니다.
+* **다음은 모두 동일한 객체에 접근할 수 있습니다.**
     
 
       1. [Constructor].prototype
@@ -304,3 +319,31 @@ var p5 = new p1.constructor('사람5'); // Person { name: "사람5" } true
 
 ------
 ### 프로토타입 체인
+
+<mark>자바스크립트의 모든 객체의 최상위 객체에는 Object 객체가 존재합니다.</mark>
+
+따라서 모든 객체의 `__proto__`에는 `Object.prototype`이 연결됩니다.
+
+**Array 객체를 예시로 든 최상위 객체 Object와의 구조 도식(~~prototype 역시 객체입니다.~~)**
+
+![객체의 최상위 객체 Object](/images/객체의_최상위_객체_Object.png)
+
+
+* 앞에서 `__proto__`는 생략가능한 프로퍼티이므로 `배열[]`에서 `Array.prototype` 내부의 메서드를 직접 호출할 수 있었습니다. 
+
+* 마찬가지로 `배열[]`의 `__proto__`를 계속 따라가다 보면 `Object.prototype`이 있으므로 `Object.prototype`의 내부 메서드도 직접 호출할 수 있습니다.
+
+------
+이러한 `__proto__` 프로퍼티 내부에 다시 `__proto__`프로퍼티가 연쇄적으로 이어진 것을 
+**프로토타입 체인**(`prototype chain`)이라 하고, 
+
+이 체인을 따라 검색하는 것을 **프로토타입 체이닝**(`prototype chaining`)이라고 합니다.
+
+------
+### 객체 전용 메서드의 예외사항
+
+어떤 생성자 함수이든 `prototype`은 객체이기 때문에 `Object.prototype`이 언제나 프로토타입 체인의 최상단에 존재하게 됩니다.
+
+따라서 **객체에서만 사용할 메서드는 다른 데이터 타입처럼 프로토타입 객체 안에 정의할 수 없습니다.**
+
+**객체에서만 사용할 메서드를 `Object.prototype`내부에 정의한다면 다른 데이터 타입도 해당 메서드를 사용할 수 있게 되기 때문입니다.**
