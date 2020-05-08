@@ -10731,9 +10731,6 @@ html {
   border: none;
   margin-top: 0;
 }
-.card div {
-  font-size: 1.5rem !important;
-}
 .card .level a {
   font-size: 1.3rem !important;
 }
@@ -10742,6 +10739,12 @@ html {
 }
 .card .tag {
   font-size: x-small !important;
+}
+.card .menu-label {
+  font-size: 1.25em !important;
+}
+.card .menu-list {
+  font-size: 1.4rem !important;
 }
 html {
   font-size: 10px;
@@ -10777,7 +10780,7 @@ article.article .article-meta {
 article.article .content {
   color: #000;
   word-wrap: break-word;
-  font-size: 1.6rem;
+  font-size: 1.5rem !important;
 }
 article.article .content h1 {
   font-size: 2em !important;
