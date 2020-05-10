@@ -4,6 +4,15 @@ disqusId: tunas-blog-1
 tags:
   - Core JavaScript
   - JavaScript
+  - constructor
+  - prototype
+  - instance
+  - prototype chain
+  - method override
+  - Object.prototype
+  - prototype 도식
+  - Object static method
+  - multiple prototype chain
 date: 2020-05-05 17:57:53
 categories: Core JavaScript
 toc: true
@@ -17,7 +26,7 @@ widgets:
     position: right
   - type: adsense
     position: right
-      
+
 sidebar:
   right:
     sticky: true
@@ -32,7 +41,7 @@ sidebar:
     * 프로토타입 체인
     * 객체 전용 메서드의 예외사항
     * 다중 프로토타입 체인
-  * [정리](/2020/05/05/prototype-Core-JavaScript/#)
+  * [정리](/2020/05/05/prototype-Core-JavaScript/#point)
 
 <!-- more -->
 
@@ -346,4 +355,65 @@ var p5 = new p1.constructor('사람5'); // Person { name: "사람5" } true
 
 따라서 **객체에서만 사용할 메서드는 다른 데이터 타입처럼 프로토타입 객체 안에 정의할 수 없습니다.**
 
-**객체에서만 사용할 메서드를 `Object.prototype`내부에 정의한다면 다른 데이터 타입도 해당 메서드를 사용할 수 있게 되기 때문입니다.**
+**객체에서만 사용할 메서드를 `Object.prototype`내부에 정의한다면 다른 데이터 타입도 해당 메서드를 사용할 수 있게 되기 때문입니다.**(참조형 데이터뿐 아니라 기본형 데이터도 &#95;&#95;proto&#95;&#95;에 반복적으로 접근하여 도달하는 최상위 객체가 Object.prototype이 됨)
+
+* 이 같은 이유로 객체만을 대상으로 동작하는 **Object 전용 메서드**들은 부득이 `Object.prototype`이 아닌 `Object`에 정적(`static`)메서드로 구현돼 있습니다.
+
+![Object-prototype](/images/Object_prototype.png)
+
+* 한편 `Object.prototype`에는 어떤 데이터에서도 활용할 수 있는 범용적인 메서드들만 있습니다.
+toString, hasOwnProperty, valueOf, isPrototypeOf 등은 모든 `instance`가 직접 호출할 수 있습니다.
+
+------
+### 다중 프로토타입 체인
+
+자바스크립트의 기본 내장 데이터 타입들은 모두 프로토타입 체인 1단계(객체), 2단계(나머지)로 끝나는 경우가 있지만 **사용자가 새롭게 만드는 경우 계속해서 단계를 추가할 수 있습니다.**
+
+`__proto__`를 연결하는 방법은 `__proto__`가 가리키는 대상을
+생성자 함수의 `prototype`이 연결하고자 하는 상위 생성자 함수의 `instance`를 지정해 주면됩니다.
+
+```js 다중 프로토타입 체인
+var Grade = function() {
+  var args = Array.prototype.slice.call(arguments);
+  for (var i = 0; i < args.length; i++) {
+    this[i] = args[i];
+  }
+  this.length = args.length;
+};
+var g = new Grade(100, 80);
+Grade.prototype = [];
+
+```
+
+* `Grade`의 `instance`는 여러개의 인자를 받아 각 순서대로 인덱싱해서 저장합니다. (`유사배열객체`)
+
+
+* `변수 g` 가 `Grade`의 `instance`를 바라봅니다.
+
+
+* `유사배열객체`지만 **배열 메서드를 직접 호출할 수 있게** 만들고자 합니다.
+
+
+* `g.__proto__` 즉, `Grade.prototype`이 배열의 `instance`를 바라보게 해주면 됩니다.
+`Grade.prototype = [];`
+
+
+* `Grade`의 `instance`인 `g`에서 직접 배열 메서드를 사용할수 있게됩니다.
+
+`g`의 `instance`는 프로토타입 체인을 따라 `Grade.prototype`, `Array.prototype`, `Object.prototype`에 접근할 수 있는 **3단계 다중프로토타입 체인 형식**입니다.
+
+------
+<h2 id="point">정리</h2>
+
+* `__proto__`는 생략 가능한 속성이므로 `instance`에서 상위 객체의 `prototype`에 있는 메서드를 직접호출할 수 있습니다.
+
+
+* `Constructor` **프로퍼티는 생성자 함수 자기 자신을 가리킵니다.**
+`instance`에서 **자신의 생성자 함수가 무엇인지 알고자할 때 필요한 수단입니다.**
+
+
+* **참조형 데이터뿐 아니라 기본형 데이터도 &#95;&#95;proto&#95;&#95;에 반복적으로 접근하면 최상위 객체 `Object.prototype`에 도달하게 됩니다.**
+
+
+* `Object.prototype`에는 **모든 데이터 타입에서 사용할 수 있는 범용적인 메서드만 존재합니다.**
+`Object` 전용 메서드는 `Object` 생성자 함수에 정적(`static`)하게 담겨있습니다.
