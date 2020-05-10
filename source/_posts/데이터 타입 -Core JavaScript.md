@@ -6,6 +6,36 @@ categories: Core JavaScript
 tag: 
 - Core JavaScript
 - JavaScript
+- data type
+- primitive type
+- reference type
+- 변수 선언과 식별자
+- memory address
+- 불변값
+- 가변값
+- 중첩객체 nested object
+- 변수 복사
+- 불변 객체 만들기
+- shallow copy
+- deep copy
+- JSON 객체
+- undefined
+- 'null'
+
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+  - type: adsense
+    position: right
+
+sidebar:
+  right:
+    sticky: true
 ---
 
 자바스크립트가 데이터를 처리하는 과정을 살펴봄으로써  

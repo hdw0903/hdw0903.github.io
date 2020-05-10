@@ -4,10 +4,30 @@ date: 2020-03-10 13:52:04
 disqusId: tunas-blog-1
 categories: jQuery
 tag: 
-- jQuery
 - JavaScript
+- jQuery
+- jQuery method
+- jQuery 선택자
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+  - type: adsense
+    position: right
+
+sidebar:
+  right:
+    sticky: true
 ---
 
+1. 속성 조작 메서드
+2. 수치 조작 메서드
+3. 객체 편집 메서드
+4. jQuery 선택자 정리
 
 <!-- more -->
 
@@ -16,81 +36,92 @@ tag:
 
 ### 속성 조작 메서드
 
-*   html() 메서드
+-------
+*   `html()` 메서드
 
-    1. $("요소 선택").html();
+    >1. $("요소 선택").html();
     2. $("요소 선택").html("새 요소");
 
 1.  선택한 요소에 하위 요소들을 불러옵니다.
 2.  선택한 요소에 하위 요소를 모두 지우고 “새 요소”로 바꿉니다
 
-*   text() 메서드
+-------
+*   `text()` 메서드
 
-    1. $("요소 선택").text();
+    >1. $("요소 선택").text();
     2. $("요소 선택").text("새 택스트");
 
 1.  선택한 요소에 포함하는 모든 텍스트을 불러옵니다.
 2.  선택한 요소에 있는 텍스트를 제거하고 “새 텍스트”로 바꿉니다
 
-*   css() 메서드
+-------
+*   `css()` 메서드
 
-    1. $("요소 선택").css("속성");
+    >1. $("요소 선택").css("속성");
     2. $("요소 선택").css("속성","값");
 
 1.  선택한 요소에 스타일(css)속성을 불러옵니다.
 2.  선택한 요소에 스타일(css)속성을 바꾸거나 새 스타일(css)을 추가합니다.
 
-*   attr() 메서드
+-------
+*   `attr()` 메서드
 
-    1. $("요소 선택").attr("속성");
+    >1. $("요소 선택").attr("속성");
     2. $("요소 선택").attr("속성","새 값");
 
 1.  선택한 요소에 지정한 속성 값을 불러옵니다.
 2.  선택한 요소에 지정한 속성 값을 새로 생성하거나 변경합니다.
 
-*   removeAttr() 메서드
+-------
+*   `removeAttr()` 메서드
 
-    1. $("요소 선택").revomeAttr("속성");
+    >1. $("요소 선택").revomeAttr("속성");
 
 1.  선택한 요소에 지정한 속성을 제거합니다.
 
-*   addClass() 메서드
+-------
+*   `addClass()` 메서드
 
-    1. $("요소 선택").addClass("클래스 값");
+    >1. $("요소 선택").addClass("클래스 값");
 
 1.  선택한 요소에 새 클래스(class)를 생성합니다.
 
-*   removeClass() 메서드
+-------
+*   `removeClass()` 메서드
 
-    1. $("요소 선택").removeClass("클래스 값");
+    >1. $("요소 선택").removeClass("클래스 값");
 
 1.  선택한 요소에 지정한 클래스를 삭제합니다.
 
-*   toggleClass() 메서드
+-------
+*   `toggleClass()` 메서드
 
-    1. $("요소 선택").toggleClass("클래스 값");
+    >1. $("요소 선택").toggleClass("클래스 값");
 
 1.  선택한 요소에 지정한 클래스의 존재 여부에 따라  
     존재 하지않으면 생성하고, 존재 하면 삭제합니다.
 
-*   hasClass() 메서드
+-------
+*   `hasClass()` 메서드
 
-    1. $("요소 선택").hasClass("클래스 값");
+    >1. $("요소 선택").hasClass("클래스 값");
 
 1.  선택한 요소에 지정한 클래스 존재 여부의 따라  
     존재할 시 true 아닐시 false를 반환합니다.
 
-*   val() 메서드
+-------
+*   `val()` 메서드
 
-    1. $("입력 요소 선택").val();
+    >1. $("입력 요소 선택").val();
     2. $("입력 요소 선택").val("새 값");
 
 1.  선택한 입력 요소의 value 속성 값을 가져옵니다.
 2.  선택한 입력 요소의 value 속성에 새 값을 입력하거나 변경합니다.
 
-*   prop() 메서드
+-------
+*   `prop()` 메서드
 
-    1. $("요소 선택").prop("속성");
+    >1. $("요소 선택").prop("속성");
     2. $("요소 선택").prop("속성","새 값");
     3. $("요소 선택").prop("[tagname | nodeType | selectedIndex]");
 
@@ -121,36 +152,35 @@ tag:
 
 ### 객체 편집 메서드
 
+-------
+*   **before() / after()** 메서드
 
-*   before() / after() 메서드
-
-    1. $("요소 선택").before(새 요소);
+    >1. $("요소 선택").before(새 요소);
     2. $("요소 선택").after(새 요소);
 
 1.  선택한 요소의 이전 위치에 새 요소 생성
 2.  선택한 요소의 다음 위치에 새 요소 생성
 
-*   append() / appendTo() / prepend() / prependTo() 메서드
+-------
+*   **append() / appendTo() / prepend() / prependTo()** 메서드
 
-    1. $("요소 선택").append("새 요소");
+    >1. $("요소 선택").append("새 요소");
     // 선택한 요소 내의 마지막 위치에 새 요소를 추가합니다.
-    
-    1. $("새 요소").appendTo("요소 선택");
+    >2. $("새 요소").appendTo("요소 선택");
     // 새 요소를 선택한 요소 내의 마지막 위치에 추가합니다.
-    
-    2. $("요소 선택").prepend("새 요소");
+    >3. $("요소 선택").prepend("새 요소");
     // 선택한 요소 내의 앞 위치에 새 요소를 추가합니다.
-    
-    2. $("새 요소").prependTo("요소 선택");
+    >4. $("새 요소").prependTo("요소 선택");
     // 새 요소를 선택한 요소 내의 앞 위치에 추가합니다.
 
 to : ~을 ~에게  
 영어 뜻을 잘생각하여 사용해야 합니다.
 
-*   inserBefore() / inserAfter() / clone() 메서드
+-------
+*   **inserBefore() / inserAfter() / clone()** 메서드
 
-    1. $("새 요소").inserBefore("요소 선택");
-    1. $("새 요소").inserAfter("요소 선택");
+    >1. $("새 요소").inserBefore("요소 선택");
+    2. $("새 요소").inserAfter("요소 선택");
     3. $("요소 선택").clone(ture);
     4. $("요소 선택").clone(false);
 
@@ -159,25 +189,28 @@ to : ~을 ~에게
 3.  선택한 요소의 하위 요소까지 복제합니다. ()값 작성안할시 기본 true값 입니다.
 4.  선택한 요소의 하위 요소를 제외하고 복제합니다.
 
-*   empty() / remove() 메서드
+-------
+*   **empty() / remove()** 메서드
 
-    1. $("요소 선택").empty();
+    >1. $("요소 선택").empty();
     2. $("요소 선택").remove();
 
 1.  선택한 요소에 모든 하위 요소를 비웁니다.
 2.  선택한 요소를 삭제 합니다.
 
-*   replaceAll() / replaceWith() 메서드
+-------
+*   **replaceAll() / replaceWith()** 메서드
 
-    1. $("새 요소").replaceAll("요소 선택");
+    >1. $("새 요소").replaceAll("요소 선택");
     2. $("요소 선택").replaceWith("새 요소");
 
 1.  replaceAll() 메서드는 선택한 요소를 새 HTML 요소로 바꿉니다.
 2.  replaceWith() 메서드는 선택한 요소를 새 내용으로 바꿉니다.
 
-*   unwrap() / wrap() / wrapAll() / wrapInner() 메서드
+-------
+*   **unwrap() / wrap() / wrapAll() / wrapInner()** 메서드
 
-    1. $("요소 선택").unwrap();
+    >1. $("요소 선택").unwrap();
     2. $("요소 선택").wrap("새 요소");
     3. $("요소 선택").wrapAll("새 요소");
     4. $("요소 선택").wrapInner("새 요소");

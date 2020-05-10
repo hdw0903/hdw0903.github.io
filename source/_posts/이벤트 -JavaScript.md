@@ -5,13 +5,33 @@ disqusId: tunas-blog-1
 categories: JavaScript
 tag: 
 - JavaScript
+- event
+- event handler
+- mouse event
+- keybord event
+- etc. event
+- addEventListener
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+  - type: adsense
+    position: right
+
+sidebar:
+  right:
+    sticky: true
 ---
 
 * * *
 
-브라우저에서 유저가 취하는 모든 동작을 이벤트라 합니다.  
+브라우저에서 유저가 취하는 모든 동작을 `이벤트`라 합니다.  
 이벤트가 발생했을 때 자바스크립트 실행문을 실행하는 것을  
-이벤트 핸들러라 합니다.
+`이벤트 핸들러`라 합니다.
 
 <!-- more -->
 
@@ -19,19 +39,19 @@ tag:
 
 ### 마우스 이벤트
 
-*   onmouseover  
+*   `onmouseover`  
     마우스가 지정한 요소에 올라갔을 때 발생합니다.
     
-*   onmouseout  
+*   `onmouseout`
     마우스가 지정한 요소를 벗어났을 때 발생합니다.
     
-*   onmousemove  
+*   `onmousemove`  
     마우스가 지정한 요소 영역에서 움직일 때 발생합니다.
     
-*   onclick  
+*   `onclick`  
     마우스가 지정한 요소를 클릭했을 때 발생합니다.
     
-*   ondbclick  
+*   `ondbclick`  
     마우스가 지정한 요소를 더블 클릭 했을 때 발생합니다.
     
 
@@ -39,13 +59,13 @@ tag:
 
 ### 키보드 이벤트
 
-*   onkeypress  
+*   `onkeypress`  
     지정한 요소에서 키보드가 눌렸을 때 발생합니다.
     
-*   onkeydown  
+*   `onkeydown`  
     지정한 요소에서 키보드를 눌렀을 때 발생합니다.
     
-*   onkeyup  
+*   `onkeyup`  
     지정한 요소에서 키보드를 눌렀다 떼었을 때 발생합니다.
     
 
@@ -53,31 +73,31 @@ tag:
 
 ### 기타 이벤트
 
-*   onfocus  
+*   `onfocus`  
     지정한 요소에 focus 되면 발생합니다.
     
-*   onblur  
+*   `onblur`  
     지정한 요소에 focus가 다른 요소로 이동되어 focus를 잃으면 발생합니다.
     
-*   onchange  
+*   `onchange`
     지정한 요소에 value 속성값이 바뀌고 focus가 이동되었을 때 발생합니다.
     
-*   onload  
+*   `onload`  
     지정한 요소의 하위 요소를 모두 로딩 했을 때 발생합니다.
     
-*   onunload  
+*   `onunload`  
     문서를 닫거나 다른 문서로 이동했을 때 발생합니다.
     
-*   onsubmit  
+*   `onsubmit`  
     폼 요소에 전송 버튼을 눌렀을 때 발생합니다.
     
-*   onreset  
+*   `onreset`  
     폼 요소에 취소 버튼을 눌렀을 때 발생합니다.
     
-*   onresize  
+*   `onresize` 
     지정된 요소의 크기가 변경되었을 때 발생합니다.
     
-*   onerror  
+*   `onerror`  
     문서 객체가 로드되는 동안 문제가 발생되었을 때 발생합니다.
     
 
@@ -168,16 +188,16 @@ alert(‘실행문2’); // 실행 됨
 
 **addEventListener**
 
-    document.getElementById("myBtn").addEventListener("click", myFunction);
-    document.getElementById("myBtn").addEventListener("click", someOtherFunction);
+>document.getElementById("myBtn").addEventListener("click", myFunction);
+document.getElementById("myBtn").addEventListener("click", someOtherFunction);
 
 기존 이벤트를 덮어 쓰지 않고  
 동일한 요소에 많은 이벤트를 추가 할 수 있습니다.
 
-이 예제는 동일한 < button> 요소에  
+이 예제는 동일한 `< button>` 요소에  
 두 개의 클릭 이벤트를 추가하는 방법을 보여줍니다.
 
-잘못된 예시 처럼 function에 alert 실행문 1,2 가 있더라도  
+잘못된 예시 처럼 `function`에 `alert 실행문 1,2` 가 있더라도  
 경고문(실행문1)이 뜨고 난뒤 두번째 경고문 (실행문2)가 나타나게 합니다.
 
 *   IE 8 이하 브라우저에서는 **attachEvent**를 사용합니다.

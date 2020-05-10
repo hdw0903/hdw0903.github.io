@@ -4,8 +4,37 @@ disqusId: tunas-blog-1
 tags:
   - Core JavaScript
   - JavaScript
+  - execution context
+  - hoisting
+  - this
+  - VariableEnvironment
+  - LexicalEnvironment
+  - environmentRecord
+  - stack
+  - queue
+  - function expression
+  - scope
+  - scope chain
+  - outerEnvironmentReference
+  - Global variable
+  - Local variable
+  
 date: 2020-04-26 17:50:25
 categories: Core JavaScript
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+  - type: adsense
+    position: right
+
+sidebar:
+  right:
+    sticky: true
 ---
 
 실행 컨텍스트(`execution context`)는 실행할 코드에 제공할 환경 정보를 모아놓은 객체로,

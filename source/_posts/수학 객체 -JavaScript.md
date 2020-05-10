@@ -5,6 +5,22 @@ disqusId: tunas-blog-1
 categories: JavaScript
 tag: 
 - JavaScript
+- Math Object
+-
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+  - type: adsense
+    position: right
+
+sidebar:
+  right:
+    sticky: true
 ---
 
 Javascript에서 더하기, 곱하기, 나누기 등등 은 산술연산자를 사용하면 됩니다.

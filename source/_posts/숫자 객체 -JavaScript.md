@@ -5,14 +5,30 @@ disqusId: tunas-blog-1
 categories: JavaScript
 tag: 
 - JavaScript
+- Number Object
+- Number Object method
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+  - type: adsense
+    position: right
+
+sidebar:
+  right:
+    sticky: true
 ---
 
 * * *
 
-    기본형 
-        var num1 = new Number(값);
-        또는 var num1 = 값;
-        //new 키워드 없이 값만 입력해도 객체 생성가능.
+>기본형 
+    var num1 = new Number(값);
+    또는 var num1 = 값;
+//new 키워드 없이 값만 입력해도 객체 생성가능.
 
 * * *
 
