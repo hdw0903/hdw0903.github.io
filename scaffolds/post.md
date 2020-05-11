@@ -7,12 +7,13 @@ tags:
 - 
 
 toc: true
+
 widgets:
   - type: toc
     position: right
-  - type: category
+  - type: categories
     position: right
-  - type: tagcloud
+  - type: tags
     position: right
   - type: adsense
     position: right

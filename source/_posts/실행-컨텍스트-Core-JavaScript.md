@@ -22,12 +22,13 @@ tags:
 date: 2020-04-26 17:50:25
 categories: Core JavaScript
 toc: true
+
 widgets:
   - type: toc
     position: right
-  - type: category
+  - type: categories
     position: right
-  - type: tagcloud
+  - type: tags
     position: right
   - type: adsense
     position: right

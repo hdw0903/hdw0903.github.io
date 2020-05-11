@@ -7,13 +7,15 @@ tag:
 - JavaScript
 - Number Object
 - Number Object method
+
 toc: true
+
 widgets:
   - type: toc
     position: right
-  - type: category
+  - type: categories
     position: right
-  - type: tagcloud
+  - type: tags
     position: right
   - type: adsense
     position: right
@@ -30,10 +32,9 @@ sidebar:
     또는 var num1 = 값;
 //new 키워드 없이 값만 입력해도 객체 생성가능.
 
-* * *
-
 <!-- more -->
 
+------
 ### Number 객체의 속성
 
 | 속성               | 설명                     |
