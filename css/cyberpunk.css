@@ -11061,6 +11061,7 @@ footer.footer .level-end .field {
   line-height: 1.5em;
   font-weight: normal;
   background-color: #050a0e;
+  min-height: 3rem;
 }
 .searchbox .searchbox-input-container {
   display: flex;
