@@ -3,7 +3,24 @@ title: 클로저 -Core JavaScript
 disqusId: tunas-blog-1
 tags:
   - Core JavaScript
+  - 코어 자바스크립트
   - JavaScript
+  - Object. freeze
+  - 동결 객체
+  - 부분 동결 객체
+  - partially applied function
+  - 부분 적용 함수
+  - 커링 함수
+  - 접근 권한 제어
+  - 고차 함수
+  - bind
+  - forEach
+  - 클로저
+  - Closure
+  - GC
+  - LexicalEnvironment
+  - outerEnvironmentReference
+  - 가비지 컬렉터
 date: 2020-05-03 15:56:17
 categories: Core JavaScript
 ---
@@ -24,7 +41,7 @@ categories: Core JavaScript
 <h2 id="closure">클로저의 의미 및 원리 이해</h2>
 
 클로저(`Closure`)는 여러 함수형 프로그래밍 언어에서 등장하는 보편적인 특성입니다.
-자바스크립트 고유의 개념이 아니라서 ECMAScript 명세에서도 클로저의 정의를 다루지 않고 있고, 다양한 문헌에서 제각각 클로저를 다르게 정의 또는 설명하고 있습니다.
+자바스크립트 고유의 개념이 아니라서 `ECMAScript` 명세에서도 클로저의 정의를 다루지 않고 있고, 다양한 문헌에서 제각각 클로저를 다르게 정의 또는 설명하고 있습니다.
 
 다양한 서적에서 클로저를 한 문장으로 요약해서 설명하는 부분들을 소개하면 다음과 같습니다.
     * 자신을 내포하는 함수의 컨텍스트에 접근할 수 있는 함수
