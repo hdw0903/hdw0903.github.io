@@ -9,7 +9,15 @@
 
     <url>
         <loc>https://hdw0903.github.io/2020/05/11/%ED%81%B4%EB%9E%98%EC%8A%A4-Class-Core-JavaScript/</loc>
-        <lastmod>2020-05-11T13:41:35.654Z</lastmod>
+        <lastmod>2020-05-12T12:44:40.068Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/</loc>
+        <lastmod>2020-05-12T11:47:58.772Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -106,14 +114,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/03/16/Strict%20mode%20-ECMAScript/</loc>
         <lastmod>2020-05-06T13:11:57.133Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/</loc>
-        <lastmod>2020-05-04T13:40:42.819Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
