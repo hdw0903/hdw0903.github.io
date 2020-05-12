@@ -11319,12 +11319,13 @@ figure.highlight .section {
   right: 5% !important;
   background-color: #f4c532 !important;
   z-index: 999 !important;
+  opacity: 0.8 !important;
 }
 #back-to-top.is-rounded {
   border-radius: 50%;
 }
 #back-to-top.fade-in {
-  opacity: 1;
+  opacity: 0.8 !important;
 }
 #back-to-top.rise-up {
   transform: translateY(0);
