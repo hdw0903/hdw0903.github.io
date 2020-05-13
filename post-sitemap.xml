@@ -8,8 +8,40 @@
     </url>
 
     <url>
-        <loc>https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/</loc>
-        <lastmod>2020-05-13T10:45:43.496Z</lastmod>
+        <loc>https://hdw0903.github.io/2020/03/08/DOM%20%EB%AC%B8%EC%84%9C%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
+        <lastmod>2020-05-13T13:59:44.740Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/20/Destructuring%20-ECMAScript/</loc>
+        <lastmod>2020-05-13T13:52:44.322Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/01/Class%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-13T13:48:56.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/04/BOM%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
+        <lastmod>2020-05-13T12:37:23.595Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/17/Arrow%20-ECMAScript/</loc>
+        <lastmod>2020-05-13T12:17:02.399Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +49,15 @@
 
     <url>
         <loc>https://hdw0903.github.io/2020/03/30/Array%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-05-12T13:56:40.265Z</lastmod>
+        <lastmod>2020-05-13T11:53:55.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/05/03/%ED%81%B4%EB%A1%9C%EC%A0%80-Core-JavaScript/</loc>
+        <lastmod>2020-05-13T10:45:43.496Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -282,46 +322,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/03/10/this%20Keyword%20-JavaScript/</loc>
         <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/17/Arrow%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/04/BOM%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
-        <lastmod>2020-04-25T09:57:08.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/01/Class%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/08/DOM%20%EB%AC%B8%EC%84%9C%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
-        <lastmod>2020-04-25T09:57:08.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/20/Destructuring%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.465Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
