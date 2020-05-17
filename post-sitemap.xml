@@ -8,48 +8,8 @@
     </url>
 
     <url>
-        <loc>https://hdw0903.github.io/2020/03/16/Strict%20mode%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T13:54:06.734Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/20/Spread%20%EC%97%B0%EC%82%B0%EC%9E%90%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T13:53:35.758Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/13/Set%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T13:37:42.962Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/09/return%20%EB%AC%B8,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%20%ED%98%B8%EC%B6%9C%20-JavaScript/</loc>
-        <lastmod>2020-05-14T13:22:13.536Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/03/RegExp%20%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%20%EA%B0%9D%EC%B2%B4%20-JavaScript/</loc>
-        <lastmod>2020-05-14T13:15:34.887Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/05/05/prototype-Core-JavaScript/</loc>
-        <lastmod>2020-05-14T12:59:57.836Z</lastmod>
+        <loc>https://hdw0903.github.io/2020/03/26/Number%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:55:43.900Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -57,7 +17,175 @@
 
     <url>
         <loc>https://hdw0903.github.io/2020/04/14/Promise%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T12:55:57.728Z</lastmod>
+        <lastmod>2020-05-17T09:55:34.088Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/05/05/prototype-Core-JavaScript/</loc>
+        <lastmod>2020-05-17T09:55:21.654Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/03/RegExp%20%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%20%EA%B0%9D%EC%B2%B4%20-JavaScript/</loc>
+        <lastmod>2020-05-17T09:55:14.092Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/09/return%20%EB%AC%B8,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%20%ED%98%B8%EC%B6%9C%20-JavaScript/</loc>
+        <lastmod>2020-05-17T09:55:08.089Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/13/Set%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:55:01.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/20/Spread%20%EC%97%B0%EC%82%B0%EC%9E%90%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:54:51.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/16/Strict%20mode%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:54:46.904Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/02/String%20%EB%AC%B8%EC%9E%90%20%EA%B0%9D%EC%B2%B4%20-JavaScript/</loc>
+        <lastmod>2020-05-17T09:54:40.941Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/06/Symbol%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:54:30.938Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/09/Symbol%20%EB%A9%94%EC%84%9C%EB%93%9C%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:54:21.669Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/29/String%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:54:10.734Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/06/Symbol%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:43:14.103Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/29/Template%20%EB%A6%AC%ED%84%B0%EB%84%90%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:42:41.843Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/10/this%20Keyword%20-JavaScript/</loc>
+        <lastmod>2020-05-17T09:42:30.563Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/27/this-Core-JavaScript/</loc>
+        <lastmod>2020-05-17T09:42:20.802Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/13/WeakMap%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:42:05.943Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/04/14/WeakSet%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:38:53.307Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/16/%ED%82%A4%EC%9B%8C%EB%93%9C,%20%EB%B8%94%EB%A1%9D%20%EC%8A%A4%EC%BD%94%ED%94%84%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:30:37.900Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/04/BOM%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
+        <lastmod>2020-05-17T09:29:33.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/18/Iteration%20-ECMAScript/</loc>
+        <lastmod>2020-05-17T09:28:36.428Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/09/function%20%ED%95%A8%EC%88%98%20-JavaScript/</loc>
+        <lastmod>2020-05-17T09:27:53.127Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/02/25/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EC%84%A0%ED%83%9D%EB%AC%B8/</loc>
+        <lastmod>2020-05-17T09:25:56.845Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -74,14 +202,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/03/31/Generator%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
         <lastmod>2020-05-14T11:32:50.646Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/26/Number%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T11:20:16.285Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -112,24 +232,8 @@
     </url>
 
     <url>
-        <loc>https://hdw0903.github.io/2020/03/18/Iteration%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T09:55:07.605Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://hdw0903.github.io/2020/03/09/Global%20Variable%20%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98%20%EC%99%80%20Local%20Variable%20%EC%A7%80%EC%97%AD%EB%B3%80%EC%88%98/</loc>
         <lastmod>2020-05-14T09:37:56.767Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/16/%ED%82%A4%EC%9B%8C%EB%93%9C,%20%EB%B8%94%EB%A1%9D%20%EC%8A%A4%EC%BD%94%ED%94%84%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T09:33:58.393Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -162,22 +266,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/04/01/Class%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
         <lastmod>2020-05-14T09:27:32.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/04/BOM%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
-        <lastmod>2020-05-13T16:22:33.228Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/09/function%20%ED%95%A8%EC%88%98%20-JavaScript/</loc>
-        <lastmod>2020-05-13T16:12:31.922Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -242,14 +330,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/02/24/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EC%97%B0%EC%82%B0%EC%9E%90/</loc>
         <lastmod>2020-05-12T13:14:56.427Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/02/25/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EC%84%A0%ED%83%9D%EB%AC%B8/</loc>
-        <lastmod>2020-05-12T13:09:28.952Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -330,86 +410,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/03/10/%EC%84%A0%ED%83%9D%EC%9E%90%20-jQuery/</loc>
         <lastmod>2020-05-11T09:57:06.963Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/13/WeakMap%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-05-06T13:30:55.904Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/27/this-Core-JavaScript/</loc>
-        <lastmod>2020-05-04T12:54:06.982Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/02/String%20%EB%AC%B8%EC%9E%90%20%EA%B0%9D%EC%B2%B4%20-JavaScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/29/String%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/09/Symbol%20%EB%A9%94%EC%84%9C%EB%93%9C%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/06/Symbol%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/06/Symbol%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/29/Template%20%EB%A6%AC%ED%84%B0%EB%84%90%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/04/14/WeakSet%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/10/this%20Keyword%20-JavaScript/</loc>
-        <lastmod>2020-04-25T09:57:08.469Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
