@@ -10722,6 +10722,9 @@ html {
 .card + .column-right-shadow {
   margin-top: 1.5rem;
 }
+.card .card-content .breadcrumb {
+  font-size: 1.25rem !important;
+}
 .card .card-image {
   overflow: hidden;
   border-top-left-radius: 0;
