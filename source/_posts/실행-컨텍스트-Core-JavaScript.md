@@ -18,6 +18,7 @@ tags:
   - outerEnvironmentReference
   - Global variable
   - Local variable
+  - 코어 자바스크립트
   
 date: 2020-04-26 17:50:25
 categories: Core JavaScript

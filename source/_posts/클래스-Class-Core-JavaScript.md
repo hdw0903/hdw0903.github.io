@@ -15,6 +15,7 @@ tags:
   - 빈 함수
   - Object.create
   - Object.freeze
+  - ES5 ES6 클래스 문법 비교
 toc: true
 widgets:
   - type: toc

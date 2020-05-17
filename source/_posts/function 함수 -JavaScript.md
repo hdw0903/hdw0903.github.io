@@ -4,14 +4,31 @@ date: 2020-03-09 08:53:26
 disqusId: tunas-blog-1
 categories: JavaScript
 tag: 
-- JavaScript
+  - JavaScript
+  - function
+  - function Hoisting
+  - Self-invoking functions
+  - Arrow function
+  - 함수
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 데이터를 저장할 때는 변수를 선언하여 저장했습니다.  
-하지만 변수에는 데이터만 저장할 수 있고,  
-실행문을 저장할 수 없습니다.  
-함수를 사용하면 실행문을 메모리에 저장했다가  
-필요할 때 마다 호출하여 사용할 수 있습니다.
+하지만 변수에는 데이터만 저장할 수 있고, 실행문을 저장할 수 없습니다.  
+
+함수를 사용하면 실행문을 메모리에 저장했다가 필요할 때 마다 호출하여 사용할 수 있습니다.
 
 <!-- more -->
 
@@ -47,8 +64,8 @@ tag:
 
 #### 1.2 표현식
 
-표현식을 사용하여 정의 할 수도 있습니다.  
-함수 표현식은 변수에 저장 될 수 있습니다
+표현식을 사용하여 정의할 수 도 있습니다.  
+함수 표현식은 변수에 저장될 수 있습니다
 
 > var x = function (a, b) {return a * b};  
 > var z = x(4, 3); // 12

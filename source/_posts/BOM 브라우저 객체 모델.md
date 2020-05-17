@@ -4,16 +4,48 @@ date: 2020-03-04 10:18:19
 categories: JavaScript
 disqusId: tunas-blog-1
 tag: 
-- JavaScript
+  - JavaScript
+  - BOM
+  - window
+  - window method
+  - window open
+  - specs
+  - moveTo 
+  - moveBy 
+  - resizeTo
+  - resizeBy
+  - senInterval
+  - clearInterval
+  - setTimeout
+  - clearTimeout
+  - screen
+  - location
+  - history
+  - navigator
+  - 브라우저 객체 모델
+
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 브라우저에 내장된 객체를
 
 **브라우저 객체(BOM: Browser Object Model)**라고 합니다.
 
-window는 브라우저 객체의 최상위 객체 입니다.
+`window`는 브라우저 객체의 최상위 객체 입니다.
 
-window 객체는 여러가지 하위 객체를 포함하고 있습니다.
+`window` 객체는 여러가지 하위 객체를 포함하고 있습니다.
 
 <!-- more -->
 
@@ -46,11 +78,11 @@ window 객체는 여러가지 하위 객체를 포함하고 있습니다.
 
 ### open()
 
-open()는 새 브라우저 창을 띄울 때 사용합니다.  
+`open()`는 **새 브라우저 창을 띄울 때 사용합니다.**  
 사이트에서 팝업 창을 띄울 때 자주 사용되는 메서드 입니다.
 
-    기본형
-    window.open("url","name","specs,replace");
+>기본형
+window.open("url","name","specs,replace");
 
 사용예시
 
@@ -63,40 +95,40 @@ window.open("https://www.google.com","google",
 
 #### 1.1. 반환값(ret)
 
-새로 만들어진 창 객체가 반환됩니다.
+새로 만들어진 창 객체가 반환됩니다. 창의 생성에 실패하면 `null`을 반환합니다.
 
-창의 생성에 실패하면 null을 반환합니다.
-
-이 객체를 통해서 새창을 제어할 수 있습니다.
-
-예로 ret.close(); 로 창을 닫을 수 있습니다.
+이 객체를 통해서 새창을 제어할 수 있습니다. 예로 `ret.close();` 로 창을 닫을 수 있습니다.
 
 #### 1.2. url
 
-새창에 보여질 주소 입니다.
+새창에 보여질 주소 입니다. 선택적인 값으로 비워두면 빈창(`about:blank`)이 보입니다.
 
-선택적인 값으로 비워두면 빈창(about:blank)이 보입니다.
-
-    빈 창을 열고 내용을 동적으로 적을 수 도 있습니다.
+빈 창을 열고 내용을 동적으로 적을 수 도 있습니다.
+```js
     var win = window.open("", "PopupWin", "width=500,height=600");
     win.document.write("<p>새창에 표시될 내용 입니다.</p>");
+```
 
 #### 1.3. name
 
-새로 열릴 참의 속성 또는 창의 이름을 지정합니다.
+새로 열릴 창의 속성 또는 창의 이름을 지정합니다.
 
-선택적인 값으로 기본값은 “_blank” 입니다.
+선택적인 값으로 기본값은 `“_blank”` 입니다.
 
 사용 가능한 값을 다음과 같습니다.
 
 *   _blank : 새 창에 열립니다. 이것이 기본값입니다.
+
     
 *   _parent : 부모 프레임에 열립니다.
-    
+
+
 *   _self : 현재 페이지를 대체합니다.
-    
+
+
 *   _top : 로드된 프레임셋을 대체합니다.
-    
+
+
 *   name(임의의 이름) : 새 창이 열리고 창의 이름을 지정합니다.  
     동일한 이름에 다시 open() 을 하면 기존의 열린창의 내용이 바뀝니다.  
     다른 이름을 사용하면 또다른 새창이 열립니다.
@@ -124,7 +156,7 @@ window.open("https://www.google.com","google",
 
 #### 1.5 replace
 
-히스토리 목록에 새 항목을 만들지 현재 항목을 대체할지 지정합니다.
+**히스토리 목록에 새 항목을 만들지 현재 항목을 대체할지 지정합니다.**
 
 *   true : 현재 히스토리를 대체합니다.
     
@@ -139,75 +171,76 @@ window.open("https://www.google.com","google",
 
 * * *
 
-* moveTo() 메서드는 브라우저 창의 위치를 이동시킬때 사용합니다.
+* `moveTo()` 메서드는 **브라우저 창의 위치를 이동시킬때 사용합니다.**
 
-    moveTo(100,200);
-    //브라우저 창을 x100,y200 위치에서 뜨게 합니다.
-
-* * *
-
-* moveBy() 메서드는 현재 브라우저 창의 위치를 기준으로 이동 시킵니다.
-
-    moveBy(100,200);
-    //실행될 때 마다 x100,y200만큼 이동합니다.
+>moveTo(100,200);
+//브라우저 창을 x100,y200 위치에서 뜨게 합니다.
 
 * * *
 
-* resizeTo() 메서드는 브라우저 창의 너비와 높이를 바꿀때 사용합니다.
+* `moveBy()` 메서드는 **현재 브라우저 창의 위치를 기준으로 이동 시킵니다.**
 
-    resizeTo(200,300);
-    //width 200px, height 300px로 바꿉니다.
-
-* * *
-
-* resizeBy() 메서드는 현재 창을 기준으로 지정된 픽셀 수만큼  
-창의 오른쪽 아래 모서리를 이동합니다.  
-**왼쪽 상단 모서리는 이동하지 않습니다 (원래 좌표로 유지됨).**
-
-    resizeBy(200,300);
-    //오른쪽 아래 모서리를 width 200px, height 300px 만큼 늘립니다.
+>moveBy(100,200);
+//실행될 때 마다 x100,y200만큼 이동합니다.
 
 * * *
 
+* `resizeTo()` 메서드는 **브라우저 창의 너비와 높이를 바꿀때 사용합니다.**
+
+>resizeTo(200,300);
+//width 200px, height 300px로 바꿉니다.
+
+* * *
+
+* `resizeBy()` 메서드는 **현재 창을 기준으로 지정된 픽셀 수만큼 창의 오른쪽 아래 모서리를 이동합니다.**  
+    **왼쪽 상단 모서리는 이동하지 않습니다 (원래 좌표로 유지됨).**
+
+>resizeBy(200,300);
+//오른쪽 아래 모서리를 width 200px, height 300px 만큼 늘립니다.
+
+
+------
 ### senInterval(), clearInterval()
 
-* * *
+------
+#### setInterval()
 
-**setInterval()**
 
-*   setInterval() 메소드는 function을 호출하거나
-    
+>기본형
+var 참조변수=setInterval(function, milliseconds, param1, param2, ...)
+
+*   `setInterval()` 메소드는 `function`을 호출하거나    
     일정한 간격 (밀리 초)으로 실행문을 반복하여 실행시킬 때 사용합니다.
     
-*   setInterval() 메소드는 clearInterval()이 호출되거나
+
+*   `setInterval()` 메소드는 `clearInterval()`이 호출되거나    
+    `window`창이 닫힐 때까지 계속됩니다.
     
-    window창이 닫힐 때까지 계속됩니다.
+
+*   `setInterval()`에 의해 리턴 된 `ID` 값은    
+    `clearInterval()` 메소드의 매개 변수로 사용됩니다.
+
     
-*   setInterval()에 의해 리턴 된 ID 값은
+*   지정된 밀리 초 후에 함수를 한 번만 실행하려면 `setTimeout()` 메소드를 사용합니다.
     
-    clearInterval() 메소드의 매개 변수로 사용됩니다.
-    
-*   지정된 밀리 초 후에 함수를 한 번만 실행하려면 setTimeout() 메소드를 사용합니다.
-    
+
 *   1000ms = 1 초
     
+
 *   4.0버젼 이전의 IE,Opera에서 실행되지 않을 수 있습니다.
     
 
-    기본형
-    var 참조변수=setInterval(function, milliseconds, param1, param2, ...)
-
-#### 1.1 function
+##### 1.1 function
 
 필수 항목입니다. 실행될 기능(스크립트 실행문)항목 입니다.
 
-#### 1.2 milliseconds
+##### 1.2 milliseconds
 
 필수 할목입니다. 코드 실행 빈도에 대한 간격 (밀리 초)입니다.
 
 값이 10보다 작은 경우 값 10이 사용됩니다.
 
-#### 1.3 param
+##### 1.3 param
 
 선택 옵션입니다.
 
@@ -216,11 +249,11 @@ window.open("https://www.google.com","google",
 
 * * *
 
-**clearInterval()**
+#### clearInterval()
 
-clearInterval() 메소드는 setInterval()로 설정된 타이머를 지웁니다.
+`clearInterval()` 메소드는 `setInterval()`로 설정된 타이머를 지웁니다.
 
-*   clearInterval() 메소드를 사용하려면 setInterval() 메소드를 작성할 때  
+*   `clearInterval()` 메소드를 사용하려면 `setInterval()` 메소드를 작성할 때  
     변수를 선언 해줘야 합니다.
 
 ```js
@@ -236,39 +269,33 @@ clearInterval(myVar);
 
 * * *
 
-setTimeout() 메서드는 일정한 간격 후 스크립트 실행문을
+`setTimeout()` 메서드는 일정한 간격 후 스크립트 실행문을
 
 **단 한번만 실행시킵니다.**
 
-반복되길 원하면 setInterval()을 사용합니다.
+반복되길 원하면 `setInterval()`을 사용합니다.
 
-setTimeout()변수가 실행되지 않길 원하면 clearTimeout()을 사용합니다.
+`setTimeout()`변수가 실행되지 않길 원하면 `clearTimeout()`을 사용합니다.
 
-* * *
+>기본형
+var(참조변수) = setTimeout(function, milliseconds, param1, param2, ...)
 
-    기본형
-    var(참조변수)=setTimeout(function, milliseconds, param1, param2, ...)
-
-* * *
-
-setTimeout()의 milliseconds는  
-코드를 실행하기전에 대기할 밀리 초를 뜻합니다.  
-setInterval()의 mliiiseconds과 다르게 생략 할 수 있습니다.  
+`setTimeout()`의 `milliseconds`는 코드를 실행하기전에 대기할 밀리 초를 뜻합니다.  
+`setInterval()`의 `mliiiseconds`과 다르게 생략 할 수 있습니다.  
 생략하게 되면 0값을 갖게되어 바로 실행됩니다.
 
 * * *
 
-clearTimeout() 메서드는 아직 실행 되지않은 setTimeout()을 취소합니다.
+`clearTimeout()` 메서드는 아직 실행 되지않은 `setTimeout()`을 취소합니다.
 
-    clearTimeout(id_of_settimeout);
+>clearTimeout(id_of_settimeout);
 
-* * *
-
+------
 ### screen
 
-screen객체는 사용자의 모니터 정보(속성)을 제공하는 객체입니다.
+`screen`객체는 사용자의 모니터 정보(속성)을 제공하는 객체입니다.
 
-    screen.속성; 으로 사용합니다.
+> screen.속성; 으로 사용합니다.
 
 
 | 속성        | 설명                                              |
@@ -284,16 +311,16 @@ screen객체는 사용자의 모니터 정보(속성)을 제공하는 객체입�
 
 ### location
 
-location 객체는 사용자 브라우저 주소창에 url정보(속성)와
+`location` 객체는 사용자 브라우저 주소창에 url정보(속성)와
 
 새로고침 기능(메서드)를 제공하는 객체 입니다.
 
-    location.속성;
-    또는
-    location.메서드() 으로 사용합니다.
+>location.속성;
+또는
+location.메서드() 으로 사용합니다.
 
-
-**location 객체 속성**
+------
+#### location 객체 속성
 
 | 속성     | 설명                                                       |
 |----------|------------------------------------------------------------|
@@ -307,8 +334,8 @@ location 객체는 사용자 브라우저 주소창에 url정보(속성)와
 | protocol | URL의 **프로토콜**을 설정하거나 반환합니다.                |
 | search   | URL의 **쿼리 값**을 설정하거나 반환합니다.                 |
 
-
-**location 객체 메서드**
+------
+#### location 객체 메서드
 
 | 종류      | 설명                                              |
 |-----------|---------------------------------------------------|
@@ -321,7 +348,7 @@ location 객체는 사용자 브라우저 주소창에 url정보(속성)와
 
 ### history
 
-history 객체에는 브라우저 창 내에서 사용자가 방문한 URL이 포함됩니다.
+`history` 객체에는 브라우저 창 내에서 사용자가 방문한 URL이 포함됩니다.
 
 
 | 속성                      | 설명                                                                                                                             |
@@ -364,7 +391,7 @@ history 객체에는 브라우저 창 내에서 사용자가 방문한 URL이 �
 
 ### navigator
 
-navigator 객체는 현재 방문자가 사용하는 브라우저 정보와  
+`navigator` 객체는 현재 방문자가 사용하는 브라우저 정보와  
 운영체제의 정보를 제공하는 객체 입니다.
 
 > 기본형  

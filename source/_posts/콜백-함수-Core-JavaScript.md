@@ -4,8 +4,35 @@ disqusId: tunas-blog-1
 tags:
   - Core JavaScript
   - JavaScript
+  - 코어 자바스크립트
+  - 콜백 함수
+  - callback function
+  - this
+  - param
+  - bind
+  - 콜백 지옥
+  - 비동기 제어
+  - 제어권
+  - setInterval
+  - clearInterval
+  - 고유 ID
+  - asynchronous
+  - synchronous
 date: 2020-04-30 20:03:50
 categories: Core JavaScript
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 * 콜백 함수
@@ -24,13 +51,13 @@ categories: Core JavaScript
 
 콜백 함수(`callback function`)는 다른 코드의 인자로 넘겨주는 함수 입니다.
 
-`callback`은 부르다, 호출하다, 실행하다의 의미인 call 과 되돌아오다 back의 합성어로,
+`callback`은 부르다, 호출하다, 실행하다의 의미인 `call` 과 되돌아오다 `back`의 합성어로,
 되돌아 호출하다라는 의미로 이해할 수 있습니다.
 
 특정 `함수a`를 호출하면서 '특정 조건일때 `함수b`를 실행해서 알려달라는'요청을 보내는 것입니다.
 `함수a`의 입장에서는 해당 조건이 갖춰졌는지 여부를 스스로 판단하고 `함수b`를 직접 호출합니다.
 
-이처럼 콜백 함수는 다른 코드(함수 또는 메서드)에게 인자를 넘겨줌으로써 그 <mark>제어권도 함께 위임한 함수</mark>입니다. (콜백 함수를 위임받은 코드는 자체적인 내부 로직에 의해 이 콜백 함수를 적절한 시점에 실행합니다.)
+이처럼 콜백 함수는 다른 코드(함수 또는 메서드)에게 인자를 넘겨줌으로써 그 <mark>제어권도 함께 위임한 함수</mark>입니다. (**콜백 함수를 위임받은 코드는 자체적인 내부 로직에 의해 이 콜백 함수를 적절한 시점에 실행합니다**.)
 
 ------
 <h2 id="callback_제어권">제어권</h2>
@@ -51,7 +78,7 @@ categories: Core JavaScript
 우선 `setInterval` 메서드의 형태를 살펴보면 다음과 같습니다.
 > var 참조변수(interval ID) = scope.setInterval(func, delay[, param1, param2, ...]);
 
-* socpe :
+* scope :
   `Window` 객체 또는 `Worker`의 인스턴스가 들어올 수 있습니다. 두 객체 모두 `setInterval` 메서드를 제공하기 때문입니다. 일반적인 브라우저 환경에서는 `window`를 생략하고 함수처럼 사용할 수 있습니다.
 
 
@@ -160,7 +187,7 @@ callback : function(currentValue, index, array)
 -------
 ### this
 
-콜백 함수 내부에서의 this
+콜백 함수 내부에서의 `this`
 
 ```js
 1. setTimeout(function() {
@@ -191,7 +218,7 @@ document.body.innerHTML += '<button id="a">클릭</button>';
 ------
 <h2 id="callback_function">콜백 함수는 함수다.</h2>
 
-콜백 함수로 객체의 메서드를 전달하더라도 그 메서드는 메서드가 아닌 함수로 호출됩니다.
+**콜백 함수로 객체의 메서드를 전달하더라도 그 메서드는 메서드가 아닌 함수로 호출됩니다.**
 
 ```js 메서드를 콜백 함수로 전달한 경우
 1. var obj = {

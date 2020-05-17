@@ -5,20 +5,42 @@ disqusId: tunas-blog-1
 categories: JavaScript
 tag: 
 - JavaScript
+- Array
+- Array method
+- join()
+- reverse()
+- splice()
+- slice()
+- concat()
+- pop()
+- push()
+- shift()
+- unshift()
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
-여러 개의 데이터를 하나의 저장소에 저장하는 Array(배열) 객체
+여러 개의 데이터를 하나의 저장소에 저장하는 `Array(배열)` 객체
 
 사용법 3가지
 
-    1. var a =new Array();
-        a[0]=30;
-        a[1]="홍길동";
-        a[2]=true;
-    
-    2. var b =new Array(30, "홍길동", true);
-    
-    3. var c =[30, "홍길동", true];
+>1. var a =new Array();
+    a[0]=30;
+    a[1]="홍길동";
+    a[2]=true;
+>2. var b =new Array(30, "홍길동", true);
+>3. var c =[30, "홍길동", true];
 
 <!-- more -->
 

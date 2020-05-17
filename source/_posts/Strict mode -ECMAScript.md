@@ -4,8 +4,24 @@ date: 2020-03-16 10:04:46
 disqusId: tunas-blog-1
 categories: ECMAScript6
 tag: 
-- ECMAScript6
-- JavaScript
+  - ECMAScript6
+  - JavaScript
+  - strict
+  - strict mode
+
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
 * * *
@@ -70,7 +86,7 @@ strict mode는 이전에 허용 된 “잘못된 구문”을 실제 오류로 �
 
 #### 2.  NaN 은 쓸 수 없는 전역 변수입니다.  
 
-NaN 에 할당하는 일반적인 코드는 아무 것도 하지 않습니다.  
+`NaN` 에 할당하는 일반적인 코드는 아무 것도 하지 않습니다.  
 개발자도 아무런 실패 피드백을 받지 않습니다.
 
 엄격 모드에서 NaN 에 할당하는 것은 예외를 발생시킵니다.  

@@ -21,6 +21,22 @@ tags:
   - LexicalEnvironment
   - outerEnvironmentReference
   - 가비지 컬렉터
+  - debounce
+  - currying function
+  - 디바운스
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 date: 2020-05-03 15:56:17
 categories: Core JavaScript
 ---
@@ -44,6 +60,7 @@ categories: Core JavaScript
 자바스크립트 고유의 개념이 아니라서 `ECMAScript` 명세에서도 클로저의 정의를 다루지 않고 있고, 다양한 문헌에서 제각각 클로저를 다르게 정의 또는 설명하고 있습니다.
 
 다양한 서적에서 클로저를 한 문장으로 요약해서 설명하는 부분들을 소개하면 다음과 같습니다.
+    
     * 자신을 내포하는 함수의 컨텍스트에 접근할 수 있는 함수
     
     * 함수가 특정 스코프에 접근할 수 있도록 의도적으로 그 스코프에서 정의하는 것
@@ -590,9 +607,48 @@ console.log(addPartial(6, 7, 8, 9, 10)); // 55
 `addPartial` 함수에 `this`값 `null`과 인자 5개를 미리 적용하고, 대기합니다.
 추후에 추가적으로 인자들을 전달하며 호출하면 대기중이던 인자들과 차례대로 적용되어 실행합니다.
 
-`add`함수는 `this`값을 사용하지 않지만, `bind`메서드는 `this`값을 변경할 수 밖에 없기 때문에 `this`에 관여하지 않는 다른 방법의 부분 적용 함수가 필요합니다.
+`add`함수는 `this`값을 사용하지 않지만, `bind`메서드는 `this`값을 변경할 수 밖에 없기 때문에 메서드에서는 사용할 수 없을 것 같습니다.
+`this`에 관여하지 않는 다른 방법의 부분 적용 함수가 필요합니다.
 
-// p 135 ~ 137 보류
+```js 부분 적용 함수 구현(1)
+var partial = function() {
+  var originalPartialArgs = arguments;
+  var func = originalPartialArgs[0];
+  if (typeof func !== 'function') {
+    throw new Error('첫 번째 인자가 함수가 아닙니다.');
+  }
+  return function() {
+    var partialArgs = Array.prototype.slice.call(originalPartialArgs, 1);
+    var restArgs = Array.prototype.slice.call(arguments);
+    return func.apply(this, partialArgs.concat(restArgs));
+  };
+};
+
+var add = function() {
+  var result = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  return result;
+};
+var addPartial = partial(add, 1, 2, 3, 4, 5);
+console.log(addPartial(6, 7, 8, 9, 10)); // 55
+
+var dog = {
+  name: '강아지',
+  greet: partial(function(prefix, suffix) {
+    return prefix + this.name + suffix;
+  }, '왈왈, '),
+};
+dog.greet('입니다!'); // 왈왈, 강아지입니다.
+```
+
+* 첫 번째 인자에 원본 함수를, 두 번째 인자 이후부터는 미리 적용할 인자들을 전달하고, 반환할 함수(부분 적용 함수)에서는 다시 나머지 인자들을 받아 이들은 한곳으로 모아(`concat`) 원본 함수를 호출(`apply`)합니다. 또한 실행 시점의 `this`를 그대로 반영함으로써 `this`에는 아무런 영향을 주지 않게 되었습니다.
+
+------
+#### 디바운스(debounce)
+
+실무에서 부분 함수를 사용하기에 적합한 예로 디바운스(`debounce`)가 있습니다.
 
 디바운스(`debounce`)는 짧은 시간 동안 동일한 이벤트가 많이 발생한 경우 이를 전부 처리하지 않고 처음 또는 마지막에 발생한 이벤트에 대해 한 번만 처리하는 것으로, `scroll`, `wheel`, `mousemove`, `resize`등에 적용하기 좋습니다.
 
@@ -637,7 +693,52 @@ document.body.addEventListener(
 * `debounce`함수에서 클로저로 처리되는 변수는 `eventName`, `func`, `wait`, `timeoutId`입니다.
 
 -------
-### 커링 함수
+### 커링 함수(currying function)
+
+커링 함수(currying function)란 <mark>여러 개의 인자를 받는 함수를 하나의 인자만 받는 함수로 나눠서</mark>
+**순차적으로 호출될 수 있게 체인 형태로 구성한 것을 말합니다.** 
+~~(앞서 살펴본 부분 적용 함수와 기본적인 맥락은 일치하지만 몇 가지 다른 점이 있습니다.)~~
+
+* 커링은 **한 번에 하나의 인자만 전달하는 것을 원칙으로 합니다.**
+
+* <u>중간 과정상의 함수를 실행한 결과는 그다음 인자를 받기 위해 대기만 할 뿐으로</u>, **마지막 인자가 전달되기 전까지는 원본 함수가 실행되지 않습니다.**
+
+* 부분 적용 함수와 달리 커링 함수는 필요한 상황에 직접 만들어 쓰기 용이합니다. 필요한 인자 개수만큼 함수를 만들어 계속 `return`해 주다가 마지막에 조합해서 `return`해주면 되기 때문이죠.
+
+```js ES5 커링 함수
+var curry5 = function(func) {
+  return function(a) {
+    return function(b) {
+      return function(c) {
+        return function(d) {
+          return function(e) {
+            return func(a, b, c, d, e);
+          };
+        };
+      };
+    };
+  };
+};
+var getMax = curry5(Math.max);
+console.log(getMax(1)(2)(3)(4)(5));
+```
+
+* 5개의 인자를 받아서 처리하기위해 코드가 길어졌습니다.
+
+* `ES6`의 화살표 함수를 사용하면 다음과 같이 처리할 수 있습니다.
+
+```js ES6 커링처리
+var curry5 = func => a => b => c => d => e => func(a,b,c,d,e);
+```
+
+* **참고 :**
+
+  * 각 단계에서 받은 인자들은 모두 마지막 단계에서 참조할 것이므로 `GC`의 대상이 되지않고
+  메모리 저장되었다가, 마지막에 호출되어 실행 컨텍스트가 종료된 이후에 한꺼번에 `GC`의 수거 대상이됩니다.
+
+  * **커링 함수가 유용한 경우**는 <u>당장 필요한 정보만 받아 전달하고 또 필요한 정보가 들어오면 전달하는 식으로 결국 마지막 인자가 넘어갈 때까지 함수 실행을 미루는 셈이 됩니다.</u>
+    **이를 함수형 프로그래밍에서 지연실행(`lazy execution`)이라고 합니다.**
+  즉, 원하는 시점까지 지연시켰다가 실행하는 것이 유용한 상황이라면 커링을 쓰기에 적합할 수 있습니다.
 
 ------
 <h2 id="closure">정리</h2>

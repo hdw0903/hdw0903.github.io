@@ -13,10 +13,13 @@ tags:
   - prototype 도식
   - Object static method
   - multiple prototype chain
+  - __proto__
+  - static
+
 date: 2020-05-05 17:57:53
 categories: Core JavaScript
-toc: true
 
+toc: true
 widgets:
   - type: toc
     position: right

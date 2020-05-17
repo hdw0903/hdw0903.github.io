@@ -21,6 +21,7 @@ tag:
 - JSON 객체
 - undefined
 - 'null'
+- 코어 자바스크립트
 
 toc: true
 

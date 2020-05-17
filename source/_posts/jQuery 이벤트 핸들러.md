@@ -6,6 +6,42 @@ categories: jQuery
 tag: 
 - jQuery
 - JavaScript
+- jQuery evnet
+- jQuery method
+- on()	
+- bind()
+- delegate()
+- one()
+- off()
+- unbind()
+- ready()
+- load()
+- click()
+- dbclick()
+- <a>
+- return false
+- preventDefault
+- mouseover
+- mouseout
+- mousemove
+- hover
+- change()
+- index()
+- 마우스 좌표값 구하기
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
+
 ---
 
 jQuery에서의 이벤트 사용 기본형
@@ -17,11 +53,15 @@ jQuery에서의 이벤트 사용 기본형
  </script>  
 ```
 
-1.  $(“#btn”)    
+* $(“#btn”)    
  이벤트 대상
-2.  click()    
+
+
+* click()    
  이벤트 등록 메서드
-3.  function(){…}  
+
+
+* function(){…}  
     이벤트가 발생 했을 때 (이벤트 대상이 클릭되었을 때)  
     실행되는 이벤트 핸들러
 
@@ -31,17 +71,16 @@ jQuery에서의 이벤트 사용 기본형
 
 ## ready() / load() 메서드
 
-HTML 문서를 불러올 때 지정된 객체의 로딩이 완료되면  
-실행되는 이벤트 핸들러.
+**HTML 문서를 불러올 때 지정된 객체의 로딩이 완료되면 실행되는 이벤트 핸들러.**
 
-    1. $(문서 객체).ready(function)(){...});
-    2. $("이미지 또는 프레임").load(function(){...});
+>1. $(문서 객체).ready(function)(){...});
+2. $("이미지 또는 프레임").load(function(){...});
 
 *   1.  문서의 로딩이 완료된 후 실행됩니다.
-*   2. HTML 문서 로딩이 완료되더라도  
-    이미지나 프레임 소스는 그 이후에 로딩됩니다.
-    load() 메서드는 이런 이미지나 프레임에 연동된 소스가 로딩이  
-    완료된 후 실행됩니다.  
+
+
+*   2. HTML 문서 로딩이 완료되더라도 이미지나 프레임 소스는 그 이후에 로딩됩니다.
+    load() 메서드는 이런 이미지나 프레임에 연동된 소스가 로딩이 완료된 후 실행됩니다.  
     _이미지나 프레임을 제외한 객체에는 사용할 수 없습니다._
     
 
@@ -54,13 +93,16 @@ HTML 문서를 불러올 때 지정된 객체의 로딩이 완료되면
 
 1.  선택한 요소를 클릭할 때 마다 실행문을 실행합니다.
     
+
 2.  선택한 요소에 강제로 click이벤트가 발생, 유저가 클릭하지 않아도 실행됩니다.
     
+
 >3.  $(“요소 선택”).on(“dbclick”,function(){…});
 >4.  $(“요소 선택”).dbclick();
 
 3.  선택한 요소를 두번 연속으로 클릭했을 때 실행됩니다.
     
+
 4.  강제로 더블클릭 이벤트가 발생합니다.
     
 
@@ -68,15 +110,15 @@ HTML 문서를 불러올 때 지정된 객체의 로딩이 완료되면
 
 ## 이벤트 대상이 < a> 태그일 때
 
-< a>태그의 경우 클릭할 때 마다 링크된 주소로 이동됩니다.
+**`< a>`태그의 경우 클릭할 때 마다 링크된 주소로 이동됩니다.**
 
-**링크된 주소로 이동되지 않도록 만드는 방법**
+### 링크된 주소로 이동되지 않도록 만드는 방법
 
-1. return false  
-    return false를 이용하여 a 태그를 클릭 했을 때  
-    링크된 주소로 이동되는 것을 막을 수 있습니다.  
-    단 return은 function 실행문을 강제로 종료시키므로  
-    함수의 마지막 부분에 작성합니다.
+------
+#### return false
+    
+`return false`를 이용하여 `a` 태그를 클릭 했을 때 링크된 주소로 이동되는 것을 막을 수 있습니다.  
+단 `return`은 `function` 실행문을 강제로 종료시키므로 함수의 마지막 부분에 작성합니다.
 
 ```js 
 $("a").click(function(){  
@@ -85,9 +127,10 @@ $("a").click(function(){
 });  
 ```
 
-2. preventDefault()  
-    function 매개변수에 .preventDefalut() 메서드를 사용하면  
-    링크된 주소로 이동되는 것을 막을 수 있습니다.
+------
+#### preventDefault()
+
+`function` 매개변수에 `.preventDefault()` 메서드를 사용하면 링크된 주소로 이동되는 것을 막을 수있습니다.
 
 ```js
 $("a").click(function(x){  
@@ -116,25 +159,31 @@ $("a").click(function(x){
 7. $("요소 선택").mousemove();  
 ```
 
-*   mouseover()
+*   `mouseover()`
     
     1.  선택한 요소에 **마우스를 올릴 때 마다** 실행됩니다.
-    2.  선택한 요소에 강제로 mouseover 이벤트를 발생시킵니다.
+    2.  선택한 요소에 강제로 `mouseover` 이벤트를 발생시킵니다.
 
-*   mouseout()
+
+*   `mouseout()`
 
     3.  선택한 요소에서 **마우스가 벗어날 때마다** 실행됩니다.
-    4.  선택한 요소에 강제로 mouseout 이벤트를 발생시킵니다.
+    4.  선택한 요소에 강제로 `mouseout` 이벤트를 발생시킵니다.
 
-*   hover()
+
+*   `hover()`
 
     5.  마우스를 올릴 때 마다 {실행문1}을 실행시키고,  
         마우스가 벗어날 때 마다 {실행문2}를 실행시킵니다.
 
-*   mousemove()
+
+*   `mousemove()`
 
     6.  선택한 **요소의 영역에서 마우스를 움직일 때 마다** 실행됩니다.
-    7.  선택한 요소에 강제로 mousemove 이벤트를 발생시킵니다.
+    7.  선택한 요소에 강제로 `mousemove` 이벤트를 발생시킵니다.
+
+------
+### mousemove() 마우스 좌표값 구하기
 
 ```js mousemove() 마우스 좌표값 구하기
 $(function(){  
@@ -162,8 +211,10 @@ $(function(){
 1.  요소의 값이(value) 새 값으로 바뀌고 포커스가 다른 요소로 이동  
     되었을 때 실행됩니다.
     
+
 2.  강제로 change 이벤트 메서드를 발생시킵니다.
     
+
 3.  이벤트를 등록한 요소 중에서 이벤트가 발생한 요소의 인덱스 값을 반환합니다.
     
 * * *

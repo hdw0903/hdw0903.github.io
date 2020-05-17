@@ -4,12 +4,34 @@ disqusId: tunas-blog-1
 tags:
   - Core JavaScript
   - JavaScript
+  - this
+  - instance
+  - call
+  - bind
+  - apply
+  - forEach
+  - this binding
+
 date: 2020-04-27 21:50:04
 categories: Core JavaScript
+
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
-자바스크립트에서의 this는 어디서든 사용할 수 있습니다.
-this는 상황에 따라 참조하는 대상이 달라질 수 있습니다.
+자바스크립트에서의 `this`는 어디서든 사용할 수 있습니다.
+`this`는 상황에 따라 참조하는 대상이 달라질 수 있습니다.
 함수와 객체(메서드) 구분이 느슨한 자바스크립트에서 이 둘을 구분하는 유일한 기능입니다.
 
 * this
@@ -59,19 +81,24 @@ console.log(a); // 1
 console.log(window.a); // 1 (전역객체의 프로퍼티)
 console.log(this.a); // 1 (this는 현재 전역객체 참조)
 ```
+
 <mark>사실 자바스크립트의 모든 변수는 실은 특정 객체의 프로퍼티로 동작합니다.</mark>
+
 이 특정 객체란 실행 컨텍스트의 `LexicalEnvironment`를 말합니다.
 실행 컨텍스트는 변수를 수집하여 `LexicalEnvironment`의 프로퍼티로 지정합니다.
 이후 변수를 호출하면 `LexicalEnvironment`를 조회하여 일치하는 프로퍼티가 있을 경우 그 값을 반환합니다.
 
   전역 컨텍스트의 `LexicalEnvironment`는 전역객체를 참조하므로 var a 선언/할당 이후 `window.a` 와 `this.a`가 1이 나오는 이유는 당연합니다.
+
 <mark>a를 직접 호출했을 때도 1이 나오는 이유는 무엇일까요?</mark>
+
 변수 a에 접근하려고 하면 스코프 체인에서 a를 검색하다가 가장 마지막에 도달하는 전역 스코프의 `LexicalEnvironment`에서 해당 프로퍼티 a를 조회하여 그 값을 반환하기 때문입니다.
 
 * 전역 공간에서 var로 변수를 선언하는 대신 window의 프로퍼티에 직접 할당하더라도 결과적으로 똑같이 동작합니다. 하지만 `delete` 연산자를 사용하는 경우 다른 결과를 반환합니다.
 
   * `var` 변수로 선언한 경우 : delete window 형식으로 삭제 불가,
   delete 변수명 형식으로도 삭제 불가
+
   * `window` 프로퍼티에 직접 할당한 경우: delete window 형식으로 삭제 가능,
   delete 변수명 형식으로도 삭제 가능
 
@@ -641,7 +668,8 @@ obj.outer();
 | `flatMap`(callback[, thisArg])           |                              |                              |
 | `from`(arrayLike[, callback[, thisArg]]) |                              |                              |
 
-* 대표적인 배열 메서드인 `forEach` 예시
+------
+#### 대표적인 배열 메서드인 forEach 예시
 
 ```js forEach
 var report = {
@@ -664,7 +692,9 @@ console.log(report.sum, report.count, report.average()); // 240 3 80
 
 * `60, 85, 95`를 인자로 삼아 `add` 메서드를 호출하면 `slice.call`메서드가 인자를 받아 새로운 배열로 반환합니다. 이후 `forEach` 메서드가 실행됩니다.
 
+
 * 콜백 함수 내부의 `this`는 `forEach` 함수의 두 번째 인자로 전달해준 `this`(add 메서드의 this)가 전달된 상태이므로 `add` 메서드의 `this(report)`를 가리킵니다.
+
 
 * 따라서 배열의 요소들을 순회 반복하며 `report.sum` , `report.count`값이 차례로 바뀌게 됩니다.
 출력 결과로 `report.sum`에 240, `report.count`에 3이 반환되어 출력됩니다.

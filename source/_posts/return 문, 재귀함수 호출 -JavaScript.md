@@ -4,18 +4,34 @@ date: 2020-03-09 10:25:56
 disqusId: tunas-blog-1
 categories: JavaScript
 tag: 
-- JavaScript
+  - JavaScript
+  - return
+  - 재귀 함수
+
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: adsense
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 
-return 문 이란 함수에서 결과값을 되돌려 줄 때 사용합니다.  
-함수에서 return 문이 실행되면  
-반복문에 break문과 비슷하게 실행문이 강제 종료됩니다.
+`return` 문 이란 함수에서 결과값을 되돌려 줄 때 사용합니다.  
+함수에서 `return` 문이 실행되면  
+반복문에 `break`문과 비슷하게 실행문이 강제 종료됩니다.
 
-    기본형
-    function 함수명(){
-        실행문;
-        return 데이터(값);
-    }
+>기본형
+function 함수명(){
+    실행문;
+    return 데이터(값);
+}
 
 ```js 예시1
 function calc(){  
@@ -45,12 +61,12 @@ myFnc();
 재귀 함수 호출 이라고 합니다.  
 **함수를 반복문 처럼 여러번 호출하기 위해 사용합니다.**
 
-    기본형
-        function myFnc(){
-        실행문;
-        myFnc();
-    }
+>기본형
+    function myFnc(){
+    실행문;
     myFnc();
+}
+myFnc();
 
 ```js 예제
 var num=0;  
