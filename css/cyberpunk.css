@@ -10768,6 +10768,7 @@ article.media .media-content {
 article.media .media-content .title {
   margin: 0;
   line-height: inherit;
+  font-weight: 600 !important;
 }
 article.article .article-meta,
 article.article .article-tags {
@@ -10824,6 +10825,11 @@ article.article .content blockquote.pullquote {
 }
 article.article .content blockquote footer strong + cite {
   margin-left: 0.5em;
+}
+@media screen and (max-width: 768px) {
+  article .title {
+    font-weight: 600 !important;
+  }
 }
 code {
   font-size: 0.875em;
