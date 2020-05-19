@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://hdw0903.github.io/2020/05/19/Array-prototype-map-filter-reduce-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2020-05-19T13:59:07.906Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/17/Arrow%20-ECMAScript/</loc>
+        <lastmod>2020-05-19T13:12:17.559Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/03/29/Template%20%EB%A6%AC%ED%84%B0%EB%84%90%20-ECMAScript/</loc>
+        <lastmod>2020-05-19T10:48:11.894Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hdw0903.github.io/2020/03/04/BOM%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9D%EC%B2%B4%20%EB%AA%A8%EB%8D%B8/</loc>
         <lastmod>2020-05-17T10:07:12.679Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,14 +138,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/04/06/Symbol%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%20-ECMAScript/</loc>
         <lastmod>2020-05-17T09:43:14.103Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/29/Template%20%EB%A6%AC%ED%84%B0%EB%84%90%20-ECMAScript/</loc>
-        <lastmod>2020-05-17T09:42:41.843Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -242,14 +258,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/03/30/Array%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%20-ECMAScript/</loc>
         <lastmod>2020-05-14T09:32:34.246Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/03/17/Arrow%20-ECMAScript/</loc>
-        <lastmod>2020-05-14T09:30:43.982Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
