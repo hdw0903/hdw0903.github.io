@@ -10780,6 +10780,12 @@ article.article .article-meta {
   overflow-x: auto;
   margin-bottom: 0.5rem;
 }
+article.article .article-tags {
+  display: inline-block;
+}
+article.article .article-tags .mr-2 {
+  float: left;
+}
 article.article .content {
   color: #000;
   word-wrap: break-word;
