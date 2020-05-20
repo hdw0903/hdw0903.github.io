@@ -10724,6 +10724,10 @@ html {
 .card .card-content .breadcrumb {
   font-size: 1.25rem !important;
 }
+.card .card-content .menu .field .control {
+  margin-bottom: 0.9rem;
+  margin-top: 0.2rem;
+}
 .card .card-image {
   overflow: hidden;
   border-top-left-radius: 4px;
@@ -10785,6 +10789,7 @@ article.article .article-tags {
 }
 article.article .article-tags .mr-2 {
   float: left;
+  margin-bottom: 0.5rem;
 }
 article.article .content {
   color: #000;
