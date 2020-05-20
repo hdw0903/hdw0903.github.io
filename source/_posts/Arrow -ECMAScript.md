@@ -1,21 +1,22 @@
 ---
-title: Arrow -ECMAScript
+title: Arrow (화살표 함수) -ECMAScript
 date: 2020-03-17 11:51:03
 categories: ECMAScript6
 disqusId: tunas-blog-1
 tag: 
-- ECMAScript6
-- JavaScript
-- Arrow function
-- setTimeout
-- arguments
-- arguments binding
-- Array - like
-- new 연산자
-- prototype
-- block
-- param
-- this
+  - ECMAScript6
+  - JavaScript
+  - Arrow function
+  - setTimeout
+  - arguments
+  - arguments binding
+  - Array - like
+  - new 연산자
+  - prototype
+  - block
+  - param
+  - this
+
 toc: true
 widgets:
   - type: toc
@@ -340,10 +341,10 @@ Sports.prototype = {
  this.count += 1;  
  },  
  get: function() {  
- setTimeout(() => { // 콜백 함수를 arrow함수로 작성합니다.  
- this.plus();  
- console.log(this.count);  
- }, 1000);  
+  setTimeout(() => { // 콜백 함수를 arrow함수로 작성합니다.  
+    this.plus();  
+    console.log(this.count);  
+  }, 1000);  
  }  
 };  
 let newSports = new Sports();  
