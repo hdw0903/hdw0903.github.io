@@ -1,7 +1,9 @@
 ---
 title: 실행 컨텍스트 -Core JavaScript
+date: 2020-04-26 17:50:25
 disqusId: tunas-blog-1
-tags:
+categories: Core JavaScript
+tag:
   - Core JavaScript
   - JavaScript
   - execution context
@@ -20,8 +22,6 @@ tags:
   - Local variable
   - 코어 자바스크립트
   
-date: 2020-04-26 17:50:25
-categories: Core JavaScript
 toc: true
 
 widgets:
@@ -102,7 +102,7 @@ console.log(a); // 1
 3. 마찬가지로 `outer` 실행 컨텍스트를 진행하다 `inner()`함수의 실행 컨텍스트가 콜 스택의 가장 위에 담기면 `outer` 컨텍스트는 일시정지되고 `inner` 함수 내부 코드를 실행합니다.
 
 * 실행 컨텍스트와 콜 스택
-![실행 컨텍스트와 콜 스택](/images/context_callStack.PNG)
+![실행 컨텍스트와 콜 스택](/images/context_callStack.png)
 
 <u>실행 컨텍스트가 콜 스택의 맨위에 쌓이는 순간이 곧 현재 실행할 코드에 관여하는 시점.
 기존의 컨텍스트는 새로 쌓인 컨텍스트보다 아래에 위치할 수 밖에 없음</u>
