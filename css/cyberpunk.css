@@ -11335,7 +11335,6 @@ figure.highlight .section {
   border-radius: 0;
   transform: translateY(120px);
   transition: 0.4s ease opacity, 0.4s ease width, 0.4s ease transform, 0.4s ease border-radius;
-  bottom: 15% !important;
   left: unset !important;
   right: 5% !important;
   background-color: #f4c532 !important;
