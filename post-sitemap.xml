@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>https://hdw0903.github.io/2020/05/24/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-component/</loc>
+        <lastmod>2020-05-25T13:51:32.330Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hdw0903.github.io/2020/05/19/Array-prototype-map-filter-reduce-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2020-05-25T13:49:25.902Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hdw0903.github.io/2020/05/22/JSX/</loc>
-        <lastmod>2020-05-24T08:51:57.530Z</lastmod>
+        <lastmod>2020-05-24T09:40:13.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -74,14 +90,6 @@
     <url>
         <loc>https://hdw0903.github.io/2020/04/26/%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Core-JavaScript/</loc>
         <lastmod>2020-05-20T13:13:35.185Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hdw0903.github.io/2020/05/19/Array-prototype-map-filter-reduce-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</loc>
-        <lastmod>2020-05-20T11:33:31.869Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
