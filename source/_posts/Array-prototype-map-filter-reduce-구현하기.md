@@ -208,6 +208,8 @@ callback : accumulator, currentValue, currentIndex, array
 ------
 ### reduce 만들어보기
 
+<p style="font-size: 2.4rem;"> 수정중. 에러사항 많음</p>
+
 ```js reduce 메서드 구현
 "use strict"
 debugger;
