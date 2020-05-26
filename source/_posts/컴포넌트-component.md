@@ -13,6 +13,8 @@ tags:
   - defaultProps
   - export
   - import
+  - useState
+  - constructor
   
 disqusId: tunas-blog-1
 toc: true
@@ -532,8 +534,8 @@ class Counter extends Component {
         <button 
           // onClick을 통해 버튼이 클릭되었을 때 호출할 함수를 지정합니다.
           onClick={() => {
-          // this.setSate를 사용하여 state에 새로운 값을 넣을 수 있습니다.
-          this.setSate({ number: number + 1 });
+          // this.setState를 사용하여 state에 새로운 값을 넣을 수 있습니다.
+          this.setState({ number: number + 1 });
         }}
         >
           +1
@@ -560,7 +562,7 @@ export default Counter;
 
 * 이벤트로 설정할 함수를 넣어줄 때는 화살표 함수를 사용해 넣어줍니다.
 
-* 함수 내부에 사용된 `this.setSate` 함수가 `state`값을 바꿀 수 있게 해 줍니다.
+* 함수 내부에 사용된 `this.setState` 함수가 `state`값을 바꿀 수 있게 해 줍니다.
 
 작성된 Counter 컴포넌트를 App에서 불러와 렌더링합니다.
 
@@ -576,4 +578,185 @@ export default App;
 ```
 
 ------
+#### state를 constructor에서 꺼내기
+
+`constructor`메서드를 선언하지 않고도 state 초깃값을 설정할 수 있는 방법이 있습니다.
+
+```jsx constructor 메서드 사용 x
+import React, { Component } from 'react';
+
+//constructor 선언 안하고 사용
+class Counter extends Component {
+  state = {
+    number: 0,
+    fixedNumber: 0,
+  };
+(...)
+// constructor 메서드 사용시에는
+class Counter extends Component {
+  constructor(props) { 
+    super(props); 
+    this.state = {
+      number = 0
+    };
+  }
+(...)
+```
+
+이렇게 사용하면 constructor 메서드를 선언하지 않고도 state 초깃값을 설정할 수 있습니다.
+
+------
+#### this.setState에 객체 대신 함수 인자 전달
+
+this.setState를 사용하여 state 값을 업데이트할 때는 <u>상태가 비동기적으로 업데이트됩니다.</u>
+
+```jsx onClick 내부에서 this.setState 두 번 호출
+onClick={() => {
+  this.setState({ number: number + 1  });
+  this.setState({ number: this.state.number + 1  });
+}}
+```
+이 처럼 작성하면 `this.setState`를 두 번 사용했음에도 버튼을 클릭할 때 숫자가 1씩 더해집니다.
+
+`this.setState`를 사용할 때 객체 대신에 함수를 인자로 넣어주어야 합니다.
+
+```jsx this.setState의 인자로 함수를 넣어주는 형태
+this.setState((prevState, props) => {
+  return {
+    // 업데이트할 내용
+  }
+})
+```
+
+`prevState`는 기존 상태를 의미하고, `props`는 현재 지니고 있는 props를 가리킵니다. (업데이트하는 과정에서 props가 필요하지 않다면 생략할 수 있습니다.)
+
+코드를 수정하여 작성하면 다음과 같이 됩니다.
+
+```jsx
+(...)
+onClick={() => {
+  this.setState(prevState => {
+    return {
+      number: prevState.number + 1
+    };
+  });
+
+  this.setState(prevState => ({
+    number: prevState.number + 1
+  // 위 코드와 아래 코드는 완전히 똑같은 기능을 하는 코드입니다.
+  // 아래 코드는 함수에서 바로 객체를 반환한다는 의미입니다.
+  }));
+(...)
+```
+
+버튼을 클릭하면 이제 값이 2씩 올라갑니다.
+
+------
+#### this.setState가 끝난 후 특정 작업
+
+setState를 사용하여 값을 업데이트하고 난 다음에 특정 작업을 하고 싶을 때
+
+**setState의 두 번째 파라미터로 콜백(callback)함수를 등록하여 처리할 수 있습니다.**
+
+```jsx 예시
+onClick={() =>{
+  this.setState(
+      {
+        number: number + 1,
+      },
+      // 두 번째 파라미터로 콜백 함수 등록
+      () => {
+        console.log('방금 setState 가 호출되었습니다.');
+        console.log(this.state);
+      }
+    );
+  }}
+```
+
+------
+### 함수형 컴포넌트에서 useState 사용
+
+리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 state를 사용할 수 없었습니다. 하지만 16.8이후부터는 useState라는 함수를 사용하여 함수형 컴포넌트에서도 state를 사용할 수 있게 되었습니다.
+
+이 과정에서 `Hooks`를 사용하게 되는데 `Hooks`의 종류는 다양하지만 여기서는 `useState`를 사용합니다.
+
+------
+### useState 사용하기
+
+```jsx Say.js
+import React, { useState } from 'react';
+
+const Say = () => {
+  const [message, setMessage] = useState('');
+  const onClickEnter = () => setMessage('안녕하세요!');
+  const onClickLeave = () => setMessage('안녕히 가세요!');
+
+  return (
+    <div>
+      <button onClick={onClickEnter}>입장</button>
+      <button onClick={onClickLeave}>퇴장</button>
+      <h1>{message}</h1>
+    </div>
+  );
+};
+
+export default Say;
+```
+
+1. `useState` 함수의 인자에는 상태의 초깃값을 넣어줍니다.('')
+
+  * **클래스형 컴포넌트에서 state 초깃값은 객체 형태로 넣어줘야합니다.**
+
+  * **useState 에서는 객체가 아니어도 상관없습니다. 값 형태가 자유입니다.**
+
+2. useState 함수 호출시 배열이 반환됩니다. 배열의 첫 번째 요소는 현재 상태이고, 두 번째 요소는 상태를 바꿔주는 함수입니다. **이 함수를 세터(Setter)함수라고 부릅니다.**
+
+```jsx App.js
+import React from 'react';
+import Say from './Say';
+
+const App = () => {
+  return <Say />;
+};
+
+export default App;
+```
+
+![](/images/useState0.png) ![](/images/useState1.png)
+
+클릭한 입장 버튼과 퇴장버튼에 따라 문구가 변하게 됩니다.
+
+------
 <h2 id="state_주의사항">state 사용시 주의 사항</h2>
+
+클래스형 컴포넌트든 함수형 컴포넌트든 state를 사용할 때는 주의해야 할 사항이 있습니다.
+
+**state 값을 바꿔야 할 때는 setState 혹은 useState를 통해 전달받은 세터 함수를 사용해야 합니다.**
+
+* 배열이나 객체를 업데이트 할 때는
+  1. 사본을 생성하고 
+  2. 사본에 값을 업데이트한 후
+  3. 그 사본의 상태를 setState 혹은 세터 함수를 통해 업데이트합니다.
+
+```jsx 사본을 만들어 업데이트하는 예시
+// 객체
+const object = { a: 1, b: 2, c: 3};
+const nextObject = {...object, b : 2}; // 사본을 만들어 b 값만 덮어씀
+
+//배열
+const array = {
+  { id:1, value: true},
+  { id:2, value: true},
+  { id:3, value: false}
+};
+
+let nextArray = array.concat({ id: 4 }); // 새 항목 추가
+nextArray.filter(item => item.id !==2); // id가 2인 항목 제거
+nextArray.map(item => (item.id === 1 ? {...item, value: false } : item)); 
+//id가 1인 항목의 value를 false로 설정
+```
+
+* 객체의 사본을 만들 때는 `spread` 연산자를 사용하여 처리합니다.
+
+
+* 배열의 사본을 만들 때는 배열의 내장 함수들을 활용합니다.
