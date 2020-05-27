@@ -37,17 +37,17 @@ categories: React
 컴포넌트를 선언하는 방식은 두 가지입니다.
 하나는 함수형 컴포넌트이고 또 다른 하나는 클래스형 컴포넌트입니다.
 
-* [클래스형 컴포넌트](/2020/05/24/컴포넌트(component)/#component)
+* [클래스형 컴포넌트](/2020/05/24/컴포넌트-component/#component)
   * 함수형 컴포넌트
 
 
-* [컴포넌트 생성](/2020/05/24/컴포넌트(component)/#New_component)
+* [컴포넌트 생성](/2020/05/24/컴포넌트-component/#New_component)
   * src 디렉터리에 MyComponent.js 파일 생성
   * 코드 작성
   * 모듈 내보내기(export) 및 불러오기(import)
 
 
-* [props](/2020/05/24/컴포넌트(component)/#props)
+* [props](/2020/05/24/컴포넌트-component/#props)
   * JSX 내부에서 props 렌더링
   * 컴포넌트를 사용할 때 props 값 지정하기
   * props 기본값 설정: defaultProps
@@ -56,12 +56,12 @@ categories: React
   * propTypes를 통한 props 검증
   * 클래스형 컴포넌트에서 props 사용하기
 
-* [state](/2020/05/24/컴포넌트(component)/#state)
+* [state](/2020/05/24/컴포넌트-component/#state)
   * 클래스형 컴포넌트의 state
   * 함수형 컴포넌트에서 useState 사용하기
 
 
-* [state 사용시 주의 사항](/2020/05/24/컴포넌트(component)/#state_주의사항)
+* [state 사용시 주의 사항](/2020/05/24/컴포넌트-component/#state_주의사항)
 
 <!-- more -->
 
