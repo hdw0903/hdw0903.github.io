@@ -2,6 +2,14 @@
 title: 이벤트 -React
 tags:
   - 이벤트
+  - onClick
+  - onChange
+  - onKeyPress
+  - 리액트 메뉴얼
+  - SyntheticEvent
+  - Property Initializer Syntax
+  - transform-class-properties
+
 disqusId: tunas-blog-1
 toc: true
 widgets:
@@ -512,7 +520,6 @@ const EventPractice = () => {
   });
   const { username, message } = form;
   const onChange = (e) => {
-    setTimeout(() => console.log(e), 500);
     const nextForm = {
       ...form, // 기존의 form 내용을 이 자리에 복사 한 뒤
       [e.target.name]: e.target.value, // 원하는 값을 덮어씌우기
