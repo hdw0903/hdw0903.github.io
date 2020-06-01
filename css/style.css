@@ -10825,7 +10825,10 @@ article.article .content code {
   overflow-wrap: break-word;
 }
 article.article .content mark {
-  background-color: #8af99f;
+  background-color: #fff;
+  letter-spacing: 0.5px;
+  color: #1cba8c;
+  font-weight: 550;
 }
 article.article .content blockquote {
   border-left: 5px solid #f00;
