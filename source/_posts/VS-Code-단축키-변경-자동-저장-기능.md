@@ -11,8 +11,6 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: tags
-    position: right
   - type: adsense
     position: right
 sidebar:
