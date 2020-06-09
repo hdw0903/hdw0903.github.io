@@ -10984,6 +10984,9 @@ footer.footer .level-end .field {
 .footer-logo img {
   max-height: 4rem;
 }
+.sda p {
+  font-size: 1.4rem !important;
+}
 .pagination .pagination-link a,
 .pagination .pagination-ellipsis a,
 .pagination .pagination-previous a,
