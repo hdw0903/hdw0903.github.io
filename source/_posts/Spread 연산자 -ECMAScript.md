@@ -1,5 +1,5 @@
 ---
-title: Spread 연산자 -ECMAScript
+title: 전개(Spread) 연산자 -ECMAScript
 date: 2020-03-20 08:49:05
 disqusId: tunas-blog-1
 categories: ECMAScript6
@@ -7,10 +7,12 @@ tag:
   - ECMAScript6
   - JavaScript
   - Spread
+  - spread
   - iterable
   - 유사 배열
   - Array-like
   - rest
+  - 전개 연산자
 
 toc: true
 widgets:
@@ -30,7 +32,10 @@ sidebar:
 
 ## 개요
 
-스프레드(`Spread`) 연산자는 **이터러블 오브젝트의 엘리먼트를 하나씩 분리하여 전개합니다.**
+전개(`Spread`) 연산자는 **이터러블 오브젝트의 엘리먼트를 하나씩 분리하여 전개합니다.** <mark>(복사)</mark>
+
+<mark>객체(혹은 배열)를 가리키는 것이 아닌 내부의 값을 복사하여 새로운 객체(혹은 배열)를 만들어 내기 때문에
+불변성을 지켜줘야하는 곳에 자주 사용됩니다.</mark>
 
 전개한 결과를 변수에 할당하거나 호출하는 함수의 파라미터 값으로 사용할 수 있습니다.
 
