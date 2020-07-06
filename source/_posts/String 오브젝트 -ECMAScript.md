@@ -1,7 +1,7 @@
 ---
 title: String 오브젝트 -ECMAScript
 date: 2020-03-29 05:33:24
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
  - ECMAScript6
@@ -23,8 +23,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

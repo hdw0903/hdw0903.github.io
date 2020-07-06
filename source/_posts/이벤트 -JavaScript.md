@@ -1,7 +1,7 @@
 ---
 title: 이벤트 -JavaScript
 date: 2020-03-09 12:33:55
-disqusId: tunas-blog-1
+
 categories: JavaScript
 tag: 
 - JavaScript
@@ -21,8 +21,7 @@ widgets:
     position: right
   - type: tags
     position: right
-  - type: adsense
-    position: right
+
 
 sidebar:
   right:

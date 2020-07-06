@@ -10,15 +10,14 @@ tags:
   - Property Initializer Syntax
   - transform-class-properties
 
-disqusId: tunas-blog-1
+
 toc: true
 widgets:
   - type: toc
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

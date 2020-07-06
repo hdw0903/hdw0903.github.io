@@ -1,7 +1,7 @@
 ---
 title: 데이터 타입 -Core JavaScript
 date: 2020-04-16 09:00:39
-disqusId: tunas-blog-1
+
 categories: Core JavaScript
 tag: 
 - Core JavaScript
@@ -30,8 +30,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 
 sidebar:
   right:

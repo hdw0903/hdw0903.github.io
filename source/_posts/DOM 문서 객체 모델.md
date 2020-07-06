@@ -1,7 +1,7 @@
 ---
 title: DOM (문서 객체 모델)
 date: 2020-03-08 06:06:24
-disqusId: tunas-blog-1
+
 categories: JavaScript
 tag: 
 - JavaScript
@@ -22,8 +22,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

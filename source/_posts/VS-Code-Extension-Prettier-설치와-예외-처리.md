@@ -1,6 +1,6 @@
 ---
 title: VS Code Extension Prettier 설치와 예외 처리
-disqusId: tunas-blog-1
+
 tags:
   - VS Code Plugin
   - VS Code Extension
@@ -13,8 +13,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

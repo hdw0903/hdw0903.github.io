@@ -1,6 +1,6 @@
 ---
 title: 'Array.prototype. map, filter, reduce 구현하기'
-disqusId: tunas-blog-1
+
 tags:
   - Array.prototype.map
   - Array.prototype.filter
@@ -16,8 +16,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

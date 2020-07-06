@@ -1,7 +1,7 @@
 ---
 title: jQuery 이벤트 핸들러 -jQuery
 date: 2020-03-12 10:40:59
-disqusId: tunas-blog-1
+
 categories: jQuery
 tag:
 - jQuery
@@ -34,8 +34,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

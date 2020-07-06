@@ -2,7 +2,7 @@
 title: BOM (브라우저 객체 모델)
 date: 2020-03-04 10:18:19
 categories: JavaScript
-disqusId: tunas-blog-1
+
 tag: 
   - JavaScript
   - BOM
@@ -30,8 +30,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

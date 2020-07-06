@@ -1,7 +1,7 @@
 ---
 title: 객체 조작 메서드 -jQuery
 date: 2020-03-10 13:52:04
-disqusId: tunas-blog-1
+
 categories: jQuery
 tag: 
 - JavaScript
@@ -15,8 +15,6 @@ widgets:
   - type: toc
     position: right
   - type: categories
-    position: right
-  - type: adsense
     position: right
 
 sidebar:

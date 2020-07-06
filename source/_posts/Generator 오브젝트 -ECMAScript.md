@@ -1,7 +1,7 @@
 ---
 title: Generator 오브젝트 -ECMAScript
 date: 2020-03-31 08:54:39
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
 - ECMAScript6
@@ -24,8 +24,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

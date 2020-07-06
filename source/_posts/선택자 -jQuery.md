@@ -1,7 +1,7 @@
 ---
 title: 선택자 -jQuery
 date: 2020-03-10 11:43:38
-disqusId: tunas-blog-1
+
 categories: jQuery
 tag: 
 - jQuery
@@ -16,8 +16,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 
 sidebar:
   right:

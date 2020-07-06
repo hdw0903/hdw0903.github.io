@@ -1,7 +1,7 @@
 ---
 title: Symbol 오브젝트 -ECMAScript
 date: 2020-04-06 10:35:07
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
   - ECMAScript6
@@ -19,8 +19,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

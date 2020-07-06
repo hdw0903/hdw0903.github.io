@@ -1,6 +1,6 @@
 ---
 title: prototype -Core JavaScript
-disqusId: tunas-blog-1
+
 tags:
   - Core JavaScript
   - JavaScript
@@ -25,8 +25,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 
 sidebar:
   right:

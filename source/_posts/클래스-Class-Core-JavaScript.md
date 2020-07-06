@@ -1,6 +1,6 @@
 ---
 title: 클래스(Class) -Core JavaScript
-disqusId: tunas-blog-1
+
 tags:
   - JavaScript
   - Core JavaScript
@@ -22,8 +22,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

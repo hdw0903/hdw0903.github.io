@@ -1,6 +1,6 @@
 ---
 title: VS Code 한글 설정
-disqusId: tunas-blog-1
+
 tags:
   - VS Code 한글 설정
 
@@ -10,8 +10,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

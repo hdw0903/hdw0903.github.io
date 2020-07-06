@@ -1,7 +1,7 @@
 ---
 title: Strict mode -ECMAScript
 date: 2020-03-16 10:04:46
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
   - ECMAScript6
@@ -15,8 +15,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

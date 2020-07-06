@@ -1,7 +1,7 @@
 ---
 title: Global Variable(전역변수)와 Local Variable(지역변수)
 date: 2020-03-09 11:13:01
-disqusId: tunas-blog-1
+
 categories: JavaScript
 tag: 
 - JavaScript
@@ -15,8 +15,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

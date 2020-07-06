@@ -1,6 +1,6 @@
 ---
 title: VS Code 유용한 Extension -ESLint
-disqusId: tunas-blog-1
+
 tags:
   - VS Code Plugin
   - VS Code Extension
@@ -12,8 +12,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

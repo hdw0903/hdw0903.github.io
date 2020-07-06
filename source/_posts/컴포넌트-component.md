@@ -16,15 +16,14 @@ tags:
   - useState
   - constructor
   
-disqusId: tunas-blog-1
+
 toc: true
 widgets:
   - type: toc
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

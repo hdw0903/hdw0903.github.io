@@ -1,7 +1,7 @@
 ---
 title: Symbol 프로퍼티 -ECMAScript
 date: 2020-04-06 12:55:12
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
   - ECMAScript6
@@ -31,8 +31,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

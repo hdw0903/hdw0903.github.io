@@ -1,7 +1,7 @@
 ---
 title: this Keyword -JavaScript
 date: 2020-03-10 09:41:19
-disqusId: tunas-blog-1
+
 categories: JavaScript
 tag: 
   - JavaScript
@@ -13,8 +13,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

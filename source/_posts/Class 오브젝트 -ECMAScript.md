@@ -2,7 +2,7 @@
 title: Class 오브젝트 -ECMAScript
 date: 2020-04-01 09:45:41
 categories: ECMAScript6
-disqusId: tunas-blog-1
+
 tag: 
 - ECMAScript6
 - JavaScript
@@ -33,8 +33,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

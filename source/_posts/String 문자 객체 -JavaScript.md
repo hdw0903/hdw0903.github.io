@@ -1,7 +1,7 @@
 ---
 title: String(문자) 객체 -JavaScript
 date: 2020-03-02 12:33:36
-disqusId: tunas-blog-1
+
 categories: JavaScript
 tag: 
   - JavaScript
@@ -15,8 +15,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

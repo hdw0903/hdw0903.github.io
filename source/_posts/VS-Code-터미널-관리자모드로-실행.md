@@ -1,6 +1,6 @@
 ---
 title: VS Code 터미널 관리자모드로 실행
-disqusId: tunas-blog-1
+
 tags:
   - VS Code
   - VS Code 터미널 관리자모드
@@ -12,8 +12,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

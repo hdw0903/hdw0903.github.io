@@ -1,7 +1,7 @@
 ---
 title: 전개(Spread) 연산자 -ECMAScript
 date: 2020-03-20 08:49:05
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
   - ECMAScript6
@@ -20,8 +20,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

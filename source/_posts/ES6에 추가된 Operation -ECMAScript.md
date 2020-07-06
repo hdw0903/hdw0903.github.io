@@ -1,7 +1,7 @@
 ---
 title: ES6에 추가된 Operation -ECMAScript
 date: 2020-03-22 07:14:37
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
 - ECMAScript6
@@ -18,8 +18,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

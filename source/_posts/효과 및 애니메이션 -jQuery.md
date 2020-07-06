@@ -1,7 +1,7 @@
 ---
 title: 효과 및 애니메이션 -jQuery
 date: 2020-03-12 13:21:33
-disqusId: tunas-blog-1
+
 categories: jQuery
 tag: 
 - jQuery
@@ -31,8 +31,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

@@ -1,7 +1,7 @@
 ---
 title: 키워드, 블록 스코프 -ECMAScript
 date: 2020-03-16 13:13:42
-disqusId: tunas-blog-1
+
 categories: ECMAScript6
 tag: 
   - ECMAScript6
@@ -22,8 +22,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

@@ -1,7 +1,7 @@
 ---
 title: 실행 컨텍스트 -Core JavaScript
 date: 2020-04-26 17:50:25
-disqusId: tunas-blog-1
+
 categories: Core JavaScript
 tag:
   - Core JavaScript
@@ -29,8 +29,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 
 sidebar:
   right:

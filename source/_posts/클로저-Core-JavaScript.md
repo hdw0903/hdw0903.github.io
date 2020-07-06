@@ -1,6 +1,6 @@
 ---
 title: 클로저 -Core JavaScript
-disqusId: tunas-blog-1
+
 tags:
   - Core JavaScript
   - 코어 자바스크립트
@@ -30,8 +30,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

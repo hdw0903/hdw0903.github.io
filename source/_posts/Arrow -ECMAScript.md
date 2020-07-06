@@ -2,7 +2,7 @@
 title: Arrow (화살표 함수) -ECMAScript
 date: 2020-03-17 11:51:03
 categories: ECMAScript6
-disqusId: tunas-blog-1
+
 tag: 
   - ECMAScript6
   - JavaScript
@@ -23,8 +23,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

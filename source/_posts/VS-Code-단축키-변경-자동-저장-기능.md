@@ -1,6 +1,6 @@
 ---
 title: 'VS Code 단축키 변경, 자동 저장 기능'
-disqusId: tunas-blog-1
+
 tags:
   - VS code 단축키
   - VS code 자동 저장 기능
@@ -11,8 +11,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true

@@ -1,7 +1,7 @@
 ---
 title: Array(배열) 객체 -JavaScript
 date: 2020-03-02 11:23:53
-disqusId: tunas-blog-1
+
 categories: JavaScript
 tag: 
 - JavaScript
@@ -22,8 +22,7 @@ widgets:
     position: right
   - type: categories
     position: right
-  - type: adsense
-    position: right
+
 sidebar:
   right:
     sticky: true
