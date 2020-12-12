@@ -9,8 +9,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description> 공부 내용 정리 블로그입니다. </description>
-    <pubDate>Fri, 11 Dec 2020 17:33:23 GMT</pubDate>
+    <pubDate>Sat, 12 Dec 2020 12:22:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>변수에 기본값 할당 Nullish coalescing operator -ES11</title>
+      <link>https://hdw0903.github.io/2020/12/12/%EB%B3%80%EC%88%98%EC%97%90-%EA%B8%B0%EB%B3%B8%EA%B0%92-%ED%95%A0%EB%8B%B9-Nullish-coalescing-operator-ES11/</link>
+      <guid>https://hdw0903.github.io/2020/12/12/%EB%B3%80%EC%88%98%EC%97%90-%EA%B8%B0%EB%B3%B8%EA%B0%92-%ED%95%A0%EB%8B%B9-Nullish-coalescing-operator-ES11/</guid>
+      <pubDate>Sat, 12 Dec 2020 11:11:41 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;변수에 기본값을 설정하고 싶을 때, 논리연산자 OR(||)을 사용하는 것이 일반적이었습니다.&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; name = &lt;span class=&quot;string&quot;&gt;&#39;Dongwon&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; user = name || &lt;span class=&quot;string&quot;&gt;&#39;Guest&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;이러한 사용은 자바스크립트의 false값 (0, ‘’, NaN, null, undefined) 모두를 Guest로 할당하기 때문에 잠재적 버그 가능성이 높았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;ES11에 추가된 Nullish coalescing operator(??)를 사용하면 좀 더 명확하게 사용할 수 있습니다.&lt;/mark&gt;&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<p>변수에 기본값을 설정하고 싶을 때, 논리연산자 OR(||)을 사용하는 것이 일반적이었습니다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">'Dongwon'</span>;</span><br><span class="line"><span class="keyword">const</span> user = name || <span class="string">'Guest'</span>;</span><br></pre></td></tr></table></figure><p>이러한 사용은 자바스크립트의 false값 (0, ‘’, NaN, null, undefined) 모두를 Guest로 할당하기 때문에 잠재적 버그 가능성이 높았습니다.</p><p><mark>ES11에 추가된 Nullish coalescing operator(??)를 사용하면 좀 더 명확하게 사용할 수 있습니다.</mark></p><a id="more"></a><hr><p>|| 연산자는 (0, ‘’, NaN, null, undefined)를 falsy값으로 갖는 반면,</p><p><code>??</code> 연산자는 <code>null</code> 또는 <code>undefined</code> 일 때만 두 번째 피연산자를 반환함으로<br><mark>0, ‘’, NaN을 유효한 값으로 사용할 수 있다.</mark></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">const</span> user = name ?? <span class="string">'Guest'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(user) </span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">Nullish coalescing operator(??)에서 ''는 유효한 값이므로</span></span><br><span class="line"><span class="comment">'Guest'가 아닌 name에 할당된 값 ''을 반환</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><h3 id="Optional-chaining과-같이-활용"><a href="#Optional-chaining과-같이-활용" class="headerlink" title="Optional chaining과 같이 활용"></a>Optional chaining과 같이 활용</h3><p>Optional chaining을 사용한 후 아무 값도 찾을 수 없을 때<br>기본값을 지정해주기 위해 사용 가능.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Dongwon'</span>,</span><br><span class="line">  details: &#123;</span><br><span class="line">    location: <span class="string">'Seoul'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> personLocation = person?.details?.age ?? <span class="string">"UnKnown age"</span></span><br><span class="line"><span class="built_in">console</span>.log(personLocation); <span class="comment">// UnKnown age</span></span><br></pre></td></tr></table></figure><hr><h4 id="중요포인트"><a href="#중요포인트" class="headerlink" title="중요포인트"></a>중요포인트</h4><ul><li><p>OR(||)과 AND(&amp;&amp;) 같은 논리 연산자들과 마찬가지로, 만약 왼쪽이 null 또는 undefined가 아님이 판명되면 오른쪽 표현식은 평가되지 않는다. </p></li><li><p>AND (&amp;&amp;) 와 OR 연산자 (||)를 ??와 직접 결합하여 사용하는 것은 불가능하다. 이 경우 SyntaxError가 발생된다.</p><figure class="highlight js"><figcaption><span>SyntaxError</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> || <span class="literal">undefined</span> ?? <span class="string">"foo"</span>; <span class="comment">// SyntaxError</span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">undefined</span> ?? <span class="string">"foo"</span>; <span class="comment">// SyntaxError</span></span><br></pre></td></tr></table></figure><p>이런 경우 우선순위를 나타내기 위한 괄호()를 작성해주면 사용가능 하다.</p><figure class="highlight js"><figcaption><span>()로 우선순위 작성</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="literal">null</span> || <span class="literal">undefined</span> ) ?? <span class="string">"foo"</span>; <span class="comment">// return "foo"</span></span><br></pre></td></tr></table></figure></li></ul><ul><li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator">MDN Nullish coalescing operator</a></li></ul>]]></content:encoded>
+      
+      <comments>https://hdw0903.github.io/2020/12/12/%EB%B3%80%EC%88%98%EC%97%90-%EA%B8%B0%EB%B3%B8%EA%B0%92-%ED%95%A0%EB%8B%B9-Nullish-coalescing-operator-ES11/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>에러 없이 객체 속성값에 접근 Optional chaining -ES11</title>
@@ -495,26 +515,6 @@
       <content:encoded><![CDATA[<p>VS Code의 제안 기능? (Ctrl +Space) 단축키가 불편하여 변경했다.</p><p>추가로 자동 저장 기능도 설정한다.</p><a id="more"></a><hr><h3 id="단축키-설정"><a href="#단축키-설정" class="headerlink" title="단축키 설정"></a>단축키 설정</h3><p>단축키 설정은 <img src="/images/%EB%8B%A8%EC%B6%95%ED%82%A4.png" alt="VS Code 단축키 설정"></p><p>VS Code 에디터 좌측 하단 톱니바퀴를 누르거나 Ctrl+k Ctrl+S로 들어갈 수 있다.</p><p>내가 변경 하고자한 단축키의 이름은 제안 항목 트리거 라고 한다..</p><p><img src="/images/%EC%A0%9C%EC%95%88%ED%95%AD%EB%AA%A9%ED%8A%B8%EB%A6%AC%EA%B1%B0.png" alt="제안 항목 트리거 단축키 변경"></p><p>단축키 부분을 더블 클릭하여 기존의 Ctrl + Space를 Shift + 2로 변경해 줬다.<br>새끼 손가락이 덜아파 행복하다.</p><p><del>특수문자 @를 쓸때마다 아주 곤란하다… 하지만 자주 쓸일이 없으니 대충 쓴다.</del></p><hr><h3 id="VS-Code-자동-저장-기능"><a href="#VS-Code-자동-저장-기능" class="headerlink" title="VS Code 자동 저장 기능"></a>VS Code 자동 저장 기능</h3><p>한번 설정해 놓으면 아주 편한 자동 저장 기능</p><p>이제 매번 Ctrl + S로 저장해줄 필요가 없다.</p><p>마찬가지로 VS Code 에디터에서 톱니바퀴를 누르고 이번에는 <code>설정</code>으로 들어간다.</p><p><img src="/images/autoSave.png" alt="AutoSave"></p><ul><li><p>일반적으로 사용되는 설정 &gt; onFocusChange 항목에서 원하는 항목으로 설정한다.<br><del>개인적으로 onFocusChage가 편해서 사용중</del></p></li><li><p>Auto Save Delay<br>afterDelay로 설정시 지연시간 (ms) 설정</p></li></ul>]]></content:encoded>
       
       <comments>https://hdw0903.github.io/2020/05/21/VS-Code-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%B3%80%EA%B2%BD-%EC%9E%90%EB%8F%99-%EC%A0%80%EC%9E%A5-%EA%B8%B0%EB%8A%A5/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>VS Code 한글 설정</title>
-      <link>https://hdw0903.github.io/2020/05/21/VS-Code-%ED%95%9C%EA%B8%80-%EC%84%A4%EC%A0%95/</link>
-      <guid>https://hdw0903.github.io/2020/05/21/VS-Code-%ED%95%9C%EA%B8%80-%EC%84%A4%EC%A0%95/</guid>
-      <pubDate>Thu, 21 May 2020 10:08:17 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h3 id=&quot;VS-Code-언어-한국어로-설정하기&quot;&gt;&lt;a href=&quot;#VS-Code-언어-한국어로-설정하기&quot; class=&quot;headerlink&quot; title=&quot;VS Code 언어 한국어로 설정하기&quot;&gt;&lt;/a&gt;VS Code 언어 한국어로 설정하기&lt;/h3&gt;&lt;
-        
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<h3 id="VS-Code-언어-한국어로-설정하기"><a href="#VS-Code-언어-한국어로-설정하기" class="headerlink" title="VS Code 언어 한국어로 설정하기"></a>VS Code 언어 한국어로 설정하기</h3><p>VS Code를 열어 좌측에 확장 마켓플레이스를 클릭해 줍니다.</p><p><img src="/images/market.png" alt="VS Code 마켓플레이스"></p><p>Korean Language Pack for Visual Studio Code를 검색하여 설치합니다.</p><p><img src="/images/Language_Pack.png" alt="Korean Language Pack for Visual Studio Code"></p><p>설치 후 F1을 누른 후 Configure Display Language를 입력하여 “ko” 값으로 설정 후 재시작 해주면 끝</p>]]></content:encoded>
-      
-      <comments>https://hdw0903.github.io/2020/05/21/VS-Code-%ED%95%9C%EA%B8%80-%EC%84%A4%EC%A0%95/#disqus_thread</comments>
     </item>
     
   </channel>
